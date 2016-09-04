@@ -7,8 +7,8 @@ public class test {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		 String sJava="";
-		    System.out.println(sJava + "\nStringEscapeUtils.unescapeJava(sJava):\n" + StringEscapeUtils.unescapeJava(sJava));
+		 String stJava="";
+		    System.out.println(stJava + "\nStringEscapeUtils.unescapeJava(sJava):\n" + StringEscapeUtils.unescapeJava(sJava));
 		}
 
 }
