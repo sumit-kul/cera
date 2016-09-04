@@ -1,0 +1,148 @@
+#container .inputForm {
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+}
+
+table {
+	clear: left;
+	margin-bottom: 10px;
+}
+
+.table {
+	margin-bottom: 0.5em
+}
+
+th {
+	text-align: left;
+	font-weight: bold
+}
+
+th,td {
+	padding: 0.25em 0.5em
+}
+
+.trclass {
+	background-color: #D6DCE1
+}
+
+td {
+	padding-top: 10px;
+	padding-bottom: 6px;
+}
+
+th.ralign,td.ralign {
+	text-align: right;
+}
+
+th.lalign,td.lalign {
+	text-align: left;
+	float: left;
+}
+
+.trclassAlt {
+	background-color: #F5F5F5
+}
+
+td {
+	vertical-align: top
+}
+
+td a {
+	color: #66799f;
+}
+
+td.nowrap {
+	white-space: nowrap;
+	width: 8em
+}
+
+td.checkonly {
+	width: 1em padding-top :   8px;
+}
+
+table.blockType {
+	border: 2px solid #D5D5D5;
+	padding: 10px;
+	margin-bottom: 10px;
+	width: 100%;
+	height: auto;
+	margin-top: 14px;
+}
+
+table.type1 th, table.blockType th {
+	background-color: #8E9BA4;
+	color: white;
+	font-weight: bold;
+	height: 20px;
+	padding-top: 10px;
+	vertical-align: top;
+}
+
+table.type1 th a {
+	color: white !important;
+}
+
+.form select.narrow {
+	width: 8.75em;
+	margin-right: .1em;
+}
+
+.form select.narrower {
+	width: 3.8em;
+	margin-right: .50em;
+}
+
+.form select.narrowYear {
+	width: 5.0em;
+	margin-right: .50em;
+}
+
+.form select.narrowerLast {
+	width: 4.0em;
+	margin-right: 0;
+}
+
+.form select.narrowest {
+	width: 3.2em;
+	margin-right: .30em;
+}
+
+.form select.last {
+	margin-right: 0;
+}
+
+.form input,.form select {
+	color: #000;
+	display: inline;
+	float: left;
+	margin: 0 5px 5px 0;
+	padding: 1px 2px;
+	width: 298px;
+}
+
+select,input.text,textarea,fieldset input {
+	border: 1px solid #6A8CAE;
+}
+
+.form select {
+	padding: 0;
+}
+
+.form select {
+	float: none;
+	padding-left: 0;
+	width: 304px;
+}
+
+#container .left-panel .commSection .communities .menus ul li a.menuBtn
+	{
+	background: none repeat scroll 0% 0% #8E9BA4;
+	border: medium none;
+	cursor: pointer;
+	color: #FFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 10px 5px;
+	margin-right: 10px;
+	text-decoration: none;
+}

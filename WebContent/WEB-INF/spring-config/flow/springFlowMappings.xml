@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans default-autowire="byType" default-lazy-init="true" default-dependency-check="none">
+
+	<bean name="/" class="com.era.community.home.ui.action.WelcomeToCommunitiesAction" />
+	<bean name="/welcomeToCommunities.do" class="com.era.community.home.ui.action.WelcomeToCommunitiesAction" />
+	<bean name="/handleInsight.ajx" class="com.era.community.home.ui.action.HandleInsightAction" />
+	
+	<bean name="/login.do" class="com.era.community.pers.ui.action.LoginAction" />
+	<bean name="/logout.ajx" class="com.era.community.pers.ui.action.LogoutAction" />
+	
+	<bean name="/loginSN.ajx" class="com.era.community.pers.ui.action.LoginSNAction" />
+	
+	<bean name="/feedback.do" class="com.era.community.home.ui.action.NCFeedbackAction" />
+	
+	<bean name="/community/showCommunities.do" class="com.era.community.communities.ui.action.AllCommunityIndexAction" />
+	<bean name="/community/showCommunities.ajx" class="com.era.community.communities.ui.action.AllCommunityIndexAction" />
+	
+	<bean name="/cid/[cec]/home.do" class="com.era.community.communities.ui.action.CommunityHomeAction" />	
+	<bean name="/cid/[cec]/home.ajx" class="com.era.community.communities.ui.action.CommunityHomeAction" />
+	
+	<bean name="/community/createNewCommunity.do" class="com.era.community.communities.ui.action.CreateNewCommunityAction" />
+	
+	<bean name="/community/completeNewCommunity.do" class="com.era.community.communities.ui.action.CompleteNewCommunityAction" />
+	
+	<bean name="/home.do" class="com.era.community.home.ui.action.WelcomeToCommunitiesAction" />
+	
+	<bean name="/blog/allBlogs.do" class="com.era.community.blog.ui.action.AllBlogsIndexAction" />
+	<bean name="/blog/allBlogs.ajx" class="com.era.community.blog.ui.action.AllBlogsIndexAction" />
+	
+	<bean name="/cid/[cec]/blog/viewBlog.do" class="com.era.community.blog.ui.action.ShowCommunityBlogAction" />
+  	<bean name="/blog/viewBlog.do" class="com.era.community.blog.ui.action.ShowPersonalBlogAction" />
+  	
+  	<bean name="/blog/personalBlog.do" class="com.era.community.blog.ui.action.PersonalBlogAction" />
+  	<bean name="/blog/personalBlog.ajx" class="com.era.community.blog.ui.action.PersonalBlogAction" />
+  	
+  	<bean name="/cid/[cec]/blog/blogEntry.do" class="com.era.community.blog.ui.action.BlogConsolDisplayEntryAction" />
+  	<bean name="/blog/blogEntry.do" class="com.era.community.blog.ui.action.BlogConsolDisplayEntryAction" />
+  	
+  	<bean name="/pers/startBlog.do" class="com.era.community.blog.ui.action.StartNewBlogAction" />
+  	
+  	<bean name="/blog/toggleAactivate.do" class="com.era.community.blog.ui.action.BlogToggleActivateAction" />
+  	
+  	<bean name="/cid/[cec]/blog/addEditBlog.do" class="com.era.community.blog.ui.action.AddEditCommunityBlogEntryAction" />
+  	<bean name="/blog/addEditBlog.do" class="com.era.community.blog.ui.action.AddEditPersonalBlogEntryAction" />
+  	<bean name="/blog/deleteBlogEntry.do" class="com.era.community.blog.ui.action.DeleteBlogEntryAction" />
+  	
+  	<bean name="/cid/[cec]/blog/editBlog.do" class="com.era.community.blog.ui.action.EditBlogAction" />
+  	<bean name="/blog/editBlog.do" class="com.era.community.blog.ui.action.EditBlogAction" />
+	
+	<bean name="/cid/[cec]/blog/manageBlogAuthors.do" class="com.era.community.blog.ui.action.ManageBlogAuthorsAction" />
+  	<bean name="/blog/manageBlogAuthors.do" class="com.era.community.blog.ui.action.ManageBlogAuthorsAction" />
+  	<bean name="/blog/blogAuthors.do" class="com.era.community.blog.ui.action.ViewBlogAuthorsAction" />
+  	
+  	<bean name="/blog/addAuthors.ajx" class="com.era.community.blog.ui.action.AddAuthorsAction" />
+  	<bean name="/blog/updateAuthors.ajx" class="com.era.community.blog.ui.action.UpdateAuthorsAction" />
+  	<bean name="/blog/deleteAuthors.ajx" class="com.era.community.blog.ui.action.DeleteAuthorsAction" />
+  	
+	<bean name="/forum/allForums.do" class="com.era.community.forum.ui.action.AllForumsAction" />
+	<bean name="/forum/allForums.ajx" class="com.era.community.forum.ui.action.AllForumsAction" />
+	
+	<bean name="/wiki/allWikis.do" class="com.era.community.wiki.ui.action.AllWikisAction" />
+	<bean name="/wiki/allWikis.ajx" class="com.era.community.wiki.ui.action.AllWikisAction" />
+	
+	<bean name="/event/allEvents.do" class="com.era.community.events.ui.action.AllEventsAction" />
+	<bean name="/event/allEvents.ajx" class="com.era.community.events.ui.action.AllEventsAction" />
+	
+	<bean name="/pers/unregisterMe.do" class="com.era.community.profile.ui.action.UnregisterMeAction" />
+	
+  	<bean name="/pers/myProfile.do" class="com.era.community.profile.ui.action.MyProfileAction" />
+  	<bean name="/pers/updateProfile.ajx" class="com.era.community.profile.ui.action.ProfileUpdateAction" />
+  	
+  	<bean name="/pers/myHome.do" class="com.era.community.pers.ui.action.MyHomePageAction" />
+  	<bean name="/pers/myHome.ajx" class="com.era.community.pers.ui.action.MyHomePageAction" />
+  	
+  	<bean name="/pers/myContacts.do" class="com.era.community.pers.ui.action.MyContactsAction" />
+  	<bean name="/pers/myContacts.ajx" class="com.era.community.pers.ui.action.MyContactsAction" />
+  	<bean name="/pers/showConnections.do" class="com.era.community.pers.ui.action.ShowConnectionsAction" />
+  	<bean name="/pers/addConnection.ajx" class="com.era.community.pers.ui.action.AddConnectionAction" />
+  	<bean name="/pers/updateConnection.ajx" class="com.era.community.pers.ui.action.UpdateConnectionAction" />
+  	<bean name="/pers/acceptrequest.do" class="com.era.community.pers.ui.action.AcceptConnectionRequestAction" />
+  	<bean name="/pers/toggleFollowing.ajx" class="com.era.community.pers.ui.action.ToggleFollowingAction" />
+  	<bean name="/pers/updateConnectionInner.ajx" class="com.era.community.pers.ui.action.UpdateConnectionInnerAction" />
+  	<bean name="/pers/addConnectionInner.ajx" class="com.era.community.pers.ui.action.AddConnectionInnerAction" />
+  	<bean name="/pers/toggleFollowingInner.ajx" class="com.era.community.pers.ui.action.ToggleFollowingInnerAction" />
+  	<bean name="/pers/removeConnection.do" class="com.era.community.pers.ui.action.RemoveConnectionAction" />
+  	<bean name="/pers/showCommonConns.ajx" class="com.era.community.media.ui.action.ShowCommonConnsAction" />
+  	
+  	<bean name="/pers/updateFollowing.ajx" class="com.era.community.pers.ui.action.UpdateFollowingAction" />
+  	
+  	<bean name="/pers/sendInvitation.do" class="com.era.community.pers.ui.action.SendInvitationAction" />
+  	<bean name="/pers/manageSocialContacts.ajx" class="com.era.community.pers.ui.action.ManageSocialContactsAction" />
+  	
+  	<bean name="/cid/[cec]/forum/forumThread.do" class="com.era.community.forum.ui.action.ForumThreadAction" />
+  	
+  	<bean name="/community/joinCommunityRequest.ajx" class="com.era.community.communities.ui.action.JoinCommunityRequestAction" />
+  	
+  	<bean name="/event/makeInviteeList.ajx" class="com.era.community.events.ui.action.MakeInviteeListAction" />
+  	
+  	<bean name="/community/joinCommunityRequestSend.do" class="com.era.community.communities.ui.action.JoinCommunityRequestSendAction" />
+  	
+  	<bean name="/pers/myMessages.do" class="com.era.community.pers.ui.action.MyMessagesAction" />
+  	<bean name="/pers/myMessages.ajx" class="com.era.community.pers.ui.action.MyMessagesAction" />
+  	<bean name="/pers/messageUpdate.ajx" class="com.era.community.pers.ui.action.MessageUpdateAction" />
+  	<bean name="/pers/contactPicker.ajx" class="com.era.community.pers.ui.action.ContactPickerAction" />
+  	
+  	<bean name="/pers/messageMailAlert.ajx" class="com.era.community.pers.ui.action.MessageMailAlertSwitchAction" />
+  	
+  	<bean name="/tag/mostPopularTags.ajx" class="com.era.community.tagging.ui.action.MostPopularTagsAction" />
+  	
+  	<bean name="/pers/sendMessage.ajx" class="com.era.community.pers.ui.action.SendMessageAction" />
+  	
+  	<bean name="/cid/[cec]/wiki/wikiDisplay.do" class="com.era.community.wiki.ui.action.WikiDisplayAction" />
+  	<bean name="/cid/[cec]/wiki/wikiDiscussionDisplay.do" class="com.era.community.wiki.ui.action.WikiDiscussionAction" />
+  	<bean name="/cid/[cec]/wiki/wikiDiscussionDisplay.ajx" class="com.era.community.wiki.ui.action.WikiDiscussionAction" />
+  	<bean name="/cid/[cec]/wiki/wikiHistory.do" class="com.era.community.wiki.ui.action.WikiHistoryAction" />
+  	
+  	<bean name="/cid/[cec]/wiki/wikiRestore.do" class="com.era.community.wiki.ui.action.WikiRestoreAction" />
+  	<bean name="/cid/[cec]/wiki/wikiDelete.do" class="com.era.community.wiki.ui.action.WikiEntryDeleteAction" />
+  	
+  	<bean name="/cid/[cec]/wiki/addWiki.do" class="com.era.community.wiki.ui.action.AddWikiAction" />
+  	
+  	<bean name="/cid/[cec]/wiki/editWiki.do" class="com.era.community.wiki.ui.action.EditWikiAction" />
+  	<bean name="/cid/[cec]/wiki/updateWikiTitle.ajx" class="com.era.community.wiki.ui.action.UpdateWikiTitleAction" />
+  	
+  	<bean name="/pers/profileSettings.do" class="com.era.community.profile.ui.action.ProfileSettingsAction" />
+  	<bean name="/pers/updatePrivacy.ajx" class="com.era.community.pers.ui.action.UpdatePrivacyAction" />
+  	
+  	<bean name="/pers/manageSubscriptions.do" class="com.era.community.profile.ui.action.ManageSubscriptionAction" />
+  	<bean name="/pers/manageSubscriptions.ajx" class="com.era.community.profile.ui.action.ManageSubscriptionAction" />
+  	
+  	<bean name="/pers/accountSettings.do" class="com.era.community.pers.ui.action.AccountSettingsAction" />
+  	
+  	<bean name="/community/inviteAFriend.do" class="com.era.community.communities.ui.action.InviteAFriendAction" />
+  	
+  	<bean name="/cid/[cec]/library/documentdisplay.do" class="com.era.community.library.ui.action.DocumentDisplayAction" />
+  	<bean name="/cid/[cec]/library/addDocument.ajx" class="com.era.community.library.ui.action.DocumentAddAction" />
+  	<bean name="/cid/[cec]/library/editDocument.do" class="com.era.community.library.ui.action.DocumentEditAction" />
+  	<bean name="/cid/[cec]/library/mediaGallery.do" class="com.era.community.library.ui.action.ShowMediaGalleryAction" />
+  	<bean name="/cid/[cec]/library/mediaGallery.ajx" class="com.era.community.library.ui.action.ShowMediaGalleryAction" />
+  	<bean name="/library/mediaDisplay.img" class="com.era.community.library.ui.action.MediaDisplayAction" />
+  	<bean name="/upload/imageDisplay.img" class="com.era.community.upload.ui.action.ImageDisplayAction" />
+  	
+  	<bean name="/library/myFilesDisplay.ajx" class="com.era.community.doclib.ui.action.MyFilesDisplayAction" />
+  	<bean name="/library/shareDocument.ajx" class="com.era.community.doclib.ui.action.ShareFileAction" />
+  	<bean name="/library/likeFileComment.ajx" class="com.era.community.library.ui.action.LikeFileCommentAction" />
+  	<bean name="/library/likeFile.ajx" class="com.era.community.library.ui.action.LikeFileAction" />
+  	
+ 	<bean name="/cid/[cec]/forum/startTopic.do" class="com.era.community.forum.ui.action.StartTopicAction" />
+  	
+	<bean name="/cid/[cec]/forum/editForumitem.do" class="com.era.community.forum.ui.action.ForumItemEditAction" />
+	<bean name="/cid/[cec]/forum/editForumResponse.ajx" class="com.era.community.forum.ui.action.ForumResponseEditAction" />
+	  	
+  	<bean name="/cid/[cec]/forum/item-file-remove.do" class="com.era.community.forum.ui.action.ForumItemFileRemoveAction" />
+  	
+  	<bean name="/cid/[cec]/wiki/wikiVersions.do" class="com.era.community.wiki.ui.action.WikiVersionsIndexAction" />
+  	
+  	<bean name="/cid/[cec]/admin/relevantWebsiteUpdate.do" class="com.era.community.communities.ui.action.RelevantSiteUpdateAction" />
+  	
+  	<bean name="/cid/[cec]/admin/relevantWebsites.do" class="com.era.community.communities.ui.action.RelevantSitesAction" />
+  	
+  	<bean name="/cid/[cec]/relevantWebsiteCreate.do" class="com.era.community.communities.ui.action.RelevantSiteCreateAction" />
+  	
+  	<bean name="/cid/[cec]/connections/manageMembership.do" class="com.era.community.communities.ui.action.ManageMembershipAction" />
+  	
+  	<bean name="/pers/registerMe.do" class="com.era.community.pers.ui.action.RegisterMeAction" />
+  	<bean name="/pers/changePass.do" class="com.era.community.pers.ui.action.ChangePasswordAction" />
+  	<bean name="/pers/createNewPassword.do" class="com.era.community.pers.ui.action.CreateNewPasswordAction" />
+  	
+  	<bean name="/pers/registerConfirm.do" class="com.era.community.pers.ui.action.RegisterConfirmAction" />
+  	
+  	<bean name="/pers/checkAvailability.ajx" class="com.era.community.pers.ui.action.CheckAvailabilityAction" />
+  	<bean name="/pers/checkProfileNameAvailability.ajx" class="com.era.community.pers.ui.action.CheckProfileNameAvailability" />
+  	
+  	<bean name="/pers/validateMe.do" class="com.era.community.pers.ui.action.ValidateMeAction" />
+  	<bean name="/pers/validateResend.do" class="com.era.community.pers.ui.action.ValidateResendAction" />
+  	<bean name="/pers/deactivateMe.ajx" class="com.era.community.pers.ui.action.DeactivateMeAction" />
+  	<bean name="/pers/reactivateMe.do" class="com.era.community.pers.ui.action.ReactivateMeAction" />
+  	<bean name="/pers/activateInvitation.do" class="com.era.community.pers.ui.action.ActivateInvitationAction" />
+  	
+  	<bean name="/pers/fPassword.do" class="com.era.community.pers.ui.action.FMyPasswordAction" />
+  	
+  	<bean name="/pers/connectionResult.do" class="com.era.community.pers.ui.action.ConnectionResultDisplayAction" />
+  	
+  	<bean name="/pers/connectionCommunities.do" class="com.era.community.pers.ui.action.ConnectionCommunitiesDisplayAction" />
+  	<bean name="/pers/connectionCommunities.ajx" class="com.era.community.pers.ui.action.ConnectionCommunitiesDisplayAction" />
+  	
+  	<bean name="/pers/communityInvitations.do" class="com.era.community.pers.ui.action.CommunityInvitationsDisplayAction" />
+  	<bean name="/pers/communityInvitations.ajx" class="com.era.community.pers.ui.action.CommunityInvitationsDisplayAction" />
+  	
+  	<bean name="/pers/joiningRequests.do" class="com.era.community.pers.ui.action.JoiningRequestsDisplayAction" />
+  	<bean name="/pers/joiningRequests.ajx" class="com.era.community.pers.ui.action.JoiningRequestsDisplayAction" />
+  	
+  	<bean name="/pers/myJoiningRequests.do" class="com.era.community.pers.ui.action.MyJoiningRequestsDisplayAction" />
+  	<bean name="/pers/myJoiningRequests.ajx" class="com.era.community.pers.ui.action.MyJoiningRequestsDisplayAction" />
+  	
+  	<bean name="/pers/connectionList.do" class="com.era.community.pers.ui.action.ConnectionListDisplayAction" />
+  	<bean name="/pers/connectionList.ajx" class="com.era.community.pers.ui.action.ConnectionListDisplayAction" />
+  	<bean name="/pers/connectionOptions.ajx" class="com.era.community.pers.ui.action.ConnectionOptionsAction" />
+  	
+  	<bean name="/community/communityOptions.ajx" class="com.era.community.communities.ui.action.CommunityOptionsAction" />
+  	
+  	<bean name="/pers/pendingConnectionRequests.do" class="com.era.community.pers.ui.action.PendingConnectionRequestsAction" />
+  	<bean name="/pers/pendingConnectionRequests.ajx" class="com.era.community.pers.ui.action.PendingConnectionRequestsAction" />
+  	<bean name="/pers/pendingConnectionForHeader.ajx" class="com.era.community.pers.ui.action.PendingConnectionForHeaderAction" />
+  	<bean name="/pers/notificationForHeader.ajx" class="com.era.community.pers.ui.action.NotificationForHeaderAction" />
+  	<bean name="/pers/notifications.do" class="com.era.community.pers.ui.action.ShowNotificationAction" />
+  	<bean name="/pers/notifications.ajx" class="com.era.community.pers.ui.action.ShowNotificationAction" />
+  	
+  	<bean name="/pers/pymk.do" class="com.era.community.pers.ui.action.PeopleYouMayKnowAction" />
+  	<bean name="/pers/pymk.ajx" class="com.era.community.pers.ui.action.PeopleYouMayKnowAction" />
+  	
+  	<bean name="/pers/subscriptionOptions.ajx" class="com.era.community.pers.ui.action.SubscriptionOptionsAction" />
+  	
+  	<bean name="/pers/interestArea.do" class="com.era.community.pers.ui.action.InterestAreaAction" />
+  	<bean name="/pers/interesCatList.ajx" class="com.era.community.pers.ui.action.InterestCatListAction" />
+	<bean name="/pers/interestList.ajx" class="com.era.community.pers.ui.action.InterestListAction" />
+	<bean name="/pers/interestSearch.ajx" class="com.era.community.pers.ui.action.InterestSearchAction" />
+	<bean name="/pers/addNewInterest.ajx" class="com.era.community.pers.ui.action.InterestAddAction" />
+	<bean name="/pers/makeMyInterest.ajx" class="com.era.community.pers.ui.action.MakeMyInterestAction" />
+	<bean name="/pers/removeInterest.ajx" class="com.era.community.pers.ui.action.RemoveMyInterestAction" />
+	<bean name="/pers/listInterestToCopy.ajx" class="com.era.community.pers.ui.action.ListInterestToCopyAction" />
+	
+	<bean name="/pers/mediaGallery.do" class="com.era.community.media.ui.action.MediaGalleryAction" />
+	<bean name="/pers/mediaGallery.ajx" class="com.era.community.media.ui.action.MediaGalleryAction" />
+	<bean name="/pers/savePhotos.ajx" class="com.era.community.media.ui.action.SavePhotosAction" />
+	<bean name="/pers/photoDisplay.img" class="com.era.community.media.ui.action.PhotoDisplayAction" />
+	<bean name="/pers/mediaContent.ajx" class="com.era.community.media.ui.action.MediaContentAction" />
+	<bean name="/pers/mediaComments.ajx" class="com.era.community.media.ui.action.MediaCommentsAction" />
+	<bean name="/pers/postMediaComment.ajx" class="com.era.community.media.ui.action.PostMediaCommentAction" />
+	<bean name="/pers/updateMediaInfo.ajx" class="com.era.community.media.ui.action.UpdateMediaInfoAction" />
+	<bean name="/pers/showGroupMedia.ajx" class="com.era.community.media.ui.action.GroupMediaAction" />
+	<bean name="/pers/showMediaList.ajx" class="com.era.community.media.ui.action.MediaListAction" />
+	<bean name="/pers/connectionSearch.ajx" class="com.era.community.pers.ui.action.ConnectionSearchAction" />
+	<bean name="/pers/showGroupMediaInfo.ajx" class="com.era.community.media.ui.action.GroupMediaInfoAction" />
+	<bean name="/pers/likeMedia.ajx" class="com.era.community.media.ui.action.LikeMediaAction" />
+	<bean name="/pers/deletePhotos.ajx" class="com.era.community.media.ui.action.DeletePhotosAction" />
+	<bean name="/pers/deleteAlbum.ajx" class="com.era.community.media.ui.action.DeleteAlbumAction" />
+	<bean name="/pers/moveToOtherAlbum.ajx" class="com.era.community.media.ui.action.MoveToOtherAlbumAction" />
+	
+	<bean name="/pers/showComments.ajx" class="com.era.community.pers.ui.action.ShowCommentsAction" />
+	<bean name="/pers/addComments.ajx" class="com.era.community.pers.ui.action.AddCommentsAction" />
+	
+	<bean name="/pers/showMediaToEdit.ajx" class="com.era.community.media.ui.action.MediaListToEditAction" />
+	
+	<bean name="/pers/addPhotoInAlbum.img" class="com.era.community.pers.ui.action.AddPhotoInAlbumAction" />
+	
+	<bean name="/pers/showGroupLibMediaInfo.ajx" class="com.era.community.media.ui.action.GroupLibMediaInfoAction" />
+  	
+  	<bean name="/cid/[cec]/event/showEventEntry.do" class="com.era.community.events.ui.action.ShowEventEntryAction" />
+  	
+  	<bean name="/event/showEventEntry.do" class="com.era.community.events.ui.action.ShowEventEntryAction" />
+  	
+  	<bean name="/cid/[cec]/event/showEvents.do" class="com.era.community.events.ui.action.ShowEventsAction" />
+  	<bean name="/cid/[cec]/event/showEvents.ajx" class="com.era.community.events.ui.action.ShowEventsAction" />
+  	
+  	<bean name="/cid/[cec]/event/addEvent.do" class="com.era.community.events.ui.action.AddEventAction" />
+  	<bean name="/cid/[cec]/event/manageEvent.do" class="com.era.community.events.ui.action.EditEventAction" />
+  	
+  	<bean name="/cid/[cec]/event/editEvent.do" class="com.era.community.events.ui.action.EditEventAction" />
+  	
+  	<bean name="/cid/[cec]/event/deleteEvent.do" class="com.era.community.events.ui.action.DeleteEventAction" />
+  	
+  	<bean name="/event/saveEventPoster.img" class="com.era.community.events.ui.action.EventPosterSaveAction" />
+  	
+  	<bean name="/event/eventPoster.img" class="com.era.community.events.ui.action.EventPosterDisplayAction" />
+  	
+  	<bean name="/event/likeEvent.ajx" class="com.era.community.events.ui.action.LikeEventAction" />
+  	
+  	<bean name="/event/replyInvitation.ajx" class="com.era.community.events.ui.action.ReplyInvitationAction" />
+  	
+  	<bean name="/cid/[cec]/feed/newsFeeds.do" class="com.era.community.news.ui.action.ShowNewsFeedsIndexAction" />
+  	
+  	<bean name="/cid/[cec]/forum/showTopics.do" class="com.era.community.forum.ui.action.ShowTopicsAction" />
+  	
+  	<bean name="/cid/[cec]/communityMembers/exportList.do" class="com.era.community.communitiesMembers.ui.action.ExportMembersAction" />
+  	
+  	<bean name="/exportList.do" class="com.era.community.communitiesMembers.ui.action.ExportMembersAction" />
+  	
+  	<bean name="/pers/registeruserPhoto.img" class="com.era.community.pers.ui.action.RegisterUserPhotoAction" />
+  	<bean name="/pers/userPhotoRemove.img" class="com.era.community.pers.ui.action.RemoveUserPhotoAction" />
+  	
+  	<bean name="/cid/[cec]/community/membershipDecision.ajx" class="com.era.community.communities.ui.action.MembershipDecisionAction" />
+  	
+  	<bean name="/cid/[cec]/forum/fileDownload.do" class="com.era.community.forum.ui.action.FileDownloadAction" />
+  	
+  	<bean name="/cid/[cec]/blog/downloadFile.do" class="com.era.community.blog.ui.action.DownloadFileAction" />
+  	
+  	<bean name="/admin/actions.do" class="com.era.community.admin.ui.action.AdminActionsAction" />
+  	
+  	<bean name="/faq/showAllFaqs.do" class="com.era.community.faqs.ui.action.ShowAllFaqsAction" />
+  	
+  	<bean name="/faq/faqCreate.do" class="com.era.community.faqs.ui.action.CreateFaqAction" />
+  	
+  	<bean name="/faq/faqRemove.do" class="com.era.community.faqs.ui.action.DeleteFaqAction" />
+  	
+  	<bean name="/faq/faqEdit.do" class="com.era.community.faqs.ui.action.EditFaqAction" />
+  	
+  	<bean name="/cid/[cec]/connections/showConnections.do" class="com.era.community.connections.communities.ui.action.ShowConnectionsAction" />
+  	
+  	<bean name="/cid/[cec]/connections/showInvitations.do" class="com.era.community.connections.communities.ui.action.ShowInvitationsAction" />
+  	
+  	<bean name="/cid/[cec]/library/showLibraryItems.do" class="com.era.community.library.ui.action.ShowLibraryItemsAction" />
+  	<bean name="/cid/[cec]/library/showLibraryItems.ajx" class="com.era.community.library.ui.action.ShowLibraryItemsAction" />
+  	
+  	<bean name="/cid/[cec]/library/showLibraryFolders.do" class="com.era.community.library.ui.action.ShowLibraryFoldersAction" />
+  	<bean name="/cid/[cec]/library/showLibraryFolders.ajx" class="com.era.community.library.ui.action.ShowLibraryFoldersAction" />
+  	
+  	<bean name="/cid/[cec]/wiki/showWikiEntries.do" class="com.era.community.wiki.ui.action.ShowWikiEntriesAction" />
+  	
+  	<bean name="/commLogoDisplay.img" class="com.era.community.communities.ui.action.CommunityLogoDisplayAction" />
+  	
+  	<bean name="/cid/[cec]/commLogoRemove.img" class="com.era.community.communities.ui.action.CommunityLogoRemoveAction" />
+  	
+  	<bean name="/pers/userPhoto.img" class="com.era.community.pers.ui.action.UserPhotoDisplayAction" />
+  	<bean name="/common/showImage.img" class="com.era.community.common.ui.action.ImageItemDisplayAction" />
+  	
+  	<bean name="/cid/[cec]/community/commLogoAddUpdate.img" class="com.era.community.communities.ui.action.CommunityLogoAddUpdateAction" />
+  	
+  	<bean name="/cid/[cec]/community/editCommunity.do" class="com.era.community.communities.ui.action.EditCommunityAction" />
+  	<bean name="/cid/[cec]/community/changeToPublic.do" class="com.era.community.communities.ui.action.ChangeToPublicAction" />
+  	<bean name="/cid/[cec]/community/changeToProtected.do" class="com.era.community.communities.ui.action.ChangeToProtectedAction" />
+  	
+  	<bean name="/cid/[cec]/connections/showJoiningRequests.do" class="com.era.community.communities.ui.action.ShowJoiningRequestsIndexAction" />
+  	<bean name="/cid/[cec]/connections/showJoiningRequests.ajx" class="com.era.community.communities.ui.action.ShowJoiningRequestsIndexAction" />
+  	<bean name="/community/handleMemberShipRequest.ajx" class="com.era.community.communities.ui.action.HandleMemberShipInvitationAction" />
+  	
+  	<bean name="/community/handleMemberShipInvitation.ajx" class="com.era.community.communities.ui.action.HandleMemberShipInvitationAction" />
+  	
+  	<bean name="/search/searchRegisteredUser.ajx" class="com.era.community.search.ui.action.RegisteredUserSearchAction" />
+  	<bean name="/connections/addNewMember.ajx" class="com.era.community.connections.communities.ui.action.AddNewMemberAction" />
+  	<bean name="/connections/inviteMembers.ajx" class="com.era.community.connections.communities.ui.action.InviteMembersAction" />
+  	
+  	<bean name="/search/runScheduledTask.do" class="com.era.community.search.ui.scheduler.RunScheduledTask" />
+  	<bean name="/search/searchComplete.do" class="com.era.community.search.ui.action.SearchCompleteAction" />
+  	<bean name="/search/searchComplete.ajx" class="com.era.community.search.ui.action.SearchCompleteAction" />
+  	<bean name="/search/searchOnTheFly.ajx" class="com.era.community.search.ui.action.SearchOnTheFlyAction" />
+  	<bean name="/cid/[cec]/srch/search.do" class="com.era.community.search.ui.action.SearchAction" />
+  	<bean name="/cid/[cec]/search/searchByTagInCommunity.do" class="com.era.community.search.ui.action.SearchByTagInCommunityAction" />
+  	<bean name="/cid/[cec]/search/searchByTagInCommunity.ajx" class="com.era.community.search.ui.action.SearchByTagInCommunityAction" />
+  	
+	<bean name="/cid/[cec]/show-tagged.do" class="com.era.community.tagging.ui.action.TagCommunitySearchAction" />
+	<bean name="/community/allCommunitiesCloud.ajx" class="com.era.community.communities.ui.action.AllCommunitiesCloudAction" />
+	<bean name="/common/allToolsCloud.ajx" class="com.era.community.common.ui.action.AllToolsCloudAction" />
+	<bean name="/common/allEntryCloud.ajx" class="com.era.community.common.ui.action.AllEntryCloudAction" />
+	<bean name="/cid/[cec]/community/cloudCommunity.ajx" class="com.era.community.communities.ui.action.CloudCommunityAction" />
+	
+	<bean name="/cid/[cec]/communityTags.do" class="com.era.community.tagging.ui.action.CommunityTagsAction" />
+	
+	<bean name="/cid/[cec]/community/subscribeCommunity.ajx" class="com.era.community.communities.ui.action.SubscribeCommunityAction" />
+	<bean name="/cid/[cec]/community/unSubscribeCommunity.ajx" class="com.era.community.communities.ui.action.UnSubscribeCommunityAction" />
+	
+	<bean name="/cid/[cec]/community/updateSubscription.ajx" class="com.era.community.communities.ui.action.UpdateSubscriptionAction" />
+	
+	<bean name="/blog/likeBlogEntry.ajx" class="com.era.community.blog.ui.action.LikeBlogEntryAction" />
+	<bean name="/blog/likeBlogEntryComment.ajx" class="com.era.community.blog.ui.action.LikeBlogEntryCommentAction" />
+	
+	<bean name="/blog/blogPannel.ajx" class="com.era.community.blog.ui.action.BlogPannelAction" />
+	<bean name="/community/communityPannel.ajx" class="com.era.community.communities.ui.action.CommunityPannelAction" />
+	<bean name="/forum/forumPannel.ajx" class="com.era.community.forum.ui.action.ForumPannelAction" />
+	
+	<bean name="/forum/likeForumItem.ajx" class="com.era.community.forum.ui.action.LikeForumItemAction" />
+	<bean name="/wiki/likeWikiEntry.ajx" class="com.era.community.wiki.ui.action.LikeWikiEntryAction" />
+	<bean name="/wiki/likeWikiEntryComment.ajx" class="com.era.community.wiki.ui.action.LikeWikiEntryCommentAction" />
+	
+	<bean name="/community/showCommunityDescription.ajx" class="com.era.community.communities.ui.action.ShowCommunityDescription" />
+	
+	<bean name="/community/getCommunityMedia.img" class="com.era.community.communities.ui.action.CommunityMediaGetAction" />
+	
+	<bean name="/cid/[cec]/addTag.do" class="com.era.community.tagging.ui.action.AddTagAction" />
+	<bean name="/cid/[cec]/addTag.ajx" class="com.era.community.tagging.ui.action.AddTagAction" />
+	<bean name="/tag/addTag.do" class="com.era.community.tagging.ui.action.AddTagAction" />
+	<bean name="/tag/addTag.ajx" class="com.era.community.tagging.ui.action.AddTagAction" />
+	
+	<bean name="/cid/[cec]/comm/get-file.do" class="com.era.community.communities.ui.action.FileGetAction" />
+	
+	<bean name="/cid/[cec]/library/downloadFile.do" class="com.era.community.library.ui.action.DownloadFileAction" />
+	
+	<bean name="/pers/downloadMedia.do" class="com.era.community.pers.ui.action.DownloadFileAction" />
+	
+	<bean name="/pers/visitMyProfile.do" class="com.era.community.profile.ui.action.MyProfileVisitAction" />	
+	<bean name="/pers/visitMyProfile.ajx" class="com.era.community.profile.ui.action.MyProfileVisitAction" />
+	<bean name="/pers/deleteProfileVisiting.ajx" class="com.era.community.profile.ui.action.DeleteProfileVisitAction" />
+	
+	<bean name="/cid/[cec]/wiki/compareWikiVersions.do" class="com.era.community.wiki.ui.action.CompareWikiVersionsAction" />
+	
+	<bean name="/cid/[cec]/blog/followBlogCons.ajx" class="com.era.community.blog.ui.action.FollowCommunityBlogAction" />
+	<bean name="/cid/[cec]/blog/stopFollowingBlogCons.ajx" class="com.era.community.blog.ui.action.StopFollowingCommunityBlogAction" />
+	<bean name="/cid/[cec]/blog/showBlogAuthors.do" class="com.era.community.blog.ui.action.ShowBlogAuthorsAction" />
+	
+	<bean name="/blog/followBlogCons.ajx" class="com.era.community.blog.ui.action.FollowCommunityBlogAction" />
+	<bean name="/blog/stopFollowingBlogCons.ajx" class="com.era.community.blog.ui.action.StopFollowingCommunityBlogAction" />
+	
+	<bean name="/cid/[cec]/event/followEventCalendar.ajx" class="com.era.community.events.ui.action.FollowEventCalendarAction" />
+	<bean name="/cid/[cec]/event/stopFollowingEventCalendar.ajx" class="com.era.community.events.ui.action.StopFollowingEventCalendarAction" />
+	
+	<bean name="/cid/[cec]/forum/followForum.ajx" class="com.era.community.forum.ui.action.FollowForumAction" />
+	<bean name="/cid/[cec]/forum/stopFollowingForum.ajx" class="com.era.community.forum.ui.action.StopFollowingForumAction" />
+	
+	<bean name="/cid/[cec]/library/followLibrary.ajx" class="com.era.community.library.ui.action.FollowLibraryAction" />
+	<bean name="/cid/[cec]/library/stopFollowingLibrary.ajx" class="com.era.community.library.ui.action.StopFollowingLibraryAction" />
+	
+	<bean name="/cid/[cec]/library/deleteDocument.do" class="com.era.community.doclib.ui.action.DocumentDeleteAction" />
+	<bean name="/cid/[cec]/library/deleteDocument.ajx" class="com.era.community.doclib.ui.action.DocumentDeleteAction" />
+	
+	<bean name="/cid/[cec]/wiki/followWiki.ajx" class="com.era.community.wiki.ui.action.FollowWikiAction" />
+	<bean name="/cid/[cec]/wiki/stopFollowingWiki.ajx" class="com.era.community.wiki.ui.action.StopFollowingWikiAction" />
+	
+	<bean name="/cid/[cec]/blog/followBlogEntry.ajx" class="com.era.community.blog.ui.action.FollowBlogEntryAction" />
+	<bean name="/blog/followBlogEntry.ajx" class="com.era.community.blog.ui.action.FollowBlogEntryAction" />
+	<bean name="/cid/[cec]/blog/stopFollowingBlogEntry.ajx" class="com.era.community.blog.ui.action.StopFollowingBlogEntryAction" />
+	<bean name="/blog/stopFollowingBlogEntry.ajx" class="com.era.community.blog.ui.action.StopFollowingBlogEntryAction" />
+	
+	<bean name="/event/followEvent.ajx" class="com.era.community.events.ui.action.FollowEventEntryAction" />
+	<bean name="/event/stopFollowingEvent.ajx" class="com.era.community.events.ui.action.StopFollowingEventEntryAction" />
+	
+	<bean name="/event/eventPannel.ajx" class="com.era.community.events.ui.action.EventPannelAction" />
+	
+	<bean name="/cid/[cec]/forum/followThread.ajx" class="com.era.community.forum.ui.action.FollowThreadAction" />
+	<bean name="/cid/[cec]/forum/stopFollowingThread.ajx" class="com.era.community.forum.ui.action.StopFollowingThreadAction" />
+	
+	<bean name="/cid/[cec]/doclib/followDocument.ajx" class="com.era.community.doclib.ui.action.FollowDocumentAction" />
+	<bean name="/cid/[cec]/doclib/stopFollowingDocument.ajx" class="com.era.community.doclib.ui.action.StopFollowingDocumentAction" />
+	
+	<bean name="/cid/[cec]/wiki/followWikiEntry.ajx" class="com.era.community.wiki.ui.action.FollowWikiEntryAction" />
+	<bean name="/cid/[cec]/wiki/stopFollowingWikiEntry.ajx" class="com.era.community.wiki.ui.action.StopFollowingWikiEntryAction" />
+	
+	<bean name="/cid/[cec]/comm/leaveCommunity.do" class="com.era.community.communities.ui.action.CommunityLeaveAction" />
+	
+	<bean name="/common/userPannel.ajx" class="com.era.community.common.ui.action.UserPannelAction" />
+	
+	<bean name="/common/mediaPannel.ajx" class="com.era.community.common.ui.action.MediaPannelAction" />
+	
+	<bean name="/common/similarProfiles.ajx" class="com.era.community.common.ui.action.SimilarProfileAction" />
+	
+	<bean name="/error/pageNotFound.do" class="com.era.community.error.ui.action.PageNotFoundAction" />
+	
+	<bean name="/pers/connectionInfo.do" class="com.era.community.pers.ui.action.ConnectionInfoDisplayAction" />
+	
+	<bean name="/pers/eventPannel.ajx" class="com.era.community.pers.ui.action.EventPannelAction" />
+	<bean name="/pers/showCalendar.do" class="com.era.community.pers.ui.action.ShowCalendarAction" />
+	
+	<bean name="/pers/memberList.ajx" class="com.era.community.pers.ui.action.MemberListDisplayAction" />
+	<bean name="/pers/unsubscribeMe.do" class="com.era.community.pers.ui.action.UnSubscribeMeAction" />
+	
+	<bean name="/aboutUs.do" class="com.era.community.home.ui.action.DisplayAboutUsAction" />
+	<bean name="/privacy.do" class="com.era.community.home.ui.action.DisplayPolicyAction" />
+	<bean name="/terms.do" class="com.era.community.home.ui.action.DisplayTermsAction" />
+	<bean name="/guide.do" class="com.era.community.home.ui.action.DisplayGuidelineAction" />
+	<bean name="/help.do" class="com.era.community.home.ui.action.DisplayHelpCenterAction" />
+	
+	<bean name="/faq/showMenuEntries.ajx" class="com.era.community.faqs.ui.action.ShowMenuEntriesAction" />
+	<bean name="/faq/helpQCreate.do" class="com.era.community.faqs.ui.action.CreateNewHelpQAction" />
+	<bean name="/faq/helpEntryCreate.do" class="com.era.community.faqs.ui.action.CreateNewHelpEntryAction" />
+
+	<bean name="/cid/[cec]/forum/topicPinned.do" class="com.era.community.forum.ui.action.TopicPinnedAction" />
+	<bean name="/cid/[cec]/forum/topicUnpinned.do" class="com.era.community.forum.ui.action.TopicUnpinnedAction" />
+	<bean name="/cid/[cec]/forum/topicClose.do" class="com.era.community.forum.ui.action.TopicCloseAction" />
+	<bean name="/cid/[cec]/forum/topicReopen.do" class="com.era.community.forum.ui.action.TopicReopenAction" />
+	
+	<bean name="/common/showUserSessions.do" class="com.era.community.common.ui.action.ShowUserSessionsAction" />
+	<bean name="/common/showUserSessions.ajx" class="com.era.community.common.ui.action.ShowUserSessionsAction" />
+	
+	<bean name="/common/showInsight.do" class="com.era.community.common.ui.action.ShowInsightAction" />
+	<bean name="/common/showInsight.ajx" class="com.era.community.common.ui.action.ShowInsightAction" />
+	<bean name="/UpdateThumbnailTask.do" class="com.era.community.admin.ui.action.UpdateThumbnailTask" />
+	<bean name="/communities/showCommunityFeatures.ajx" class="com.era.community.communities.ui.action.ShowCommunityFeaturesAction" />
+	<bean name="/communities/addCommunityFeatures.ajx" class="com.era.community.communities.ui.action.AddCommunityFeaturesAction" />
+	<bean name="/cid/[cec]/assignment/showAssignments.do" class="com.era.community.assignment.ui.action.ShowAssignmentsAction" />
+	
+	<bean name="/cid/[cec]/assignment/createAssignment.do" class="com.era.community.assignment.ui.action.CreateAssignmentAction" />
+	
+	<bean name="/cid/[cec]/assignment/showAssignment.do" class="com.era.community.assignment.ui.action.ShowAssignmentAction" />
+	<bean name="/cid/[cec]/assignment/addAssignment.ajx" class="com.era.community.assignment.ui.action.AddAssignmentsEntryAction" />
+	<bean name="/cid/[cec]/assignment/editAssignment.ajx" class="com.era.community.assignment.ui.action.EditAssignmentsEntryAction" />
+	<bean name="/assignment/showComments.ajx" class="com.era.community.assignment.ui.action.ShowCommentsAction" />
+	<bean name="/assignment/addComments.ajx" class="com.era.community.assignment.ui.action.AddCommentsAction" />
+	<bean name="/assignment/makeAssigneeList.ajx" class="com.era.community.assignment.ui.action.MakeAssigneeListAction" />
+	<bean name="/assignment/addAssignee.ajx" class="com.era.community.assignment.ui.action.AddAssigneeAction" />
+	<bean name="/assignment/showAssignee.ajx" class="com.era.community.assignment.ui.action.ShowAssigneeAction" />
+	
+	<bean name="/pers/occupationList.ajx" class="com.era.community.pers.ui.action.OccupationListAction" />
+	<bean name="/pers/socialLinkList.ajx" class="com.era.community.pers.ui.action.SocialLinkListAction" />
+	<bean name="/pers/saveProfileAction.ajx" class="com.era.community.pers.ui.action.SaveProfileAction" />
+	
+</beans>

@@ -1,0 +1,342 @@
+.pswp__captionLeft {
+	position: absolute;
+	left: 52px;
+	top: 45px;
+	display: inline-block;
+	height: auto;
+}
+
+.pswp__captionLeft small {
+	font-size: 11px;
+	color: #BBB;
+}
+
+.pswp__captionLeft__center {
+	text-align: left;
+	max-width: 350px;
+	margin: 0 auto;
+	font-size: 13px;
+	line-height: 20px;
+	color: #CCC;
+	height: auto;
+	display: inline-block;
+}
+
+.pswp__captionLeft--empty {
+	display: none;
+}
+
+/* Fake captionLeft element, used to calculate height of next/prev image */
+.pswp__captionLeft--fake {
+	visibility: hidden;
+}
+
+.pswp__captionLeft {
+	-webkit-backface-visibility: hidden;
+	will-change: opacity;
+	-webkit-transition: opacity 333ms cubic-bezier(0.4, 0, 0.22, 1);
+	transition: opacity 333ms cubic-bezier(0.4, 0, 0.22, 1);
+}
+
+.pswp__ui--hidden .pswp__captionLeft {
+	/* Force paint & create composition layer for controls. */
+	opacity: 0.001;
+}
+
+.swipebox-content {
+	margin: 0px;
+	width: 100%;
+	vertical-align: middle;
+	padding-top: 24px;
+}
+
+.swipebox-content img {
+	height: 50px;
+	width: 50px;
+	float: left;
+	margin: 0px;
+	margin-right: 3px;
+	border-radius: 50%;
+}
+
+.swipebox-content .details {
+	float: left;
+	width: 78%;
+	word-wrap: break-word;
+}
+
+.swipebox-content .details .heading {
+	float: left;
+	width: 100%;
+	overflow: hidden;
+}
+
+.swipebox-content .details .heading a {
+	font-size: 12px;
+	font-weight: bold;
+	color: #66799f;
+	text-decoration: none;
+}
+
+.swipebox-content .details .heading a:hover {
+	color: #2a3a47;
+	text-decoration: none;
+}
+
+.swipebox-content .details .person {
+	clear: both;
+	font-size: 12px;
+	color: #a7a9ab;
+	padding: 0px;
+	float: left;
+	width: 270px;
+}
+
+.swipebox-content .mediaInfo .medinf {
+	font-size: 13px;
+	color: #20394D;
+	padding: 2px 8px;
+	float: left;
+	text-align: left;
+	height: auto;
+	word-wrap: break-word;
+	position: relative;
+}
+
+.swipebox-content .mediaInfo .medinf span {
+	position: absolute;
+	top: 18px;
+	right: 0px;
+	margin-right: 20px;
+	padding-left: 4px;
+	color: #738397;
+	font-size: 11px;
+	font-weight: bold;
+}
+
+#iii .medinf p {
+	/*overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap; */
+	max-width: 334px;
+}
+
+#container .left-panel .swipebox-content .mediaInfo .medinf p.header {
+	font-size: 12px;
+	font-weight: bold;
+	color: #2A6496;
+}
+
+.swipebox-content .cmntSec {
+	width: 100%;
+	word-wrap: normal;
+	text-align: left;
+	float: left;
+	position: relative;
+	background-color: #EEF3F6;
+	margin: 2px 0px;
+}
+
+.swipebox-content .mediaInfo .medinf p,.swipebox-content .cmntSec p {
+	font-size: 12px;
+	font-weight: normal;
+	color: #484F56;
+	line-height: 18px;
+	width: 300px;
+	white-space: normal;
+	word-wrap: break-word;
+}
+
+#container .left-panel .cmntSec p.theader {
+	color: #2A6496;
+	font-size: 14px;
+	font-weight: bold;
+	padding-left: 6px;
+	word-wrap: break-word;
+}
+
+span.capTop {
+	font-size: 18px;
+	cursor: pointer;
+	color: #738397;
+}
+
+.swipebox-content .medinf .capTop:hover {
+	background-color: #000000;
+}
+
+.outerInfo {
+	position: absolute;
+	top: 96px;
+	width: 100%;
+}
+
+.outerInfo .mediaInfo {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	background-color: #EEF3F6;
+	padding-top: 6px;
+	padding-right: 20px;
+	margin-bottom: 4px;
+}
+
+.editMediaForm {
+	margin: 0px 6px;
+	width: 97%;
+}
+
+.editMediaForm span.secLev {
+	margin: 0px 0px 0px 12px;
+}
+
+.editMediaForm textarea {
+	width: 100%;
+	height: 52px;
+	line-height: 1.28;
+	font-size: 12px;
+	word-wrap: break-word;
+	padding: 3px;
+	text-decoration: none;
+	resize: none;
+	overflow: hidden;
+	text-align: left;
+}
+
+.swipebox-content .addComment {
+	height: auto;
+	background-color: #EEF3F6;
+	float: left;
+	width: 100%;
+}
+
+.swipebox-content .addComment img {
+	height: 30px;
+	width: 30px;
+	float: left;
+	margin: 2px;
+}
+
+textarea.editItmCmt {
+	width: 300px;
+	height: 16px;
+	line-height: 1.28;
+	font-size: 12px;
+	border: 1px solid rgb(215, 215, 215);
+	word-wrap: break-word;
+	padding: 6px 3px;
+	text-decoration: none;
+	color: #20394D;
+	resize: none;
+	overflow: hidden;
+	text-align: left;
+	margin: 2px;
+}
+
+.commentArea {
+	height: 100%;
+	width: 100%;
+	float: left;
+}
+
+.swipebox-scroll-pane
+{
+	width: 100%;
+	min-height: 100px;
+	overflow: auto;
+	height: 100%;
+}
+
+.showComment {
+	height: 40px;
+	width: 97.6%;
+	background-color: #EEF3F6;
+	margin-bottom: 2px;
+	display: inline-table;
+	padding: 4px;
+}
+
+.showComment img {
+	height: 30px;
+	width: 30px;
+	float: left;
+	margin: 2px;
+	border-radius: 50%;
+}
+
+.showComment .heading {
+	font-size: 11px;
+}
+
+.showComment .heading a {
+	font-weight: bold;
+	color: #738397;
+	text-decoration: none;
+	padding: 0 0 0 3px;
+	padding-right: 4px;
+}
+
+.showComment .heading a:hover {
+	color: #2a3a47;
+	text-decoration: none;
+}
+
+.showComment .heading span {
+	float: right;
+	padding-left: 4px;
+	color: #738397;
+	font-size: 11px;
+}
+
+.showComment .incomm {
+	font-size: 12px;
+	padding: 0px 14px 4px 38px;
+	color: #484F56;
+	line-height: 14px;
+}
+
+.rlikeTop {
+	position: relative;
+	float: left;
+	padding-right: 10px;
+	word-wrap: break-word;
+	width: 100%;
+}
+
+.rlikeTopEdit {
+    position: absolute;
+    width: 92%;
+    top: 58px;
+}
+
+.showComment .heading span.lkCnt, .rlikeTopEdit span.lkCnt {
+	float: left;
+	position: relative;
+	margin-right: 4px;
+}
+
+.rlikeTop a.euInfoSelect, .rlikeTopEdit a.euInfoSelect {
+    color: #738397;
+    text-decoration: none;
+    position: relative;
+	right: 30px;
+	float: right;
+}
+
+#capTopSpan {
+	position: absolute;
+	right: -13px;
+	float: right;
+	padding-right: 10px;
+	word-wrap: break-word;
+}
+
+.editMediaForm span.secLev a {
+	color: #738397;
+	font-weight: bold;
+}
+
+.pswp--fscap {
+	display: none;
+	width:0px;
+}

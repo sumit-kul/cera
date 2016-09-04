@@ -1,0 +1,27 @@
+	<Context docBase="myapp" path="" reloadable="true">
+
+     <!--   <Resource name="DefaultDataSource" auth="Container" type="javax.sql.DataSource"
+		maxActive="50" maxIdle="30" maxWait="10000" 
+		username="root"
+		password="" 
+		driverClassName="com.mysql.jdbc.Driver"
+		url="jdbc:mysql://localhost:3306/communityera_1" />   
+
+		
+		
+	  <Resource name="DefaultDataSource" auth="Container" type="javax.sql.DataSource"
+               maxActive="50" maxIdle="30" maxWait="10000"
+               username="communit_arun" password="arun@1234" 
+               driverClassName="com.mysql.jdbc.Driver"
+               url="jdbc:mysql://localhost:3306/communit_cera"
+			   connectionProperties="useUnicode=yes;characterEncoding=utf8;" />  -->
+			   
+			   <Resource name="DefaultDataSource" auth="Container" type="javax.sql.DataSource"
+               maxActive="50" maxIdle="30" maxWait="10000"
+               username="jhapak_arun" password="arun@1234" 
+               driverClassName="com.mysql.jdbc.Driver"
+               url="jdbc:mysql://localhost:3306/jhapak_db"
+			   connectionProperties="useUnicode=yes;characterEncoding=utf8;" /> 
+ 
+
+</Context>

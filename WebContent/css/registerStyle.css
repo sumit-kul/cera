@@ -1,0 +1,176 @@
+#container .welcomeSignupright {
+	border-radius: 3px;
+	box-sizing: border-box;
+	background-color: #FFF;
+	border-width: 1px 1px 2px;
+	border-style: solid;
+	border-color: #D8D8D8;
+	-moz-border-top-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-bottom-colors: none;
+	-moz-border-left-colors: none;
+	border-image: none;
+	vertical-align: top;
+	clear: both;
+	overflow: hidden;
+	margin: 10px auto;
+	padding: 10px;
+	position: relative;
+	box-shadow: 2px 2px 5px #CCC;
+	font-size: 14px;
+	font-weight: normal;
+	width: 100%;
+	display: inline-flex;
+}
+
+#container .welcomeSignupright .innerBlock h1 {
+	clear: both;
+	font-size: 20px;
+	font-weight: bold;
+	color: #66799f;
+	text-decoration: none;
+	margin-bottom: 10px;
+}
+
+
+#container .welcomeSignupright h1 {
+	clear: both;
+	font-size: 20px;
+	font-weight: bold;
+	color: #66799f;
+	text-decoration: none;
+	margin-bottom: 10px;
+}
+
+#container .welcomeSignupright .innerBlock {
+	margin: 0px auto;
+	width: 600px;
+}
+
+#container .welcomeSignupright .upperBlock {
+	margin: unset;
+	width: 48%;
+	border-right: 1px solid #E2E2E2;
+	min-height: 358px;
+	float: left;
+}
+
+#container .welcomeSignupright .lowerBlock {
+	float: left;
+	width: 30%;
+	min-height: 258px;
+	padding: 50px 6px;
+}
+
+#customBtn {
+	width: 80%;
+}
+
+#customBtnFB {
+	width: 80%;
+}
+
+#linkedin-login-button {
+	width: 80%;
+}
+#container .welcomeSignupright .lowerBlock .sec{
+	margin: 50px 26px;
+	width: 76%;
+	float: left;
+}
+
+#container .welcomeSignupright .innerBlock form {
+	margin: 0px auto;
+}
+
+#container .welcomeSignupright .innerBlock form label {
+	color: #aaa6a6;
+}
+
+#container .welcomeSignupright .innerBlock form input {
+	background: #fff;
+	border: 1px solid #dadee2;
+	font-size: 13px;
+	font-weight: bold;
+	padding: 5px;
+	color: #4E5665;
+	margin: 4px 0 0px 0;
+	width:70%;
+}
+
+
+
+span.suggest {
+	color: #aaa6a6;
+	font-size: 14px;
+	padding: 6px 6px;
+	float: right;
+}
+
+p.availablePass {
+	font-size: 12px;
+	font-weight: bold;
+	color: #009200;
+	padding: 10px 0px;
+	float: left;
+}
+
+p.availableFail {
+	font-size: 12px;
+	font-weight: bold;
+	color: #AC0000;
+	padding: 10px 0px;
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.left {
+	float: left;
+}
+
+.loginList {
+	display: list-item;
+	margin-left:10px;
+}
+
+ul.errorList {
+	font-size: 13px;
+	margin-bottom: 10px;
+	padding-left: 1.7em !important ; 
+	margin: 0 0 1em 1.7em !important; 
+	list-style:disc !important;
+}
+
+.errorList li {	
+	font-weight: normal;
+	display:list-item;
+}
+
+.errorList a {
+	display: inline;
+}
+
+.forgotp {
+	text-align: left;
+}
+
+.forgotp a {
+	color: #66799f;
+	font-size: 12px;
+	font-weight: normal;
+	padding: 0px;
+	text-decoration: none;
+	text-align: right;
+}
+
+.forgotp a.arrow {
+	background: url(../images/arrow.png) no-repeat left 6px;
+	padding: 5px 10px 5px 15px;
+	}
+
+.forgotp a:hover {
+	color: #666;
+}

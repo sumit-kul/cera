@@ -1,0 +1,5 @@
+	<base href="${communityEraContext.contextUrl}/"/>
+	
+	<script type="text/javascript" src="js/jPaginator/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="js/jPaginator/jPaginator-min.js"></script>
+	<link rel="stylesheet" media="all" type="text/css" href="css/jPaginator.css" />

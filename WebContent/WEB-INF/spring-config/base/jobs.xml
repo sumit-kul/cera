@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans default-autowire="no" default-lazy-init="true" default-dependency-check="none" >
+
+   <bean id="cfg4" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+      <property name="locations">
+         <list>  
+            <value>WEB-INF/spring-config/app.properties</value>
+         </list>
+      </property>
+   </bean>
+   
+<bean id="defaultTaskConfig" class="support.community.scheduledTask.AppTaskConfig">
+   <property name="runtimeContext" ref="runtimeContext"/>
+   <property name="securityProviderKey" value="${acegi.anon.key}"/>
+   <property name="userAttribute" value="anonymousUser,ROLE_ANONYMOUS"/>
+   <property name="runAsServerTemplate" ref="runAsServerTemplate"/>
+   <property name="threadDecorators">
+      <list>
+         <ref bean="transactionContextHolder" />
+         <ref bean="threadLifecycleTracker" />
+      </list>
+   </property>
+</bean>
+
+<bean id="SendInvitationJob" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+  <property name="targetMethod" value="runTask" />
+  <property name="concurrent" value="false" />
+  <property name="targetObject" >
+      <bean class="support.community.scheduledTask.AppDelegatedTask" >
+            <property name="taskConfig" ref="defaultTaskConfig" />
+            <property name="runAsServer" value="true"/>
+            <property name="runnables" >
+             <list>
+                  <bean class="support.community.scheduledTask.SendInvitationTask" autowire="byType" >
+                  	<property name="linkPrefix" value="${tasks.SendInvitationTask.linkPrefix}" />
+                  </bean>
+              </list>
+            </property>
+       </bean>
+  </property>
+</bean>
+
+<bean id="MailSubscriptionsTaskDaily" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+  <property name="targetMethod" value="runTask" />
+  <property name="concurrent" value="false" />
+  <property name="targetObject" >
+      <bean class="support.community.scheduledTask.AppDelegatedTask" >
+            <property name="taskConfig" ref="defaultTaskConfig" />
+            <property name="runAsServer" value="true"/>
+            <property name="runnables" >
+             <list>
+					<bean class="com.era.community.monitor.ui.scheduler.SubscriptionsMailerTask" autowire="byType">
+						<property name="frequency" value="1" />
+						<property name="linkPrefix" value="${tasks.SubscriptionsMailerTask.linkPrefix}" />
+					</bean>
+              </list>
+            </property>
+       </bean>
+  </property>
+</bean>
+
+<bean id="MailSubscriptionsTaskWeekly" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+  <property name="targetMethod" value="runTask" />
+  <property name="concurrent" value="false" />
+  <property name="targetObject" >
+      <bean class="support.community.scheduledTask.AppDelegatedTask" >
+            <property name="taskConfig" ref="defaultTaskConfig" />
+            <property name="runAsServer" value="true"/>
+            <property name="runnables" >
+             <list>
+					<bean class="com.era.community.monitor.ui.scheduler.SubscriptionsMailerTask" autowire="byType">
+						<property name="frequency" value="2" />
+						<property name="linkPrefix" value="${tasks.SubscriptionsMailerTask.linkPrefix}" />
+					</bean>
+              </list>
+            </property>
+       </bean>
+  </property>
+</bean>
+
+<bean id="IndexerTask" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+  <property name="targetMethod" value="runTask" />
+  <property name="concurrent" value="false" />
+  <property name="targetObject" >
+      <bean class="support.community.scheduledTask.AppDelegatedTask" >
+            <property name="taskConfig" ref="defaultTaskConfig" />
+            <property name="runAsServer" value="true"/>
+            <property name="runnables" >
+             <list>
+				<ref bean="communityIndexer" />
+				<ref bean="communityIndexCleaner" />
+              </list>
+            </property>
+       </bean>
+  </property>
+</bean>
+
+<bean id="FeedReaderTask" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+  <property name="targetMethod" value="runTask" />
+  <property name="concurrent" value="false" />
+  <property name="targetObject" >
+      <bean class="support.community.scheduledTask.AppDelegatedTask" >
+            <property name="taskConfig" ref="defaultTaskConfig" />
+            <property name="runAsServer" value="true"/>
+            <property name="runnables" >
+             <list>
+					<bean class="com.era.community.newsfeed.ui.scheduler.FeedReaderJob" autowire="byType">
+					</bean>
+              </list>
+            </property>
+       </bean>
+  </property>
+</bean>
+</beans>

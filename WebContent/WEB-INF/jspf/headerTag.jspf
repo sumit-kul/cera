@@ -1,0 +1,69 @@
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+
+<base href="${communityEraContext.contextUrl}/"/>
+
+<script type="text/javascript">
+	function callInnerLink(lnk) {
+		window.location.href='${communityEraContext.contextUrl}/'+lnk;
+	}
+	function toggle() {
+		var toggleList = document.getElementById("toggleList").value;
+		var cloudList = document.getElementById("cloudList");
+		var cloud = document.getElementById("cloud");
+		var aCloud = document.getElementById("aCloud");
+		
+		if(cloudList.style.display == "block") {
+			cloudList.style.display = "none";
+			cloud.style.display = "block";
+			aCloud.style.display = "none";
+			hCloud.style.display = "block";
+			aCloudList.style.display = "block";
+			hCloudList.style.display = "none";
+			document.getElementById("toggleList").value = "false";
+	  	}
+		else {
+			cloudList.style.display = "block";
+			cloud.style.display = "none";
+			aCloud.style.display = "block";
+			hCloud.style.display = "none";
+			aCloudList.style.display = "none";
+			hCloudList.style.display = "block";
+			document.getElementById("toggleList").value = "true";
+		}
+	}
+
+	function toggleOnLoad() {
+		var toggleList = document.getElementById("toggleList").value;
+		var cloudList = document.getElementById("cloudList");
+		var cloud = document.getElementById("cloud");
+		var aCloud = document.getElementById("aCloud");
+		
+		if(toggleList == "false") {
+			cloudList.style.display = "none";
+			cloud.style.display = "block";
+			aCloud.style.display = "none";
+			hCloud.style.display = "block";
+			aCloudList.style.display = "block";
+			hCloudList.style.display = "none";
+	  	}
+		else {
+			cloudList.style.display = "block";
+			cloud.style.display = "none";
+			aCloud.style.display = "block";
+			hCloud.style.display = "none";
+			aCloudList.style.display = "none";
+			hCloudList.style.display = "block";
+		}
+	}
+
+	function normalQtip() {
+		$('.normalTip').qtip({ 
+		    content: {
+		        attr: 'title'
+		    },
+			style: {
+		        classes: 'qtip-tipsy'
+		    }
+		});
+	}
+</script>

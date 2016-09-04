@@ -1,0 +1,71 @@
+<footer id="footer">
+	<div class="section">
+		<div class="logo">
+			<a href="${communityEraContext.contextUrl}/welcomeToCommunities.do">
+				<img src="images/link_Image.png" width="34" height="34" style="image-rendering: pixelated;">
+			</a>
+		</div>
+		<div class="cntInfo">
+			<div class="siteStatus">
+				<div class="siteStatusStat">
+					<p>${communityEraContext.communityCountSoFar} <span>communities</span></p>
+				</div>
+				<div class="siteStatusStat">
+					<p>${communityEraContext.userCountSoFar} <span>members</span></p>
+				</div>
+			</div>
+		</div>
+		<div class="secLinks">
+			<hr style="background-color:#9d9ec1; color:#9d9ec1;border-color:#9d9ec1" />
+			<ul id="footerMenu">
+				<%-- <li><a href="${communityEraContext.contextUrl}/aboutUs.do">About</a></li> --%>
+				<li><a href="${communityEraContext.contextUrl}/privacy.do">Privacy Policy</a></li>
+				<li><a href="${communityEraContext.contextUrl}/terms.do">Terms &amp; Conditions</a></li>
+				<li><a href="${communityEraContext.contextUrl}/guide.do">Community Guidelines</a></li>  
+				<li><a href="${communityEraContext.contextUrl}/help.do">Help</a></li> 
+				<li><a href="${communityEraContext.contextUrl}/feedback.do">Feedback</a></li>	
+				<li><a href="https://jhapak.a.offsitestatus.com/">Status</a></li>
+			</ul>
+			<br>
+			<ul class="socialNetworks">
+				<li><a href="https://www.facebook.com/EraOfCommunities" target="newSocial"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+				<li><a href="https://twitter.com/EraCommunity" target="newSocial"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>				
+				<li><a href="https://plus.google.com/+Jhapak4u" target="newSocial"><i class="fa fa-google-plus-official" aria-hidden="true"></i></a></li>
+				<li><a href="https://www.linkedin.com/company/communityera" target="newSocial"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>	
+				<li><a href="https://www.instagram.com/communityera2025/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+				<%-- <li><a href="https://www.pinterest.com/thepennyhoarder/" target="newSocial"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+				<li><a href="http://www.thepennyhoarder.com/feed/"><span class="icon-rss"></span></a></li> --%>
+			</ul>
+			<br> 
+		
+		<%-- <div style="width: 100%; display: inline-block; margin-bottom: 20px;">
+			<div class="fb-page" data-href="https://www.facebook.com/CommunityEra-1703188919924053/" 
+			data-tabs="" data-small-header="false" data-adapt-container-width="true" 
+			data-hide-cover="false" data-show-facepile="true"></div>
+		</div>  --%>
+	
+	<div class="copyright" >Jhapak &copy; Copyright 2016 </div>
+			
+			<c:if test="${communityEraContext.userSysAdmin}">	
+				<br />
+				<div class="admnLnk"><a href="${communityEraContext.contextUrl}/admin/actions.do" title="System Administrator only">Admin Links</a></div>
+			</c:if>
+		</div>
+	</div>
+</footer>
+
+<!-- Twitter universal website tag code -->
+<script src="//platform.twitter.com/oct.js" type="text/javascript"></script>
+<script type="text/javascript">
+	twttr.conversion.trackPid('nuyhs', {
+		tw_sale_amount : 0,
+		tw_order_quantity : 0
+	});
+</script>
+<noscript><img height="1" width="1" style="display: none;"
+	alt=""
+	src="https://analytics.twitter.com/i/adsct?txn_id=nuyhs&p_id=Twitter&tw_sale_amount=0&tw_order_quantity=0" />
+<img height="1" width="1" style="display: none;" alt=""
+	src="//t.co/i/adsct?txn_id=nuyhs&p_id=Twitter&tw_sale_amount=0&tw_order_quantity=0" />
+</noscript>
+<!-- End Twitter universal website tag code -->

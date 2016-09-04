@@ -1,0 +1,101 @@
+/* must set border width with px */
+.paginator_p {
+	background: none repeat scroll 0% 0% #243F52;  
+	text-align: center;
+	float: left;
+	height: 20px;
+	cursor: pointer;
+	list-style-type: none;
+	color: #FFF;
+	-moz-border-radius: 3px; /* FF1-3.6 */
+	-webkit-border-radius: 3px; /* Saf3-4, iOS 1-3.2, Android <1.6 */
+	border-radius: 3px;
+}
+
+.paginator_p.over {
+	background-color: rgb(0, 110, 150); 
+	color: #66799f;
+}
+
+.paginator_p.selected {
+	color: #66799f; 
+}
+
+.paginator_p_wrap {
+	margin-top: 5px;
+	position: relative;
+	overflow: hidden;
+	float: left;
+	height: 22px;
+	margin-bottom: 10px;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+
+.paginator_p_bloc {
+	position: relative;
+	width: 700px;
+}
+
+.paginator_slider {
+	float: left;
+	clear: left;
+	height: 4px;
+	top: 4px;
+	background: white;
+	border: solid 1px black;
+	position: relative;
+}
+
+.paginator_slider .ui-slider-handle {
+	width: 8px;
+	height: 12px;
+	position: absolute;
+	top: -4px;
+	background-color: black;
+}
+
+.jPaginatorOver {
+	background: none repeat scroll 0% 0% #243F52;
+	float: left;
+	height: 20px;
+	margin: 5px 4px;
+	text-align: center;
+	line-height: 20px;
+	cursor: pointer;
+	width: 50px;
+	font-size: 12px;
+	font-weight: bold;
+	text-decoration: none;
+	color: #FFF;
+	-moz-border-radius: 3px; /* FF1-3.6 */
+	-webkit-border-radius: 3px; /* Saf3-4, iOS 1-3.2, Android <1.6 */
+	border-radius: 3px;
+}
+
+.jPaginatorMax {
+	background: none repeat scroll 0% 0% #243F52;
+}
+
+.jPaginatorMax {
+	border: medium none;
+	cursor: pointer;
+	float: left;
+	height: 20px;
+	margin: 5px 4px;
+	line-height: 20px;
+	text-align: center;
+	width: 50px;
+	color: #FFF;
+	font-size: 12px;
+	font-weight: bold;
+	text-decoration: none;
+	/*border radius half the width and height of our links to create a circle*/
+	-moz-border-radius: 3px; /* FF1-3.6 */
+	-webkit-border-radius: 3px; /* Saf3-4, iOS 1-3.2, Android <1.6 */
+	border-radius: 3px;
+	/* Opera 10.5, IE9, Saf5, Chrome, FF4, iOS 4, Android 2.1+ */
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE beans PUBLIC
+    "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans
+  default-autowire="byType"
+  default-lazy-init="false"
+  default-dependency-check="none"
+>
+
+  <bean name="feature10" class="com.era.community.forum.dao.ForumFeature"/>
+  <bean name="feature20" class="com.era.community.events.dao.EventCalendarFeature"/>
+  <bean name="feature30" class="com.era.community.connections.communities.dao.MemberListFeature"/>
+  <bean name="feature40" class="com.era.community.doclib.dao.DocumentLibraryFeature"/>
+  <bean name="feature50" class="com.era.community.wiki.dao.WikiFeature"/>
+  <bean name="feature70" class="com.era.community.blog.dao.CommunityBlogFeature"/> 
+  <bean name="feature90" class="com.era.community.assignment.dao.AssignmentFeature"/>
+  <!--  <bean name="feature60" class="com.era.community.newsfeed.dao.NewsFeedAggregatorFeature"/>
+  <bean name="feature80" class="com.era.community.events.dao.MasterCalendarFeature"/>  -->
+
+</beans>

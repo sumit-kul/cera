@@ -1,0 +1,146 @@
+<%@ taglib prefix="form" uri="/WEB-INF/tlds/cera_form.tld" %>
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-56267Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-56267Z');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Place this tag in your head or just before your close body tag. -->
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+<header style="width: 100%;">
+	<div class="section">
+		<div class="rowBlock" style="position: relative !important;">
+			<div class="logo">
+				<a href="${communityEraContext.contextUrl}/welcomeToCommunities.do">
+					<img src="images/link_Image.png" width="46" height="46" style="image-rendering: pixelated;">
+				</a>
+			</div>
+			<div class="linkBuilder" style="">
+				<ul class="mainLB" >
+			    	<li><a href="${communityEraContext.contextUrl}/community/showCommunities.do" >Communities</a></li>
+					<li><a href="${communityEraContext.contextUrl}/blog/allBlogs.do" >Blogs</a></li>
+					<li><a href="${communityEraContext.contextUrl}/forum/allForums.do" >Forums</a></li>
+					<li><a href="${communityEraContext.contextUrl}/wiki/allWikis.do" >Wikis</a></li>
+					<li><a href="${communityEraContext.contextUrl}/event/allEvents.do" >Events</a></li>
+			    </ul>
+			    <ul class="shortLB" >
+			    	<li><a href="${communityEraContext.contextUrl}/community/showCommunities.do" ><i class="fa fa-users" style="margin-right: 8px;"></i></a></li>
+					<li><a href="${communityEraContext.contextUrl}/blog/allBlogs.do" ><i class="fa fa-quote-left" style="margin-right: 8px;"></i></a></li>
+					<li><a href="${communityEraContext.contextUrl}/forum/allForums.do" ><i class="fa fa-comments-o" style="margin-right: 8px;"></i></a></li>
+					<li><a href="${communityEraContext.contextUrl}/wiki/allWikis.do" ><i class="fa fa-book" style="margin-right: 8px;"></i></a></li>
+					<li><a href="${communityEraContext.contextUrl}/event/allEvents.do" ><i class="fa fa-calendar-check-o" ></i></a></li>
+			    </ul>
+			</div>
+		</div>
+		<div class="rowBlockLow sticky" id="sticky" style="margin: 0px auto;">
+			<div class="rowBlock">
+				<div style="position: relative !important; margin: 0px; width: 100%; display: inline-block; padding-top: 8px;">
+					<div id="shortLogoId" class="share" >
+						<a href="${communityEraContext.contextUrl}/welcomeToCommunities.do">
+							<img src="images/link_Image.png" height="34" style="image-rendering: pixelated;">
+						</a>
+					</div>
+					<div class="form-part">
+						<div class="search">
+							<form:form showFieldErrors="true" action="${communityEraContext.contextUrl}/search/searchComplete.do" method="get" id="myform" name="myform">
+								<input name="cx" value="000937791762657326997:duztx-oomg0" type="hidden">
+								<input name="ie" value="UTF-8" type="hidden">
+								<input type="text" id="queryText" name="q" value="${command.queryText}" 
+								placeholder="Search for communities, blogs, people and more... " class="qtext" autocomplete="off" onkeydown="searchOnTheFly()" onmousedown="searchOnTheFly()"/>
+							</form:form>
+							<a id="searchtab" class="srchbtn" href="javascript:void(0);" onclick="submitform();"><i class='fa fa-search' style='padding: 7px; color: #ADBDCB;'></i></a>
+						</div>
+					</div>
+					
+					<c:choose>
+						<c:when test="${communityEraContext.userAuthenticated}">
+							<div class="headerProfile" style="width: 50px;">
+								<div class="navlst">
+									<ul>
+										<li class="current">
+											<c:if test="${communityEraContext.currentUser.photoPresent}">
+												<img src="${communityEraContext.contextUrl}/pers/userPhoto.img?id=${communityEraContext.currentUser.id}" width="30" height="30" style="margin-right: 6px; margin-left: 16px;" />
+											</c:if>
+											<c:if test="${!communityEraContext.currentUser.photoPresent}">
+												<img src="img/user_icon.png" width="30" height="30" style="margin-right: 6px; margin-left: 16px;" />
+											</c:if>
+										</li>
+										<ul class="darkMenu">
+											<li><a href="${communityEraContext.contextUrl}/pers/connectionResult.do?id=${communityEraContext.currentUser.id}" style="padding: 10px;"><i class="fa fa-users" style="font-size: 14px;"></i>&nbsp;&nbsp;${communityEraContext.currentUser.fullName}</a></li>
+											<li><a href="${communityEraContext.contextUrl}/pers/connectionCommunities.do" style="padding: 10px;"><i class="fa fa-users" style="font-size: 14px;"></i>&nbsp;&nbsp;My Communities</a></li>
+											<li><a href="${communityEraContext.contextUrl}/blog/personalBlog.do" style="padding: 10px;"><i class="fa fa-quote-left" style="font-size: 14px;"></i>&nbsp;&nbsp;My Blogs</a></li>
+											<li><a href="${communityEraContext.contextUrl}/pers/connectionList.do" style="padding: 10px;"><i class="fa fa-user" style="font-size: 14px;"></i>&nbsp;&nbsp;My Connections</a></li>
+											<li><a href="${communityEraContext.contextUrl}/pers/showCalendar.do" style="padding: 10px;"><i class="fa fa-calendar" style="font-size: 14px;"></i>&nbsp;&nbsp;My Calendar</a></li>
+										    
+										    <li id=""><a href="${communityEraContext.contextUrl}/pers/sendInvitation.do" style="padding: 10px;"><i class="fa fa-envelope-o" style="font-size: 14px;"></i>&nbsp;&nbsp;Send Invitations</a></li>
+								        	<%-- <li id=""><a href="${communityEraContext.contextUrl}/pers/profileSettings.do" style="padding: 10px;"><i class="fa fa-cogs" style="font-size: 14px;"></i>&nbsp;&nbsp;Settings</a></li> --%>
+								            <li id=""><a href="${communityEraContext.contextUrl}/help.do" style="padding: 10px;"><i class="fa fa-question-circle" style="font-size: 14px;"></i>&nbsp;&nbsp;Help Center</a></li>
+								            <li id=""><a href="javascript:void(0);" onclick="logOutFromApp();" style="padding: 10px;"><i class="fa fa-sign-out" style="font-size: 14px;"></i>&nbsp;&nbsp;logout</a></li>
+										</ul>
+									</ul>
+								</div>
+							</div>
+							<div class="outerNav" style="float: right; margin-right: 50px;">
+								<div class="firstNav" style="display: inline-block;">
+									<div style="float: right;">
+										<div style="float: none; margin: 5px 0px 6px; position: relative;  width: 30px;">
+											<span class="profileMe" style="">
+												<a id="myMessage" href="${communityEraContext.contextUrl}/pers/myMessages.do?msgType=All&order=Date">
+													<i class="fa fa-envelope" style=""></i>
+													<c:if test="${communityEraContext.alert.messageCount > 0}">
+														<span class='redMarkTop'>${communityEraContext.alert.messageCount}</span>
+													</c:if>
+												</a>
+											</span>
+										</div>
+									</div>
+									<div style="float: right;">
+										<div style="float: none; margin: 5px 0px 6px; position: relative;  width: 30px;">
+											<span class="profileMe" style="" >
+												<i id="topNotification" class="fa fa-bell" style="" >
+												<c:if test="${communityEraContext.alert.notificationCount > 0}">
+													<span class='redMarkTop' id='notificationRedMarkTop'>${communityEraContext.alert.notificationCount}</span>
+												</c:if></i>
+											</span>
+										</div>
+									</div>
+									<div style="float: right;">
+										<div style="float: none; margin: 5px 0px 6px; position: relative;  width: 30px;">
+											<span class="profileMe" style="" >
+												<i id="topConnection" class="fa fa-user-plus" style="" >
+												<c:if test="${communityEraContext.alert.connectionReceivedCount > 0}">
+													<span class='redMarkTop'>${communityEraContext.alert.connectionReceivedCount}</span>
+												</c:if></i>
+											</span>
+										</div>
+									</div>
+									
+									<div style="float: right;">
+										<div style="float: none; margin: 5px 0px 6px;" id="outProfileme">
+											<%-- <span class="myHome profileMe" style="float: right; padding: 4px 6px;" id="cUseNme">
+												<a id="myHome" href="${communityEraContext.contextUrl}/pers/connectionResult.do">${communityEraContext.currentUser.fullName}</a>
+											</span> --%>
+											<span class="myHome profileMe" >
+												<a id="myHome" href="${communityEraContext.contextUrl}/pers/myHome.do"><i id="topNotification" class="fa fa-home" style="padding-right: 4px;"></i><span id="thHome">Home</span></a>
+											</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</c:when>
+						<c:otherwise>
+							<div id="logoinBtn"><a href="${communityEraContext.contextUrl}/login.do" class="btnmain btnClass" style="border: none; margin-top: 2px;"><i class="fa fa-sign-in" style="margin-right: 8px;"></i>Log In</a></div>
+						</c:otherwise>
+					</c:choose>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</header>

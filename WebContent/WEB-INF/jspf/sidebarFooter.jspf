@@ -1,0 +1,15 @@
+<div id="sidebar-footer" >
+	<ul class="nav-links">
+		<li class="nav-link"><a href="${communityEraContext.contextUrl}/privacy.do">Privacy</a></li>
+		<li class="nav-link"><a href="${communityEraContext.contextUrl}/terms.do">Terms</a></li>
+		<li class="nav-link"><a href="${communityEraContext.contextUrl}/guide.do">Community Guidelines</a></li> 
+	</ul>
+	<ul class="nav-links">
+		<%-- <li class="nav-link"><a href="${communityEraContext.contextUrl}/aboutUs.do">About</a></li> --%>
+		<li class="nav-link"><a href="${communityEraContext.contextUrl}/help.do">Help</a></li>
+		<li class="nav-link"><a href="${communityEraContext.contextUrl}/feedback.do">Feedback</a></li> 
+	</ul>
+	<ul class="nav-links">
+		<li class="nav-link" style="font-size: 12px; margin-left: 5px;">Jhapak &copy; 2016</li> 
+	</ul>
+</div>

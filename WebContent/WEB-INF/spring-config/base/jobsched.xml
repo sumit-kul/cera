@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<!-- Quartz scheduler setup -->
+<beans
+  default-autowire="no"
+  default-lazy-init="false"
+  default-dependency-check="none"
+>
+
+   <bean id="cfg1" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+      <property name="locations">
+         <list>  
+            <value>WEB-INF/spring-config/app.properties</value>
+         </list>
+      </property>
+   </bean>
+
+   <bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean" autowire="no">
+    <property name="jobDetails">
+        <list> 
+            <ref bean="SendInvitationJob" />
+            <ref bean="MailSubscriptionsTaskDaily" />
+            <ref bean="MailSubscriptionsTaskWeekly" />
+            <ref bean="IndexerTask" />
+            <ref bean="FeedReaderTask" />
+        </list>
+    </property>
+
+    <property name="triggers">
+        <list>
+        <!--  Daily mailer   -->
+         <bean class="org.springframework.scheduling.quartz.CronTriggerBean">
+             <property name="jobDetail" ref="MailSubscriptionsTaskDaily" />
+             <property name="cronExpression" value="${tasks.MailSubscriptionsTaskDaily.cron}" /> 
+         </bean>
+        <!--  Weekly mailer   -->
+         <bean class="org.springframework.scheduling.quartz.CronTriggerBean">
+             <property name="jobDetail" ref="MailSubscriptionsTaskWeekly" />
+             <property name="cronExpression" value="${tasks.MailSubscriptionsTaskWeekly.cron}" /> 
+         </bean>
+        <!--  Feed reader   -->
+         <bean class="org.springframework.scheduling.quartz.CronTriggerBean">
+             <property name="jobDetail" ref="FeedReaderTask" />
+             <property name="cronExpression" value="${tasks.FeedReaderTask.cron}" /> 
+         </bean>
+        <!--  Indexer   -->
+         <bean class="org.springframework.scheduling.quartz.CronTriggerBean">
+             <property name="jobDetail" ref="IndexerTask" />
+             <property name="cronExpression" value="${tasks.IndexerTask.cron}" /> 
+         </bean>
+         <!--  InvitationSender   -->
+         <bean class="org.springframework.scheduling.quartz.CronTriggerBean">
+             <property name="jobDetail" ref="SendInvitationJob" />
+             <property name="cronExpression" value="${tasks.SendInvitationTask.cron}" /> 
+         </bean>
+        </list>
+    </property>
+    
+    <property name="startupDelay" value="20"/>
+	</bean>
+</beans>

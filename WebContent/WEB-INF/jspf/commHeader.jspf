@@ -1,0 +1,460 @@
+	<base href="${communityEraContext.contextUrl}/"/>
+	<link rel="stylesheet" type="text/css" href="css/commScreen.css" />
+	<link rel="stylesheet" type="text/css" href="css/communityStyle.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	
+	<link type="text/css" rel="stylesheet" href="css/qtip/jquery.qtip.min.css" />
+	<link type="text/css" rel="stylesheet" href="css/qtip/qtip-extra.css" />
+	<link type="text/css" rel="stylesheet" href="css/font-awesome.min.css" />
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	  	  <style type="text/css">.gradient{filter:none;}</style>      
+	<![endif]-->
+	
+	<script src="js/jquery-1.11.0.min.js"></script>
+	<script src="js/bowser.min.js"></script>
+	<script src="js/mobile-detect.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/bootstrap-dialog.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap-dialog.min.css" />
+	
+	<script type="text/javascript" src="js/qtip/jquery.qtip.min.js"></script>
+	<script type="text/javascript" src="js/qtip/imagesloaded.pkg.min.js"></script>
+	
+	<link type="text/css" href="css/jquery.jscrollpane.css" rel="stylesheet" media="all" />
+ 	<script type="text/javascript" src="js/jquery.jscrollpane.min.js"></script>
+ 	<link type="text/css" href="css/jquery.jscrollpane.lozenge.css" rel="stylesheet" media="all" />
+	
+	<link type="text/css" rel="stylesheet" href="css/bootstrap-social.css" />
+	<link href="css/font-awesome.min.css" rel="stylesheet">
+	<link href="css/docs.css" rel="stylesheet" >
+  	<script src="https://apis.google.com/js/api:client.js"></script>
+  	
+  	<!-- Facebook Pixel Code -->
+	<script>
+	!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+	n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+	n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+	t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+	document,'script','https://connect.facebook.net/en_US/fbevents.js');
+	
+	fbq('init', '678534068982510');
+	fbq('track', "PageView");</script>
+	<noscript><img height="1" width="1" style="display:none"
+	src="https://www.facebook.com/tr?id=678534068982510&ev=PageView&noscript=1"
+	/></noscript>
+	<!-- End Facebook Pixel Code -->
+  	
+  	  
+  	<script>
+  	$(document).ready(function(){
+  		var sticky = $('#sticky'),
+	    stickyClone,
+	    stickyTop = sticky.offset().top,
+	    scrollTop,
+	    scrolled = false,
+	    $window = $(window);
+
+		/* Bind the scroll Event */
+		$window.on('scroll', function (e) {
+		    scrollTop = $window.scrollTop();
+		    if (scrollTop >= stickyTop && !stickyClone) {
+		        /* Attach a clone to replace the "missing" body height */
+		        stickyClone = sticky.clone().prop('id', sticky.prop('id') + '-clone')
+		        stickyClone = stickyClone.insertBefore(sticky);
+		        sticky.addClass('fixed');
+		    } else if (scrollTop < stickyTop && stickyClone) {
+		        /* Since sticky is in the viewport again, we can remove the clone and the class */
+		        stickyClone.remove();
+		        stickyClone = null;
+		        sticky.removeClass('fixed');
+		    }
+		});
+        $('#topNotification').qtip({
+        	overwrite: true,
+            content: {
+                text: function(event, api) {
+                    $.ajax({
+                        url: '${communityEraContext.contextUrl}/pers/notificationForHeader.ajx' // Use href attribute as URL
+                    })
+                    .then(function(content) {
+                    	$('#notificationRedMarkTop').css("display","none");
+                    	
+                    	var sConnData = "<div><div class='topLabel'><span style='font-size: 14px; font-weight: 700;'>Notifications</span>";
+                    	sConnData += "<span style='float: right;'><a href='${communityEraContext.contextUrl}/pers/notifications.do' >See all</a></span></div>";
+                    	sConnData += "<div class='topHeaderSection'><div class='scroll-pane-note horizontal-only'><ul class='topHeaderTitle' style='width: 440px;'>";
+                    	$.each(content.bData, function() {
+                    		sConnData += "<li class='topHeaderlst' onclick=\"goToNotification(&#39;"+this['link']+"&#39;)\" style='width: inherit; cursor: pointer;'><div class='leftImg'>";
+                    		if(this['communityId'] == this['itemId']){
+                    			if(this['logoPresent']){
+	                    			sConnData += "<img src='${communityEraContext.contextUrl}/commLogoDisplay.img?communityId="+this['communityId']+"' width='30' height='30' /></a>"; 
+	                    		} else {
+		   							if(this['photoPresent']){
+		                    			sConnData += "<img src='${communityEraContext.contextUrl}/pers/userPhoto.img?id="+this['posterId']+"' width='30' height='30' /></a>"; }
+			   						 else {
+			   							sConnData += "<img src='img/user_icon.png' width='30' height='30' />";
+			   						 }
+		   						 }
+                    		} else if (this['itemType'] == 'Event22') {
+                    		} else {
+	                    		if(this['photoPresent']){
+	                    			sConnData += "<img src='${communityEraContext.contextUrl}/pers/userPhoto.img?id="+this['posterId']+"' width='30' height='30' /></a>"; }
+		   						 else {
+		   							sConnData += "<img src='img/user_icon.png' width='30' height='30' />";
+		   						 }
+                    		}
+                    		sConnData += "</div><div class='details' style='overflow: hidden;'><div class='heading' style='width: 100%; word-wrap: normal;'>"+this['itemTitle']+"</div>";
+                    		sConnData += "<div class='sheading' style='width: 100%; word-wrap: normal;'>"+this['datePosted']+"</div></div>";
+                    		sConnData += "</li>";
+                    	});
+                    	sConnData += "</ul></div></div></div>";
+                        api.set('content.text', sConnData);
+                        $('.scroll-pane-note').jScrollPane(
+	    		        		{
+	    		        			verticalDragMinHeight: 20,
+	    		        			verticalDragMaxHeight: 200,
+	    		        			autoReinitialise: true
+	    		        			}
+	    	    		        );
+
+                    }, function(xhr, status, error) {
+                        api.set('content.text', 'Loading...');
+                    });
+                    return '<div class=\'footer-hint\' style=\'margin-top:10px;\'>Loading...</div>'; // Set some initial text
+                }
+            },
+            show: {
+                solo: true,
+                event: 'click'
+            },
+            hide: 'unfocus',
+            position: {
+                my: 'top right',  // Position my top left...
+                at: 'bottom left', // at the bottom left of...
+                target: $('#topNotification') // my target
+            },
+            
+			style: {
+		        classes: 'qtip-tipsy headerQtip'
+		    }
+         });
+
+        $('#topConnection').qtip({
+            content: {
+        	 title: 'Add Connections',
+                text: function(event, api) {
+                    $.ajax({
+                        url: '${communityEraContext.contextUrl}/pers/pendingConnectionForHeader.ajx' // Use href attribute as URL
+                    })
+                    .then(function(content) {
+                    	var sConnData = "<div style='max-height: 560px;'><div class='scroll-pane-note horizontal-only'><div class='topLabel'><span>Pending Invitations ("+content.invCont+")</span>";
+                    	if(content.invCont > 0){
+                    		sConnData += "<span style='float: right;'><a href='${communityEraContext.contextUrl}/pers/pendingConnectionRequests.do' >See all</a></span>";
+                    	}
+                    	sConnData += "</div>";
+                    	sConnData += "<div class='topHeaderSection'><ul class='topHeaderTitle'>";
+                    	$.each(content.bData, function() {
+                    		sConnData += "<li class='topHeaderlst2'><div class='leftImg'>";
+                    		sConnData += "<a href='${communityEraContext.contextUrl}/pers/connectionResult.do?id="+this['ownerId']+"&backlink=ref' >";
+                    		if(this['photoPresent']){
+                    			sConnData += "<img src='${communityEraContext.contextUrl}/pers/userPhoto.img?id="+this['ownerId']+"' width='30' height='30' /></a>"; }
+	   						 else {
+	   							sConnData += "<img src='img/user_icon.png' width='30' height='30' />";
+	   						 }
+                    		sConnData += "</div><div class='details'><div class='heading'><a href='${communityEraContext.contextUrl}/pers/connectionResult.do?id="+this['ownerId']+"&backlink=ref'>"+this['firstName']+" "+this['lastName']+"</a></div></div>";
+                    		sConnData += "</li>";
+                    	});
+                    	sConnData += "</ul>";
+                    	sConnData += "</div>";
+                    	
+                    	if (content.zData.length) {
+                    		sConnData += "<div class='topHeaderSection' style='margin-top: 10px;'><ul class='topHeaderTitle'>";
+                    		sConnData += "<div class='topLabel'><span>People You May Know</span>";
+                    		sConnData += "<span style='float: right;'><a href='${communityEraContext.contextUrl}/pers/pymk.do' >See all</a></span>";
+                    		sConnData += "</div>";
+                    		
+	                    	sConnData += "<ul class='topHeaderTitle'>";
+		                    	$.each(content.zData, function() {
+		                    		sConnData += "<li class='topHeaderlst2'><div class='leftImg'>";
+		                    		sConnData += "<a href='${communityEraContext.contextUrl}/pers/connectionResult.do?id="+this['ownerId']+"&backlink=ref' >";
+		                    		if(this['photoPresent']){
+		                    			sConnData += "<img src='${communityEraContext.contextUrl}/pers/userPhoto.img?id="+this['ownerId']+"' width='30' height='30' /></a>"; }
+			   						 else {
+			   							sConnData += "<img src='img/user_icon.png' width='30' height='30' />";
+			   						 }
+		                    		sConnData += "</div><div class='details'><div class='heading'><a href='${communityEraContext.contextUrl}/pers/connectionResult.do?id="+this['ownerId']+"&backlink=ref'>"+this['firstName']+" "+this['lastName']+"</a></div></div>";
+		                    		sConnData += "</li>";
+		                    	});
+	                    	sConnData += "</ul>";
+                    	}
+                    	sConnData += "</div></div></div>";
+                        api.set('content.text', sConnData);
+                        $('.scroll-pane-note').jScrollPane(
+	    		        		{
+	    		        			verticalDragMinHeight: 20,
+	    		        			verticalDragMaxHeight: 200,
+	    		        			autoReinitialise: true
+	    		        			}
+	    	    		        );
+                    }, function(xhr, status, error) {
+                        api.set('content.text', 'Loading...');
+                    });
+                    return '<div class=\'footer-hint\' style=\'margin-top:10px;\'>Pending Invitations</div>'; // Set some initial text
+                }
+            },
+            show: 'click',
+            hide: 'unfocus',
+            position: {
+                my: 'top right',  // Position my top left...
+                at: 'bottom left', // at the bottom left of...
+                target: $('#topConnection') // my target
+            },
+            
+			style: {
+		        classes: 'qtip-tipsy headerQtip'
+		    }
+         });
+		
+  	});
+		  window.fbAsyncInit = function() {
+			    FB.init({
+			      appId      : '537291956458750',
+			      xfbml      : true,
+			      version    : 'v2.7',
+		    	  cookie     : true, 
+			      status     : true, 
+			      frictionlessRequests: true
+			    });
+			  };
+		
+			  (function(d, s, id){
+				     var js, fjs = d.getElementsByTagName(s)[0];
+				     if (d.getElementById(id)) {return;}
+				     js = d.createElement(s); js.id = id;
+				     js.src = "//connect.facebook.net/en_US/sdk.js";
+				     fjs.parentNode.insertBefore(js, fjs);
+				   }(document, 'script', 'facebook-jssdk'));
+
+		  function logOutFromApp() {
+			  $.ajax({url:"${communityEraContext.contextUrl}/logout.ajx",
+				    method: "POST",
+				    processData: false,
+				    contentType: false,
+				    success: function (result) {
+					    //if(result.snType == 2) {
+									    	FB.logout(function(){
+									    	FB.Auth.setAuthResponse(null, 'unknown');
+										    });
+					    //}
+				  		window.location.href = "${communityEraContext.contextUrl}/jlogout.do";
+				    }
+				});
+		  }
+		  function logOutFrom() {
+			  window.location.href = "${communityEraContext.contextUrl}/jlogout.do";
+		  }
+	</script>
+  	
+
+	<script type="text/javascript">
+
+		function searchOnTheFly()
+			{
+				var searchString = document.getElementById('queryText');
+				$('.qtext').each(function() {
+			         $(this).qtip({
+			            content: {
+			                text: function(event, api) {
+			                    $.ajax({
+			                        url: '${communityEraContext.contextUrl}/search/searchOnTheFly.ajx?queryText='+searchString.value // Use href attribute as URL
+			                    })
+			                    .then(function(content) {
+			                    	var searchList = "<div class='scroll-pane-search horizontal-only'><ul>";
+			                    	$.each(content.aData, function() {
+			                    		var varItemType = "";
+			                    		if(this['entityTypeName'] != "PrivateCommunity"){
+				   						 if(this['iscommunity'] == "true"){
+					   						 
+				   							if(this['entityTypeName'] == "PublicCommunity"){
+				   								varItemType = "Public Community:";
+				   							}
+				   							if(this['entityTypeName'] == "ProtectedCommunity"){
+				   								varItemType = "Protected Community:";
+				   							}
+				   							
+				   							searchList += "<li class='srchRslt' onclick=\"goToSearchItem(&#39;"+this['link']+"&#39;)\" >";
+				                    		if(this['logoPresent'] == "true"){
+				                    			searchList += "<img src='${communityEraContext.contextUrl}/commLogoDisplay.img?communityId="+this['communityId']+"' width='36' height='36' />&nbsp;&nbsp;";
+				                    		}else{
+				                    			searchList += "<img src='img/community_Image.png'  width='36' height='36'/>&nbsp;&nbsp;";
+				                    		}
+				                    		searchList += "<p><span class='header'>"+this['title']+"</span><br />";
+				                    		searchList += "<span class='subHeader'>"+varItemType+"</span>"+this['memberCount']+" members <i class='a-icon-text-separator'></i>Created by "+this['creatorFullName']+" on "+this['dateCommunityCreation']+"</p></li>";
+										 } else {
+											 if(this['isUser'] == "false"){
+												 if (this['entityTypeName'] == "BlogEntry"){
+													 varItemType = "Blog Entry:";
+													 searchList += "<li class='srchRslt' onclick=\"goToSearchItem(&#39;"+this['link']+"&#39;)\" >";
+												 }
+												 if (this['entityTypeName'] == "Document"){
+													 varItemType = "File:";
+													 searchList += "<li class='srchRslt' onclick=\"goToSearchItem(&#39;"+this['link']+"&#39;)\" >";
+												 }
+												 if (this['entityTypeName'] == "WikiEntry"){
+													 varItemType = "Wiki Entry:";
+													 searchList += "<li class='srchRslt' onclick=\"goToSearchItem(&#39;"+this['link']+"&#39;)\" >";
+												 }
+												 if (this['entityTypeName'] == "Event"){
+													 varItemType = "Event:";
+													 searchList += "<li class='srchRslt' onclick=\"goToSearchItem(&#39;"+this['link']+"&#39;)\" >";
+												 }
+												 if (this['entityTypeName'] == "ForumTopic"){
+													 varItemType = "Forum Topic:";
+													 searchList += "<li class='srchRslt' onclick=\"goToSearchItem(&#39;"+this['link']+"&#39;)\" >";
+												 }
+												 if (this['entityTypeName'] == "ForumResponse"){
+													 varItemType = "Forum Response:";
+													 searchList += "<li class='srchRslt' onclick=\"goToSearchItem(&#39;"+this['link']+"&#39;)\" >";
+												 }
+												 
+												 if(this['isPhotoPresent'] == "true"){
+													 searchList += "<img src='${communityEraContext.contextUrl}/pers/userPhoto.img?id="+this['userId']+"'  width='36' height='36' />&nbsp;&nbsp;";
+												 } else {
+													 searchList += "<img src='img/user_icon.png' id='photoImg' width='36' height='36' />&nbsp;&nbsp;";
+												 }
+												 searchList += "<p><span class='header'>"+this['title']+"</span><br />";
+												 searchList += "<span class='subHeader'>"+varItemType+"</span>By "+this['userName'];
+												 
+												 searchList += "</p></li>";
+											 } else {
+												 varItemType = "People:";
+												 searchList += "<li class='srchRslt' onclick=\"goToSearchItem(&#39;"+this['link']+"&#39;)\" >";
+												 if(this['isPhotoPresent'] == "true"){
+													 searchList += "<img src='${communityEraContext.contextUrl}/pers/userPhoto.img?id="+this['userId']+"'  width='36' height='36' />&nbsp;&nbsp;";
+												 } else {
+													 searchList += "<img src='img/user_icon.png' id='photoImg'  width='36' height='36' />&nbsp;&nbsp;";
+												 }
+												 searchList += "<p><span class='header'>"+this['userName']+"</span><br />";
+												 searchList += "<span class='subHeader'>"+varItemType+"</span>"+this['connectionCount']+" connections</p></li>";
+											 }
+										 }
+			                    		}
+			                    	});
+			                    	searchList += "</ul></div>";
+			                    	
+			                        api.set('content.text', searchList);
+			                        $('.scroll-pane-search').jScrollPane(
+				    		        		{
+				    		        			verticalDragMinHeight: 20,
+				    		        			verticalDragMaxHeight: 200,
+				    		        			autoReinitialise: true
+				    		        			}
+				    	    		        );
+			                    }, function(xhr, status, error) {
+			                        api.set('content.text', 'Finding results...');
+			                    });
+			                    return ''; // Set some initial text
+			                }
+			            },
+			            show: {
+			            	event: 'keyup mouseenter',
+			                target: $('.qtext')
+			            },
+			            position: {
+			                my: 'top left',  // Position my top left...
+			                at: 'bottom left', // at the bottom left of...
+			                target: $('.qtext') // my target
+			            },
+			            hide: {
+			                event: 'unfocus'
+			            },
+						style: {
+					        classes: 'qtip-bootstrap myCustomSearchClass'
+					    }
+			         });
+			     });
+			}
+
+		function goToSearchItem(url)
+		{
+			window.location.href = url;
+		}
+
+		function goToNotification(url)
+		{
+			window.location.href = url;
+		}
+		
+		function submitform() 
+		{
+		    var qText = $('#queryText').val();
+		    var qSType = $('#searchType').val();
+		    if (qSType == ""){
+		    	$('#searchType').val('All Content');
+		    }
+		    if (qText == "") 
+		    {
+		    	var type = BootstrapDialog.TYPE_DANGER;
+		    	BootstrapDialog.show({
+		            type: type,
+		            title: 'Error',
+		            message: 'No search query has been entered',
+		            closable: true,
+		            closeByBackdrop: false,
+		            closeByKeyboard: false,
+		            draggable: true,
+		            buttons: [{
+		            	label: 'Close',
+		                action: function(dialogRef){
+		                    dialogRef.close();
+		                }
+		            }]
+		        });  
+		    } else {
+		    	document.myform.submit();
+		    }
+		}
+	
+		function signInSubmit(){
+			document.signInForm.action = "${communityEraContext.contextUrl}/jlogin.do";
+			document.signInForm.submit();
+		}
+
+		function registerMeSubmit(){
+			window.location.href = "${communityEraContext.contextUrl}/pers/registerMe.do";
+		}
+		
+		function changeSelection (val)
+		{
+			if (val == 1) {
+				$( '#topDarkMenu').html("All Content");
+				document.getElementById("searchType").value = 'All Content';
+			} else if (val == 2) {
+				$( '#topDarkMenu').html("People");
+				document.getElementById("searchType").value = 'People';
+			} else if (val == 3) {
+				$( '#topDarkMenu').html("Community");
+				document.getElementById("searchType").value = 'Community';
+			} else if (val == 4) {
+				$( '#topDarkMenu').html("Blog");
+				document.getElementById("searchType").value = 'Blog';
+			} else if (val == 5) {
+				$( '#topDarkMenu').html("Forum");
+				document.getElementById("searchType").value = 'Forum';
+			} else if (val == 6) {
+				$( '#topDarkMenu').html("Wiki");
+				document.getElementById("searchType").value = 'Wiki';
+			} else if (val == 7) {
+				$( '#topDarkMenu').html("Event");
+				document.getElementById("searchType").value = 'Event';
+			} else if (val == 8) {
+				$( '#topDarkMenu').html("File");
+				document.getElementById("searchType").value = 'File';
+			} 
+			document.getElementById('queryText').focus();
+		}
+		
+	</script>

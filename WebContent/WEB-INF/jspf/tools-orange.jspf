@@ -1,0 +1,11 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:if test="${communityEraContext.linkBuilder.toolsLinkBuilder.length>0}">			
+	<c:forEach var="link" items="${communityEraContext.linkBuilder.toolsLinkBuilder.links}">
+		<li><a href="${link.href}" title="${link.title}" class="${link.linkClass}">${link.text}</a></li>
+	</c:forEach>
+</c:if>
+<c:if test="${communityEraContext.linkBuilder.optionsLinkBuilder.length>0}">			
+	<c:forEach var="link" items="${communityEraContext.linkBuilder.optionsLinkBuilder.links}">
+		<li><a href="${link.href}" title="${link.title}" class="${link.linkClass}">${link.text}</a></li>
+	</c:forEach>
+</c:if>

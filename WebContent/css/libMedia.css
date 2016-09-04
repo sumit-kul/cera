@@ -1,0 +1,418 @@
+.lineseparaterProfile {
+	float: right;
+	list-style: none outside none;
+	background-color: #E9E9E9;
+	height: 2px;
+	margin: 6px 0px 10px;
+	padding: 0px;
+	position: relative;
+	border-top: 0px none;
+}
+
+#container .welcomeSignupright .innerBlock label {
+	color: #aaa6a6;
+}
+
+#container .inputForm .innerBlock input {
+	background: #fff;
+	border: 1px solid #dadee2;
+	font-size: 13px;
+	padding: 5px;
+	color: #20394d;
+	margin: 4px 0 0px 0;
+	width: 50%;
+}
+
+#container .inputForm .innerBlock select {
+	background: #fff;
+	border: 1px solid #dadee2;
+	font-size: 13px;
+	padding: 5px;
+	color: #20394d;
+	margin: 4px 0 0px 0;
+	width: 150px;
+}
+
+span.suggest {
+	color: #aaa6a6;
+	font-size: 11px;
+	padding: 6px 6px;
+}
+
+#checkPAvail p.availablePass,#checkAvail p.availablePass {
+	font-size: 12px;
+	font-weight: bold;
+	color: #009200;
+	margin-bottom: 10px
+}
+
+ul.errorList {
+	font-size: 13px;
+	margin-bottom: 0px;
+	padding-left: 1.7em !important;
+	margin: 0 0 1em 1.7em !important;
+	list-style: disc !important;
+}
+
+.errorList li {
+	font-weight: normal;
+	display: list-item;
+}
+
+.errorList a {
+	display: inline;
+	word-wrap: break-word;
+}
+
+#checkPAvail p.availableFail,#checkAvail p.availableFail {
+	font-size: 12px;
+	font-weight: bold;
+	color: #AC0000;
+	margin-bottom: 10px;
+	word-wrap: break-word;
+}
+
+#container .left-panel .createEntry {
+	clear: both;
+	overflow: hidden;
+	background: #ecf2f2;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border: 5px solid #f4f4f4;
+	background: #f6f8f7;
+	margin: 0 0 10px 0;
+	padding: 10px 15px;
+}
+
+#container .left-panel form .inputForm {
+	clear: both;
+	color: rgb(72, 79, 86);
+	font-size: 13px;
+	font-weight: normal;
+}
+
+#container .left-panel form .inputForm label {
+	color: #707070;
+	font-size: 12px;
+	font-weight: normal;
+	height: 20px;
+	line-height: 20px;
+	width: 65px;
+}
+
+#container .left-panel form .inputForm input[type=submit] {
+	background: #8e9ba4;
+	border: none;
+	cursor: pointer;
+	color: #fff;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 3px 5px;
+}
+
+#container .abtMeSection {
+	width: 540px;
+	height: 176px;
+	line-height: 16px;
+	background: #fff;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	border: 2px solid #f4f4f4;
+	word-wrap: break-word;
+	padding: 3px;
+	text-decoration: none;
+	resize: none;
+	outline: none;
+	overflow: hidden;
+	overflow-y: auto;
+	margin: 0px;
+	font-size: 12px;
+	color: #20394d;
+	height: 154px;
+}
+
+.paginatedListConnection {
+	clear: both;
+	overflow: hidden;
+	position: relative;
+}
+
+.paginatedListConnection .detailsConnection {
+	float: left;
+	width: 570px;
+	word-wrap: break-word;
+}
+
+.paginatedListConnection .detailsConnection .headingConnection {
+	clear: both;
+}
+
+.paginatedListConnection .detailsConnection .entryConnection {
+	position: absolute;
+	right: 10px;
+	top: 4px;
+}
+
+.paginatedListConnection .detailsConnection .entryConnection span {
+	color: rgb(204, 204, 204);
+	font-size: 11px;
+	font-weight: bold;
+}
+
+.paginatedListConnection .detailsConnection .entryConnection a {
+	font-size: 11px;
+	font-weight: bold;
+	color: #6e716e;
+	text-decoration: none;
+	padding-left: 10px;
+}
+
+.paginatedListConnection .detailsConnection .entryConnection a:hover {
+	color: #ccc;
+}
+
+#container .abtMeSection p {
+	white-space: pre-wrap;
+}
+
+.abtMeSection .actions {
+	z-index: 3;
+	position: relative;
+}
+
+.abtMeSection .actions a {
+	clear: none;
+	display: none;
+	float: right;
+	margin: 0 5px 0 0;
+	position: absolute;
+	top: 2px;
+	right: 0px;
+}
+
+.abtMeSection:hover .actions a.button {
+	display: inline-block;
+}
+
+.button, .button2 {
+	background-color: #F0EDED;
+	background-image: -webkit-linear-gradient(center top, #FDFAFB, #F9F7F7 50%, #F6F3F4 50%,
+		#F0EDED);
+	background-image: -moz-linear-gradient(center top, #FDFAFB, #F9F7F7 50%, #F6F3F4 50%,
+		#F0EDED);
+	background-image: linear-gradient(center top, #FDFAFB, #F9F7F7 50%, #F6F3F4 50%, #F0EDED)
+		;
+	border: 1px solid #BBBBBB;
+	border-radius: 6px 6px 6px 6px;
+	color: #524D4D;
+	cursor: pointer;
+	display: inline-block;
+	float: right;
+	font-weight: bold;
+	line-height: 1em;
+	margin: 0;
+	padding: 5px 9px;
+	text-align: center;
+	text-shadow: 0 1px rgba(255, 255, 255, 0.9);
+	-webkit-transition: all 0.2s ease-in-out 0s;
+	-moz-transition: all 0.2s ease-in-out 0s;
+	-ms-transition: all 0.2s ease-in-out 0s;
+	-o-transition: all 0.2s ease-in-out 0s;
+	transition: all 0.2s ease-in-out 0s;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+}
+
+.button:hover {
+	box-shadow: 0 1px rgba(255, 255, 255, 0.35) inset, 0 0 0 1px
+		rgba(140, 126, 126, 0.5), 0 1px 2px rgba(35, 24, 24, 0.75);
+}
+
+.button.disabled,.button[disabled], .button2.disabled,.button2[disabled] {
+	background: none repeat scroll 0 0 #F2F0F0;
+	border-color: #D1CDCD;
+	color: #D1CDCD;
+	cursor: default;
+	text-shadow: 0 -1px rgba(34, 25, 25, 0.01);
+}
+
+textarea.comment {
+	overflow: hidden;
+	position: absolute;
+	top: 26px;
+	background-color: #FCF9F9;
+	border: 1px solid #CCCCCC;
+	color: #8C7E7E;
+	font-size: 12px;
+	height: 120px;
+	line-height: 1em;
+	resize: none;
+	display: none;
+	width: 98.8%;
+	padding: 3px;
+}
+
+textarea.comment:focus {
+	background-color: #FFFFFF;
+	box-shadow: 0 1px 1px rgba(34, 29, 29, 0.1) inset;
+}
+
+.captionBottom {
+	display: none;
+	position: relative;
+	border-radius: 2px;
+	background-color: #000;
+	top: -44px;
+	margin: 0px;
+	width: 154px;
+	word-wrap: break-word;
+	height: 30px;
+	opacity: 0.7;
+	padding: 14px 0px 0px 6px;
+	cursor: pointer;
+}
+
+.picture:hover .captionBottom {
+	display: inline-block;
+}
+
+.captionBottom span {
+	font-size: 13px;
+	font-weight: bold;
+	color: #66799f;
+	padding: 10px;
+}
+
+.mainSec {
+	padding-top: 6px;
+	display: inline-block;
+	width: 700px;
+	word-wrap: break-word;
+}
+
+#container .left-panel .inputForm h2 {
+	margin: 0px;
+	padding: 0px;
+	font-size: 13px;
+	word-wrap: break-word;
+}
+
+input.editInfo {
+	background: none repeat scroll 0% 0% #FFF;
+	border: 1px solid #DADEE2;
+	font-size: 13px;
+	padding: 5px;
+	color: #20394D;
+	margin: 4px 0px 0px;
+	width: 50%;
+}
+
+p.displayWaitMessage {
+	background: url('../img/preloader.gif') no-repeat;
+	height: 33px;
+	width: 33px;
+	margin-left: 350px;
+	position: absolute;
+	margin-top: 130px;
+}
+
+.inputForm .formSection {
+	display: none;
+	width: 97%;
+	height: 100%;
+	padding: 10px;
+	margin-bottom: 30px;
+	background-color: #FCF9F9;
+	border: 1px solid #CCCCCC;
+}
+
+.intHeader {
+	height: 40px;
+	background: none repeat scroll 0% 0% #EEF3F6;
+	clear: both;
+	text-decoration: none;
+}
+
+.intHeader span.firLev {
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+}
+
+.intHeader span.firLev a {
+	cursor: pointer;
+	color: #243F52;
+	display: inline-block;
+	margin: 12px 8px;
+	position: relative;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 13px;
+}
+
+.intHeader span.firLev a.selected {
+	color: #66799f;
+	text-decoration: none;
+}
+
+.intHeader span.firLev a span {
+	color: #AAA6A6;
+	font-weight: normal;
+	font-size: 12px;
+}
+
+.intHeader span.firLevAlt {
+	display: inline-block;
+	margin: 12px 8px;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 13px;
+	color: #66799f;
+}
+
+.intHeader span.firLevAlt span {
+	color: #AAA6A6;
+	font-weight: normal;
+	font-size: 12px;
+}
+
+span.secLev {
+	margin: 0px 8px 0px 0px;
+	float: right;
+	word-wrap: break-word;
+}
+
+span.secLev a {
+	border-color: #CCC #C5C6C8 #B6B7B9;
+	color: #4E5665;
+	text-shadow: 0px 1px 0px #FFF;
+	line-height: 20px;
+	display: inline-block;
+	height: 20px;
+	vertical-align: middle;
+	padding: 2px 8px;
+	background: repeat-x scroll 0% 0% #F6F7F8;
+	border: 1px solid;
+	border-radius: 2px;
+	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
+	box-sizing: content-box;
+	font-weight: bold;
+	font-size: 12px;
+	position: relative;
+	text-align: center;
+	vertical-align: middle;
+	margin: 6px 1px;
+}
+
+.intHeader span.firLevselected {
+	font-size: 13px;
+	font-weight: bold;
+	margin-top: 0px;
+	padding: 10px;
+	float: left;
+	color: #AAA6A6;
+	cursor: text;
+}

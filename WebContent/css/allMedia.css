@@ -1,0 +1,634 @@
+/* tablets/desktops and up ----------- */
+@media  only screen and (min-width: 992px) {
+	img.headBarImG {
+		display: none;
+	}
+	
+	.headerProfile {
+	    width: 38%;
+	}
+	
+	#container .left-panel .commSection .abtMe a.photocontainer {
+		right: 50px;
+		top: -250px;
+	}
+}
+
+/* Small devices (tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	.actions2 {
+	    left: 170px;
+	}
+	
+	#container {
+		width: 100%;
+	}
+	
+	#container .left-panel .commSection { 
+		margin: 10px;
+	}
+	
+	img.headBarImG {
+		display: none;
+	}
+	
+	#container .left-panel {
+	    width: 100%;
+	}
+	
+	.headerProfile {
+	    width: 40%;
+	}
+	
+	header .section .rowBlock .linkBuilder ul li:last-child {
+		padding-right: 28px;
+	}
+	
+	header .section .rowBlock .form-part {
+		width: 400px;
+	}
+	
+	header .section .rowBlock .form-part .search {
+		width: 400px;
+	}
+	
+	header .section .rowBlock .form-part .search form input[type="text"] {
+		width: 350px;
+	}
+	
+	header .section .rowBlock {
+		padding: 0px 10px;
+	}
+	
+	.headerProfile {
+		max-width: 38%;
+	}
+	
+	#thHome {
+		display: none;
+	}
+	
+	#outProfileme {
+		width:30px;
+	}
+	
+	#myProfile {
+		display: none;
+	}
+	
+	.share-active {
+		display: none;
+	}
+	
+	#container .right-panel {
+		display: none;
+	}
+	
+	#container .left-panel .community ul li {
+		margin: 0px;
+	}
+	
+	.innerGroups {
+		height: 80px;
+		width: 80px;
+		top: 50px;
+		right: 10px;
+	}
+	
+	#flexslider1 .flex-viewport {
+	    height: 290px;
+	}
+	
+	#container .left-panel .sliderOuter  {
+    	width: 97%;
+    	margin-left: 10px;
+	}
+	
+	#container .left-panel .sliderLowerOuter {
+		width: 95%;
+		margin-left: 20px;
+	}
+	
+	footer .section {
+		width: 96%;
+	}
+	
+	#container .left-panel .commSection .groups {
+		position: absolute;
+		height: 120px;
+		width: 120px;
+		top: 20px;
+		left: 20px;
+	}
+	
+	#container .left-panel .commSection .abtMe .detailsConnection {
+		top: 20px;
+		left: 160px;
+	}
+	
+	#container .left-panel .commSection .abtMe .detailsConnection h2 {
+		font-size: 14pt;
+	}
+	
+	#container .left-panel .commSection .groups .picture {
+		height: 120px;
+	    width: 120px;
+	}
+	
+	#container .left-panel .commSection .groups .picture img {
+		height: 120px;
+	    width: 120px;
+	}
+	
+	#container .left-panel .commSection .abtMe .cvrImg img {
+    	max-width: 100%;
+    	max-height: unset;
+	}
+	
+	#communityEra .commBanr .innerPanl .groups .picture img {
+		height: 200px;
+		width: 200px;
+	}
+	
+	#communityEra .commBanr .innerPanl .groups {
+		position: absolute;
+	    right: 20px;
+	    height: 200px;
+		width: 200px;
+		top: 240px;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	#container {
+		width: 100%;
+	}
+	
+	#container .left-panel .commSection { 
+		margin: 10px;
+	}
+
+	.actions2 {
+	    position: relative;
+	    float: right;
+	    top: 0;
+	    left: 170px;
+	}
+	
+	.intHeader span.firLev a {
+		font-size: 12px;
+		margin: 8px 2px;
+	}
+	
+	span.secLev {
+    	margin: 0px 4px 0px 0px;
+	}
+	
+	.btnmain {
+		border-radius: 2px;
+		padding: 2px 6px;
+		font-size: 12px;
+	}
+	
+	#comList {
+		display: none;
+	}
+	
+	#cUseNme {
+		display: none;
+	}
+	
+	img.headBarImG {
+		display: none;
+	}
+	
+	#container .left-panel {
+	    width: 100%;
+	}
+	
+	.headerProfile {
+	    max-width: 42%;
+	}
+	
+	header .section .rowBlock .logo {
+		padding: 8px;
+	}
+	
+	header .section .rowBlock .logo a img {
+		width: 60px;
+		height: 30px;
+	}
+	
+	header .section .rowBlock .linkBuilder {
+		float: none;
+	}
+	
+	header .section .rowBlock .linkBuilder ul.mainLB{
+		display: none;
+	}
+	
+	header .section .rowBlock .linkBuilder ul.shortLB{
+		display: block;
+	}
+	
+	header .section .rowBlock .linkBuilder ul li:first-child {
+		padding: 14px;
+	}
+	
+	header .section .rowBlock .form-part {
+		width: 170px;
+	}
+	
+	header .section .rowBlock .form-part .search {
+		width: 170px;
+	}
+	
+	header .section .rowBlock .form-part .search form input[type="text"] {
+		width: 120px;
+	}
+	
+	header .section .rowBlock .linkBuilder ul li:last-child {
+		padding: 14px;
+	}
+	
+	header .section .rowBlock .linkBuilder ul li {
+		padding: 14px;
+	}
+	
+	.headerProfile {
+		padding-right: 8px;
+	}
+	
+	#thHome {
+		display: none;
+	}
+	
+	#outProfileme {
+		width:30px;
+		float: left;
+	}
+	
+	#myProfile {
+		display: none;
+	}
+	
+	.share-active {
+		display: none;
+	}
+	
+	#container .right-panel {
+		display: none;
+	}
+	
+	#container .left-panel .community ul li {
+		margin: 0px;
+	}
+	
+	.bnrImg {
+		height: 120px;
+	}
+	
+	.innerGroups {
+		height: 80px;
+		width: 80px;
+		top: 50px;
+		right: 10px;
+	}
+	
+	#flexslider1 .flex-viewport {
+	    height: 290px;
+	}
+	
+	#container .left-panel .commSection .abtMe .cvrImg img {
+    	width: 100%;
+    	max-width: unset;
+    	max-height: unset;
+    	min-height: 170px;
+	}
+	
+	#container .left-panel .commSection .abtMe {
+		min-height: 170px;
+	}
+	
+	#container .left-panel .commSection .groups {
+		position: absolute;
+		height: 60px;
+		width: 60px;
+		top: 20px;
+		left: 20px;
+	}
+	
+	#container .left-panel .commSection .abtMe .detailsConnection {
+		top: 20px;
+		left: 90px;
+	}
+	
+	#container .left-panel .commSection .abtMe .detailsConnection h2 {
+		font-size: 12pt;
+	}
+	
+	#container .left-panel .commSection .groups .picture {
+		height: 60px;
+	    width: 60px;
+	}
+	
+	#container .left-panel .commSection .groups .picture img {
+		height: 60px;
+	    width: 60px;
+	}
+	
+	#container .left-panel .commSection .paginatedList .details { 
+		width: 80%;
+	}
+	
+	#container .left-panel .commSection .pListInner .leftImgLarge {
+    	width: 100%;
+	}
+	
+	.carousel_caption {
+		display: none;
+	}
+	
+	#communityEra .commBanr .bnrImg, #communityEra .commBanr {
+    	height: 200px;
+	}
+	
+	#communityEra .commBanr .innerPanl .menuContainer {
+		top: 160px;
+	}
+	
+	#communityEra .commBanr .innerPanl .groups .picture img {
+		height: 100px;
+		width: 100px;
+	}
+	
+	#communityEra .commBanr .innerPanl .groups {
+		position: absolute;
+	    top: 108px;
+		left: 10px;
+		height: 100px;
+		width: 100px;
+	}
+	
+	span.myHome {
+		padding: 0px 2px;
+	}
+}
+
+@media only screen and (max-width: 340px) {
+	header .section .rowBlock .form-part .search {
+	    width: 130px;
+	}
+	header .section .rowBlock .form-part {
+		 width: 130px;
+	}
+	
+	header .section .rowBlock .form-part .search form input[type="text"] {
+	    width: 80px;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	
+	.actions2 {
+	    position: absolute;
+	    float: right;
+	    top: 0;
+	    left: 170px;
+	}
+	
+	.intHeader {
+    	height: 84px;
+	}
+	
+	.intHeader span.firLev a {
+		font-size: 12px;
+		margin: 8px 2px;
+	}
+	
+	span.secLev {
+    	margin: 0px 4px 0px 0px;
+	}
+	
+	.btnmain {
+		border-radius: 2px;
+		padding: 2px 6px;
+		font-size: 12px;
+	}
+	
+	#comaction1 {
+		display: none;
+	}
+	
+	#comaction2 {
+		display: block;
+	}
+	
+	#container .inputForm .innerBlock {
+	    padding: 0px;
+	    display: block;
+	}
+	
+	#container .left-panel .commSection .communities .headerIcon {
+	    padding: 8px 5px 3px;
+	    width: 14px;
+	    height: 26px;
+	    font-size: 20px;
+	}
+	
+	#container .left-panel .commSection .communities .type {
+	    padding: 8px 2px 0px;
+	}
+	
+	#container .left-panel .commSection .communities .type h4 {
+	    font-size: 15px;
+	}
+	
+	#container .left-panel .commSection .communities .type form {
+    	font-size: 12px;
+	}
+	
+	#container .left-panel .commSection .communities .type form label {
+    	font-size: 11px;
+	}
+	
+	#container .left-panel .commSection .communities .type form select {
+	    margin: 0px 6px 5px 0px;
+	    padding: 2px 3px;
+	    width: 105px;
+	}
+}
+
+.cssload-square {
+	margin: 19px auto;
+	width: 23px;
+	height: 23px;
+	transform: rotate(-45deg);
+		-o-transform: rotate(-45deg);
+		-ms-transform: rotate(-45deg);
+		-webkit-transform: rotate(-45deg);
+		-moz-transform: rotate(-45deg);
+}
+
+.cssload-square-part {
+	position: absolute;
+	width: 23px;
+	height: 23px;
+	z-index: 1;
+	animation: cssload-part-anim 0.68s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite alternate;
+		-o-animation: cssload-part-anim 0.68s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite alternate;
+		-ms-animation: cssload-part-anim 0.68s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite alternate;
+		-webkit-animation: cssload-part-anim 0.68s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite alternate;
+		-moz-animation: cssload-part-anim 0.68s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite alternate;
+}
+
+.cssload-square-green {
+	background: rgb(100,149,237);
+	right: 0;
+	bottom: 0;
+	animation-direction: alternate-reverse;
+		-o-animation-direction: alternate-reverse;
+		-ms-animation-direction: alternate-reverse;
+		-webkit-animation-direction: alternate-reverse;
+		-moz-animation-direction: alternate-reverse;
+}
+
+.cssload-square-pink {
+	background: rgb(34,139,34);
+	left: 0;
+	top: 0;
+}
+
+.cssload-square-blend {
+	background: rgb(255,101,0);
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 2;
+	animation: blend-anim 0.68s ease-in infinite;
+		-o-animation: blend-anim 0.68s ease-in infinite;
+		-ms-animation: blend-anim 0.68s ease-in infinite;
+		-webkit-animation: blend-anim 0.68s ease-in infinite;
+		-moz-animation: blend-anim 0.68s ease-in infinite;
+}
+
+
+
+
+
+@keyframes blend-anim {
+	0% {
+		transform: scale(0.01, 0.01) rotateY(0);
+		animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+	}
+	50% {
+		transform: scale(1, 1) rotateY(0);
+		animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+	}
+	100% {
+		transform: scale(0.01, 0.01) rotateY(0);
+	}
+}
+
+@-o-keyframes blend-anim {
+	0% {
+		-o-transform: scale(0.01, 0.01) rotateY(0);
+		-o-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+	}
+	50% {
+		-o-transform: scale(1, 1) rotateY(0);
+		-o-animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+	}
+	100% {
+		-o-transform: scale(0.01, 0.01) rotateY(0);
+	}
+}
+
+@-ms-keyframes blend-anim {
+	0% {
+		-ms-transform: scale(0.01, 0.01) rotateY(0);
+		-ms-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+	}
+	50% {
+		-ms-transform: scale(1, 1) rotateY(0);
+		-ms-animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+	}
+	100% {
+		-ms-transform: scale(0.01, 0.01) rotateY(0);
+	}
+}
+
+@-webkit-keyframes blend-anim {
+	0% {
+		-webkit-transform: scale(0.01, 0.01) rotateY(0);
+		-webkit-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+	}
+	50% {
+		-webkit-transform: scale(1, 1) rotateY(0);
+		-webkit-animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+	}
+	100% {
+		-webkit-transform: scale(0.01, 0.01) rotateY(0);
+	}
+}
+
+@-moz-keyframes blend-anim {
+	0% {
+		-moz-transform: scale(0.01, 0.01) rotateY(0);
+		-moz-animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+	}
+	50% {
+		-moz-transform: scale(1, 1) rotateY(0);
+		-moz-animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+	}
+	100% {
+		-moz-transform: scale(0.01, 0.01) rotateY(0);
+	}
+}
+
+@keyframes cssload-part-anim {
+	0% {
+		transform: translate3d(-11px, -11px, 0);
+	}
+	100% {
+		transform: translate3d(11px, 11px, 0);
+	}
+}
+
+@-o-keyframes cssload-part-anim {
+	0% {
+		-o-transform: translate3d(-11px, -11px, 0);
+	}
+	100% {
+		-o-transform: translate3d(11px, 11px, 0);
+	}
+}
+
+@-ms-keyframes cssload-part-anim {
+	0% {
+		-ms-transform: translate3d(-11px, -11px, 0);
+	}
+	100% {
+		-ms-transform: translate3d(11px, 11px, 0);
+	}
+}
+
+@-webkit-keyframes cssload-part-anim {
+	0% {
+		-webkit-transform: translate3d(-11px, -11px, 0);
+	}
+	100% {
+		-webkit-transform: translate3d(11px, 11px, 0);
+	}
+}
+
+@-moz-keyframes cssload-part-anim {
+	0% {
+		-moz-transform: translate3d(-11px, -11px, 0);
+	}
+	100% {
+		-moz-transform: translate3d(11px, 11px, 0);
+	}
+}

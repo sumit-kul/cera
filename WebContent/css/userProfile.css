@@ -1,0 +1,65 @@
+.userUpload {
+	margin-bottom: 6px;
+	float: left;
+	height: auto;
+	width: 698px;
+	padding: 2px 6px 2px 6px;
+	border: 1px solid rgb(10, 156, 226);
+	background-color: rgb(237, 239, 244);
+	border-radius: 3px 3px 3px 3px;
+}
+
+.userlogo {
+	float: right;
+}
+
+.userDetails {
+	margin: 0px 0px 0px 0px;
+	height: auto;
+	width: 696px;
+}
+
+.mugshotlarge {
+	float: left;
+	border: 0.4em solid #fff;
+	margin: 0.4em;
+}
+
+.userBtns {
+	height: 2em;
+	padding: 2px 2px 0px;
+}
+
+.userGen {
+	margin: 0px 0px 0px 6px;
+	width: 540px;
+	float:left;
+	padding: 2px;
+}
+
+.userGen2 {
+    margin: 0px 0px 0px 6px;
+    width: 690px;
+    float: left;
+    padding: 2px;
+}
+
+.lineseparaterProfile {
+	background-color: rgb(137, 143, 156);
+	width: 540px;
+	height: 2px;
+	margin: 10px 3px 5px 0px;
+	padding: 0px;
+	position: relative;
+	border-top: 0px none;
+}
+
+.lineseparaterProfile2 {
+	background-color: rgb(137, 143, 156);
+	width: 680px;
+	height: 2px;
+	margin: 10px 3px 5px 0px;
+	padding: 0px;
+	position: relative;
+	border-top: 0px none;
+}

@@ -1,0 +1,93 @@
+.upersec { /*padding: 4px; */
+	height: 80px;
+	display: inline-block;
+}
+
+.lowersec {
+	height: 300px;
+	border-top: 1px solid #E9EAED;
+	margin-left: 8px;
+	margin-right: 12px;
+}
+
+.uploadPhoto {
+	height: 80px;
+	float: left;
+}
+
+.uploadPhoto:hover {
+	background: none repeat scroll 0% 0% #E9EAED;
+}
+
+.takePhoto {
+	height: 80px;
+	float: left;
+}
+
+.takePhoto:hover {
+	background: none repeat scroll 0% 0% #E9EAED;
+}
+
+.photo-separator {
+	display: inline-block;
+	width: 1px;
+	background-color: #E9EAED;
+	line-height: 0;
+	height: 80px;
+	margin-left: 6px;
+}
+
+.firOuter {
+	position: relative;
+	display: inline-block;
+	/*padding: 28px 0px; */
+	position: relative;
+	text-align: center;
+}
+
+.firOuter span {
+	vertical-align: top;
+	display: inline-block;
+	margin-top: 36px;
+}
+
+.addPlus {
+	width: 16px;
+	background-position: -36px -54px;
+	background-size: 54px 124px;
+	background-repeat: no-repeat;
+	background-image: url('../images/profile.png');
+	display: inline-block;
+	height: 16px;
+}
+
+.imageBox .spinner {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	text-align: center;
+	line-height: 400px;
+	background: rgba(0, 0, 0, 0.7);
+}
+
+.container {
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	right: 0%;
+	bottom: 0%;
+	width: 100%;
+	padding: 0px;
+}
+
+.action {
+	width: 400px;
+	height: 30px;
+	margin: 10px 0;
+}
+
+.cropped>img {
+	margin-right: 10px;
+}

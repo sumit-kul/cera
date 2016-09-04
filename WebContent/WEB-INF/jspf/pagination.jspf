@@ -1,0 +1,23 @@
+<c:if test="${command.pageCount > 0}">
+	<span class="euInfo" id="tRecordsCount">Total Records - ${command.rowCount}</span>
+	<div id="pagination" style="width:auto;float:right; height: 34px;"> 
+		<!-- optional left control buttons--> 	
+		<c:if test="${command.pageCount > 5}">
+			<a class="jPaginatorMax" id="max_backward" style="border-left: medium none;" >First</a>
+			<a class="jPaginatorOver" id="over_backward" style="border-left: 1px solid rgb(163, 176, 185);">&lt;&lt;&lt;</a> 
+		</c:if>
+		<div class='paginator_p_wrap'> 
+			<div class='paginator_p_bloc'> 
+				<!--<a class='paginator_p'></a> // page number : dynamically added --> 
+			</div> 
+		</div> 
+		<!-- optional right control buttons--> 
+		<c:if test="${command.pageCount > 5}">
+			<a class="jPaginatorOver" id="over_forward" style="border-left: 1px solid rgb(163, 176, 185);">&gt;&gt;&gt;</a> 
+			<a class="jPaginatorMax" id="max_forward" >Last</a>
+		</c:if>
+	</div>
+</c:if>
+<c:if test="${command.pageCount == 0}">
+	<span class="euInfo">No result found</span>
+</c:if>

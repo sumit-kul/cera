@@ -1,0 +1,230 @@
+.wrapper{
+	width:100%;
+	margin:0px auto;
+}
+
+.st-accordion{
+    width:100%;
+    margin: 0 auto;
+}
+
+.st-accordion ul li{
+    height: 100px;
+    border-bottom: 1px solid #c7deef;
+    border-top:1px solid #fff;
+    overflow: hidden;
+}
+
+.st-accordion ul li:first-child{
+    border-top:none;
+}
+
+.st-accordion ul li > a{
+	top:-26px;
+    text-shadow: 1px 1px 1px #fff;
+    font-size: 86px;
+    display: block;
+	position: relative;
+    line-height: 100px;
+	outline:none;
+    -webkit-transition:  color 0.2s ease-in-out;
+	-moz-transition:  color 0.2s ease-in-out;
+	-o-transition:  color 0.2s ease-in-out;
+	-ms-transition:  color 0.2s ease-in-out;
+	transition:  color 0.2s ease-in-out;
+	text-decoration: none;
+}
+
+.st-accordion ul li>a span.st-arrow {
+	background: transparent url(../images/down.png) no-repeat center center;
+	text-indent: -9000px;
+	width: 26px;
+	height: 14px;
+	position: absolute;
+	top: 46%;
+	right: -20px;
+	opacity: 0;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	-ms-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+}
+
+.st-accordion ul li>a:hover {
+	color: #1693eb;
+	text-decoration: none;
+}
+
+.st-accordion ul li>a:hover span.st-arrow {
+	opacity: 1;
+	right: 10px;
+	text-decoration: none;
+}
+
+.st-accordion ul li.st-open>a {
+	color: #1693eb;
+}
+
+.st-accordion ul li.st-open>a span {
+	right: 10px;
+	opacity: 1;
+}
+
+.st-accordion ul li.st-open>a span.st-arrow {
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	transform: rotate(180deg);
+	right: 10px;
+	opacity: 1;
+}
+
+.st-content {
+	padding: 0px 3px 10px;
+	float: right;
+	width: 92%;
+	background-color: rgb(246, 247, 248);
+}
+
+.st-content .bottomRight {
+	width: 200px;
+	margin: 0px 0px 0px 455px;
+	padding: 1px;
+	display: inline;
+}
+
+.st-content p {
+	font-size: 16px;
+	font-family: Georgia, serif;
+	font-style: italic;
+	line-height: 28px;
+	padding: 0px 4px 15px 4px;
+}
+
+.st-content img {
+	width: 100%;
+	border-right: 1px solid #fff;
+	border-bottom: 1px solid #fff;
+}
+
+@media screen and (max-width: 320px) {
+	.st-accordion ul li>a {
+		font-size: 36px;
+	}
+}
+
+li.paginatedList {
+	background: #fff;
+	clear: both;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	border: 2px solid #f4f4f4;
+	margin: 10px 0 0 0;
+	padding: 10px;
+}
+
+.st-accordion ul li a span.toggleHeader {
+	transform: unset;
+	font-size: 12px;
+	font-weight: bold;
+	color: #66799f;
+	background: none;
+	text-indent: 0px;
+	position: relative;
+	opacity: 10;
+	transition: none;
+	top: -20px;
+	left: 0px;
+	margin: 0px;
+	text-decoration: none;
+}
+
+.st-accordion ul li span.person {
+	top: 26px;
+	position: absolute;
+	left: 70px;
+	clear: both;
+	font-size: 11px;
+	color: #A7A9AB;
+	padding: 3px 0px 0px;
+}
+
+.st-accordion ul li span.person a {
+	font-size: 11px;
+	font-weight: bold;
+	color: #738397;
+	text-decoration: none;
+	padding: 0px 0px 0px 3px;
+}
+
+.st-accordion ul li span.person a:hover {
+	color: #2A3A47;
+}
+
+.st-accordion ul li span.person2 {
+	top: 42px;
+	position: absolute;
+	left: 70px;
+	clear: both;
+	font-size: 11px;
+	color: #A7A9AB;
+	padding: 3px 0px 0px;
+}
+
+#container .left-panel .commSection .paginatedList .leftImg {
+	float: left;
+}
+
+.st-content .new-members h3,.new-members h4 { 
+	color: #0480BC;
+	margin-top: 0px;
+}
+
+.st-content .new-members {
+	float: left;
+	width: 100%;
+	padding-left: 10px;
+	padding-bottom: 20px;
+}
+
+.st-content .new-members  ul {
+	margin: auto;
+	width: 99%;
+	display: inline-block;
+}
+
+.st-content .new-members li {
+	padding: 6px 0px;
+	display: inline-block;
+	height: 50px;
+	overflow: hidden;
+	border: 0px;
+}
+
+.st-content .new-members a span {
+	color: #0480BC;
+	font-weight: bold;
+	font-size: 11px;
+	margin: 2px;
+	text-decoration: none;
+}
+
+.st-content .new-members h4 a:hover {
+	text-decoration: underline;
+}
+
+.st-content .new-members h3 {
+	font-size: 100%;
+	/* padding-left:10px; */
+}
+
+.st-content .new-members img {
+	margin-left: auto;
+	margin-right: auto;
+	width: 50px;
+}
+
+.st-content .new-members img:hover {
+	right: 0px;
+}

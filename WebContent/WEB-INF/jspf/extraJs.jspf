@@ -1,0 +1,136 @@
+<script src="ckeditor/ckeditor.js"></script>
+<link type="text/css" href="css/messageFromInfo.css" rel="stylesheet" media="all" />
+<script type="text/javascript">
+	function addConnection(userId, contactName){
+		$.ajax({url:"${communityEraContext.contextUrl}/pers/addConnection.ajx?id="+userId+"&userName="+contactName,success:function(result){
+			$("#connectionInfo-"+userId).html(result);
+    	    $('.normalTip').qtip({ 
+			    content: {
+			        attr: 'title'
+			    },
+				style: {
+			        classes: 'qtip-tipsy'
+			    }
+			});
+    	  }});
+	}
+
+	function updateConnection(userId, contactId, newStatus, contactName){
+		$.ajax({url:"${communityEraContext.contextUrl}/pers/updateConnection.ajx?id="+contactId+"&newStatus="+newStatus+"&userId="+userId+"&userName="+contactName,success:function(result){
+    	    $("#connectionInfo-"+userId).html(result);
+    	    $('.normalTip').qtip({ 
+			    content: {
+			        attr: 'title'
+			    },
+				style: {
+			        classes: 'qtip-tipsy'
+			    }
+			});
+    	  }});
+	}
+
+	function stopFollowing(contactId, actionFor, userId, contactName){
+		$.ajax({url:"${communityEraContext.contextUrl}/pers/toggleFollowing.ajx?contactId="+contactId+"&actionFor="+actionFor+"&actionType=0"+"&userId="+userId+"&contactName="+contactName,success:function(result){
+			$("#connectionInfo-"+userId).html(result);
+    	  }});
+	}
+
+	function startFollowing(contactId, actionFor, userId, contactName){
+		$.ajax({url:"${communityEraContext.contextUrl}/pers/toggleFollowing.ajx?contactId="+contactId+"&actionFor="+actionFor+"&actionType=1"+"&userId="+userId+"&contactName="+contactName,success:function(result){
+			$("#connectionInfo-"+userId).html(result);
+    	  }});
+	}
+
+	function sendMessageFromInfo(to, contactName, photoPresent){
+		$(".qtip").hide();
+		var editor;
+		selectedUserIds = [];
+		selectedUserIds.push(to);
+		var dialogInstance = BootstrapDialog.show({
+			title: 'Send Message',
+			message: function(dialog) {
+			var $message = $('<div id="main" style="display: inline-block;width: 700px;"></div>');
+            return $message;
+        },
+        closable: false,
+        closeByBackdrop: false,
+        onshow: function(dialog) {
+        	var form = "<div style='display:inline-block;'>";
+        	form += "<div id='sendMessageForm' style='float: left; width: 700px;'>";
+            form += "<div style='width: 700px; float: left;'>";
+            form += "<div class='type'><label for='toNames'>To:</label><br /><div id='toNames' class='divText2'>";
+            form += "<span id='cont-"+to+"' class='innerName normalTip' >"+contactName;
+			if(photoPresent){
+				form += "<img src='pers/userPhoto.img?id="+to+"' alt='"+contactName+"' width='21' height='21'/></span>";
+			}else {
+				form += "<img src='img/user_icon.png' alt='"+contactName+"' width='21' height='21'/></span>";
+			}
+            form += "</div>";
+            form += "<label for='subject'>Subject:</label><br /><input id='subject' maxlength='100' autocomplete='off' type='text' class='text2' style='width: 97%; margin:0px;'/>";
+            form += "<br /><br /><label for='editor'>Message:</label><br /><textarea name='body' id='body' style='display:none;'></textarea><div id='editor' style='width: 680px;'></div></div></div></div>";
+            //form += "<div id='myContactPicker' ><div id='header'>My Connections</div><div id='pickerSection'></div>";
+            form += "<p id='waitCloudMessage' style='margin-left: 235px; margin-top: 180px; min-height:200px; display: none;' class='showCloudWaitMessage'></p></div>";
+            //form += "</div>";
+            dialog.getModalBody().find('#main').html(form);
+        },
+        buttons: [{
+        	id: 'button-cancel',
+            label: 'Cancel',
+            action: function(dialog){
+        	dialog.close();
+        }
+        }, {
+        	id: 'button-add',
+            label: 'Send',
+            cssClass: 'btn-primary',
+            action: function(dialog) {
+        	dialog.getButton('button-add').disable();
+        	dialog.getButton('button-cancel').disable();
+        	dialog.getButton('button-add').spin();
+        	var ssubject = document.getElementById("subject").value;
+        	var sbody = editor.getData();
+        	$.ajax({
+            	type:"POST",
+            	url:"${communityEraContext.contextUrl}/pers/sendMessage.ajx",
+            	data: {json:selectedUserIds, subject:ssubject, body:sbody},
+	            success:function(result){
+            	//window.location.href="${communityEraContext.contextUrl}/pers/myMessages.do?msgType="+$("#msgType").val()+"&order="+$("#order").val();
+        		dialog.close();
+        		var dialogInstance = BootstrapDialog.show({
+					title: 'Message sent successfully',
+					type: BootstrapDialog.TYPE_SUCCESS,
+					message: function(dialog) {
+					var $message = $('<div id="main"><p class="seccMsg">Message has been successfully sent to '+contactName+'.</p></div>');
+	                return $message;
+	            },
+	            cssClass: 'successMsg-dialog',
+	            closable: true,
+	            closeByBackdrop: false,
+	            buttons: [{
+	                label: 'Close',
+	                cssClass: 'btn-success',
+	                action: function(dialog){
+	            	dialog.close();
+                	}
+	            	}]
+				});
+			    }
+		    });
+            }
+        }],
+        cssClass: 'sendMessage-dialog',
+        onshown: function(dialogRef){
+        	var config = {};
+            config.toolbarGroups = [
+                            		{ name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },
+                            		{ name: 'editing',     groups: [ 'spellchecker' ] },
+                            		{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
+                            		{ name: 'paragraph',   groups: [ 'list', 'blocks' ] },
+                            		{ name: 'styles' },
+                            		{ name: 'colors' }
+                            	];
+			editor = CKEDITOR.appendTo( 'editor', config, '' );
+        }
+        });
+	}
+</script>

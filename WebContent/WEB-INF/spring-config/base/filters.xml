@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+			http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.0.xsd"
+>
+
+	<bean id="filterChainProxy" class="org.acegisecurity.util.FilterChainProxy">
+		<property name="filterInvocationDefinitionSource">
+			<value>
+				CONVERT_URL_TO_LOWERCASE_BEFORE_COMPARISON
+				PATTERN_TYPE_APACHE_ANT
+				/**/*.do=characterEncodingFilter,transactionContextFilter,requestContextHolder,httpSessionContextIntegrationFilter,logoutFilter,authenticationProcessingFilter,rememberMeProcessingFilter,anonymousProcessingFilter,exceptionTranslationFilter,filterInvocationInterceptor,threadLifecycleTrackerFilter,communityEraContextManager,communityMemberRelationCheckFilter,copUserActivityFilter
+				/**/profile/*=characterEncodingFilter,transactionContextFilter,requestContextHolder,httpSessionContextIntegrationFilter,logoutFilter,authenticationProcessingFilter,rememberMeProcessingFilter,anonymousProcessingFilter,exceptionTranslationFilter,filterInvocationInterceptor,threadLifecycleTrackerFilter,communityEraContextManager,communityMemberRelationCheckFilter,copUserActivityFilter
+				/**/*.ajx=characterEncodingFilter,transactionContextFilter,requestContextHolder,httpSessionContextIntegrationFilter,logoutFilter,authenticationProcessingFilter,rememberMeProcessingFilter,anonymousProcessingFilter,exceptionTranslationFilter,filterInvocationInterceptor,threadLifecycleTrackerFilter,communityEraContextManager
+				/**/*.rss=characterEncodingFilter,transactionContextFilter,requestContextHolder,httpSessionContextIntegrationFilter,basicProcessingFilter,basicExceptionTranslationFilter,filterInvocationInterceptor,threadLifecycleTrackerFilter,communityEraContextManager,communityMemberRelationCheckFilter
+				/**/*.img=characterEncodingFilter,transactionContextFilter,requestContextHolder,httpSessionContextIntegrationFilter,logoutFilter,authenticationProcessingFilter,rememberMeProcessingFilter,anonymousProcessingFilter,exceptionTranslationFilter,filterInvocationInterceptor,threadLifecycleTrackerFilter,communityEraContextManager
+			</value>
+		</property>
+	</bean> 
+   
+   <bean id="characterEncodingFilter" class="org.springframework.web.filter.CharacterEncodingFilter" >
+      <property name="encoding" value="UTF-8"/>
+      <property name="forceEncoding" value="true"/>
+   </bean>
+   
+	<bean id="transactionContextFilter" class="support.community.framework.ThreadDecoratorFilter" >
+		<property name="decorator" ref="transactionContextHolder"/>
+	</bean>
+	
+	<bean id="requestContextHolder" class="support.community.framework.AppRequestContextHolder" autowire="byType">
+		<property name="contextBeanId" value="requestContextPrototype"/>
+    </bean> 
+    
+	<bean id="requestContextPrototype" class="support.community.framework.AppRequestContext" scope="prototype" autowire="byType">
+    </bean> 
+    
+	<bean id="threadLifecycleTrackerFilter" class="support.community.framework.ThreadDecoratorFilter" >
+		<property name="decorator" ref="threadLifecycleTracker"/>
+	</bean> 
+
+	<bean name="threadLifecycleTracker" class="support.community.framework.ThreadLifecycleTracker">
+		<property name="listeners">
+			<list>
+				<ref bean="entityIndex"/>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="communityMemberRelationCheckFilter" class="com.era.community.base.CommunityMemberRelationCheckFilter" autowire="byType" />
+	  
+	<bean id="copUserActivityFilter" class="com.era.community.base.UserActivityFilter" autowire="byType" />
+	  
+</beans>

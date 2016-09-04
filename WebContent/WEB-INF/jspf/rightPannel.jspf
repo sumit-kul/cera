@@ -1,0 +1,68 @@
+<!--	<c:if test="${!communityEraContext.userAuthenticated}">
+		<div class="login">
+			<div style="">
+				<div style="float: left; width: 210px; height: 70px;">
+					<div class="loginHeader">Login with your social network:</div>
+					<div id="showLoginWaitMessage" style="display: none;"><p class="showLoginWaitMessage"></p></div>
+				    <a class="btn btn-block btn-social btn-sm btn-google" id="customBtn" 
+				    	style="width: 150px; padding-left: 48px; margin-top: 0px; font-weight: bold; font-size: 13px;">
+					    <i class="fa fa-google-plus"></i> Log In with Google
+					</a>
+				    <div id="name"></div>
+  					<script>startApp();</script>
+  					
+  					<a class="btn btn-block btn-social btn-sm btn-facebook" id="customBtn" 
+  						style="width: 150px; padding-left: 48px; margin-top: 8px; font-weight: bold; font-size: 13px;" onclick="Login()" >
+					    <i class="fa fa-facebook"></i> Log In with Facebook
+					</a> 
+				</div>
+				<div style="float: left; width: 200px;">
+					<div class="or"><span>OR</span></div>
+				</div>
+			</div>
+			
+			<div class="loginHeader">
+			Login using CommunityEra Account:</div>
+			<form action="${communityEraContext.contextUrl}/jlogin.do" method="post" name="signInForm">
+				<input type="text" class="loginText" id="email" value="" name="j_username" placeholder="Email"/>
+				<input type="password" class="loginText" id="password" value="" name="j_password" placeholder="Password"/> 
+				<input type="hidden" name="_acegi_security_remember_me" value="1"/>
+				<a href="javascript:void(0);" style="width: 210px;" onclick="signInSubmit();" class="btnmain" ><i class="fa fa-sign-in" style="margin-right: 8px;"></i>Log In</a>
+				<div class="forgot" style="padding: 8px 0px; display: inline-block;">
+					<a href="javascript:void(0);" onclick="registerMeSubmit();" style="padding: 5px 2px 5px 15px; float: left;">Register Now</a>
+					<br />
+					<a href="${communityEraContext.contextUrl}/pers/fPassword.do" style="padding: 5px 2px 5px 15px; float: left;">Forgot Password</a>
+				</div>
+			</form>
+		</div>
+	</c:if>
+	<c:if test="${communityEraContext.userAuthenticated}">
+		<%-- <div class="user">
+			<a href="${communityEraContext.contextUrl}/pers/connectionResult.do" style="float: right; margin-right: 4px;">${communityEraContext.currentUser.firstName} ${communityEraContext.currentUser.lastName}</a>
+		</div> --%>
+		<c:if test="${communityEraContext.linkBuilder.dashBoardLinkBuilder.length > 0}">
+			<div class="inbox">
+				<ul>
+				    <c:forEach var="link" items="${communityEraContext.linkBuilder.dashBoardLinkBuilder.links}">
+				    	<li>
+							<a id="${link.id}" href="${link.href}" title="${link.title}" class="${link.linkClass}">${link.text}</a>
+						</li>
+					</c:forEach>
+				    <%-- <li class="check"><a href="#">Check All Updates</a></li> --%>
+				</ul>
+			</div>
+		</c:if>
+		<div class="list-menu">
+			<ul>
+			    <li><a href="${communityEraContext.contextUrl}/pers/myHome.do"><i class="fa fa-home" style="margin-right: 8px;"></i>My Home</a></li>
+				<li><a href="${communityEraContext.contextUrl}/pers/connectionCommunities.do"><i class="fa fa-users" style="margin-right: 8px;"></i>My Communities</a></li>
+			    <li><a href="${communityEraContext.contextUrl}/pers/myMessages.do?msgType=All&order=Date"><i class="fa fa-envelope" style="margin-right: 8px;"></i>My Messages</a></li>
+				<li><a href="${communityEraContext.contextUrl}/blog/personalBlog.do"><i class="fa fa-quote-left" style="margin-right: 8px;"></i>My Blogs</a></li>
+				<li><a href="${communityEraContext.contextUrl}/pers/connectionList.do"><i class="fa fa-user" style="margin-right: 8px;"></i>My Connections</a></li>
+			    <%-- <li><a href="#">My Bookmarks</a></li> --%>
+			</ul>
+		</div>
+	</c:if>	-->
+	<div class="fb-page" data-href="https://www.facebook.com/CommunityEra-1703188919924053/" 
+			data-tabs="" data-small-header="false" data-adapt-container-width="true" 
+			data-hide-cover="false" data-show-facepile="true"></div>

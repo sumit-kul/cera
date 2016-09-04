@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	
+   <bean id="cfg47" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+      <property name="locations">
+         <list>  
+            <value>WEB-INF/spring-config/app.properties</value>
+         </list>
+      </property>
+   </bean>
+   
+     <bean id="entityIndex" class="com.era.community.search.index.CecEntityIndex">
+	  <property name="path" value="${lucene.index.directory}"/>
+	  <property name="analyzer">
+	  	<bean class="support.community.lucene.index.SnowballAnalyzer">
+	  		<property name="name" value="English"/>
+	  	</bean>
+	  </property>
+	  <property name="entityHandlers">
+	  	<list>
+	  		<bean autowire="byType" class="com.era.community.search.index.CommunityEntityHandler"/>
+	  		<bean autowire="byType" class="com.era.community.search.index.DocumentEntityHandler"/>
+	  		<bean autowire="byType" class="com.era.community.search.index.ForumTopicEntityHandler"/>
+	  		<bean autowire="byType" class="com.era.community.search.index.ForumResponseEntityHandler"/>
+	  		<bean autowire="byType" class="com.era.community.search.index.WikiEntityHandler"/>
+	  		<bean autowire="byType" class="com.era.community.search.index.EventEntityHandler"/>
+	  		<bean autowire="byType" class="com.era.community.search.index.BlogEntityHandler"/>
+	  		<bean autowire="byType" class="com.era.community.search.index.UserEntityHandler"/>
+	  		<bean autowire="byType" class="com.era.community.search.index.TagEntityHandler"/>
+	  	</list>
+	  </property>
+      <property name="daoManager" ref="daoManager"/>
+      <property name="binaryDataHandler" ref="binaryDataHandler"/>
+   </bean>
+
+	<bean id="communityIndexer" class="support.community.lucene.index.EntityIndexer">
+	  <property name="index" ref="entityIndex"/>
+	  <property name="scheduledJobFinder" ref="Dao.TBSCTK"/>
+	  <property name="indexSets">
+	  	<list>
+	  		<bean autowire="byType" class="com.era.community.search.index.CommunityIndexSet"/>
+	  		<bean autowire="byType" class="com.era.community.search.index.DocumentIndexSet"/>
+	  		<bean autowire="byType" class="com.era.community.search.index.ForumIndexSet"/>
+	  		<bean autowire="byType" class="com.era.community.search.index.WikiIndexSet"/>
+	  		<bean autowire="byType" class="com.era.community.search.index.EventIndexSet"/>
+	  		<bean autowire="byType" class="com.era.community.search.index.BlogIndexSet"/>
+	  		<bean autowire="byType" class="com.era.community.search.index.UserIndexSet"/>
+	  		<bean autowire="byType" class="com.era.community.search.index.TagIndexSet"/>
+	  	</list>
+	  </property>
+	</bean> 
+
+	<bean id="communityIndexCleaner" class="support.community.lucene.index.EntityIndexCleaner">
+	  <property name="index" ref="entityIndex"/>
+	</bean> 
+
+  <bean id="binaryDataHandler" class="support.community.lucene.index.BinaryDataHandler">
+  	<property name="textExtractors">
+  		<map>
+  			<entry key="text/html"> 
+	  			<bean class="support.community.lucene.parse.html.HtmlExtractor" />
+  			</entry>
+  			<entry key="application/pdf">
+	  			<bean class="support.community.lucene.parse.pdf.PdfParser" />
+  			</entry>
+  			<entry key="application/msword">
+	  			<bean class="support.community.lucene.parse.msword.WordExtractor" />
+  			</entry>
+  			<entry key="application/rtf">
+	  			<bean class="support.community.lucene.parse.rtf.RtfExtractor" />
+  			</entry>
+  		</map>
+  	</property>
+ </bean>
+
+</beans>

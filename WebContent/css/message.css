@@ -1,0 +1,281 @@
+.messReadList {
+	background: #EEF3F6;
+	clear: both;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	border: 1px solid #f4f4f4;
+	overflow: hidden;
+	margin: 10px 0 0 0;
+	padding: 10px;
+	position: relative;
+}
+
+.messReadList .leftImg {
+	float: left;
+}
+
+.messReadList .leftImg img {
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	height: 50px;
+	overflow: hidden;
+	/*padding: 0 5px; */
+	width: 50px;
+	margin: 0 10px 0 0;
+}
+
+.messReadList .details {
+	float: left;
+	width: 630px;
+	word-wrap: break-word;
+}
+
+.messReadList .details .heading {
+	clear: both;
+	word-wrap: break-word;
+}
+
+.messReadList .details .heading {
+	color: #2A3A47;
+	font-weight: normal;
+	width: 640px;
+	font-size: 12px;
+	font-weight: bold;
+	text-decoration: none;
+	word-wrap: break-word;
+}
+
+.messReadList .details .heading a {
+	font-size: 12px;
+	font-weight: bold;
+	color: #2A3A47;
+	text-decoration: none;
+}
+
+#container .left-panel .commSection .paginatedList .details .heading {
+	font-weight: normal;
+	width: 560px;
+	word-wrap: break-word;
+	font-size: 12px;
+	font-weight: bold;
+	color: #66799f;
+	text-decoration: none;
+}
+
+.messReadList .details .heading a:hover {
+	color: #2a3a47;
+	text-decoration: none;
+}
+
+.messReadList .details .person {
+	clear: both;
+	font-size: 11px;
+	color: #a7a9ab;
+	padding: 3px 0 0 0;
+}
+
+.messReadList .details .person a {
+	font-size: 11px;
+	font-weight: bold;
+	color: #738397;
+	text-decoration: none;
+	padding: 0 0 0 3px;
+}
+
+.messReadList .details .person a:hover {
+	color: #2a3a47;
+	text-decoration: none;
+}
+
+.messReadList .details .heading .entry,#container .left-panel .commSection .paginatedList .details .heading .entry
+	{
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	word-wrap: break-word;
+}
+
+.messReadList .details .entry,#container .left-panel .commSection .paginatedList .details .entry
+	{
+	position: absolute;
+	right: 10px;
+	top: 26px;
+	word-wrap: break-word;
+}
+
+.messReadList .details .entry span {
+	color: rgb(204, 204, 204);
+	font-size: 11px;
+	font-weight: bold;
+	word-wrap: break-word;
+}
+
+.messReadList .details .entry a {
+	font-size: 11px;
+	font-weight: bold;
+	color: #6e716e;
+	text-decoration: none;
+	padding-left: 10px;
+}
+
+.messReadList .details .entry a:hover {
+	color: #ccc;
+}
+
+.levelImg1 {
+	float: right;
+}
+
+.levelImg2 {
+	float: right;
+	position: absolute;
+	right: 10px;
+	top: 46px;
+}
+
+#no-contacts {
+	color: #333;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#container .left-panel .commSection .paginatedList .details .commDesc p
+	{
+	width: 600px;
+	list-style: none outside none;
+}
+
+.chkMSG {
+	display: inline-block;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+
+span.secLev {
+	margin: -30px 8px 0px 0px;
+	float: right;
+	word-wrap: break-word;
+}
+
+.secLev .button {
+	margin: 8px 2px;
+	padding: 4px;
+}
+
+.button {
+	background-color: #F0EDED;
+	background-image: -webkit-linear-gradient(center top, #FDFAFB, #F9F7F7 50%, #F6F3F4 50%,
+		#F0EDED);
+	background-image: -moz-linear-gradient(center top, #FDFAFB, #F9F7F7 50%, #F6F3F4 50%,
+		#F0EDED);
+	background-image: linear-gradient(center top, #FDFAFB, #F9F7F7 50%, #F6F3F4 50%, #F0EDED)
+		;
+	border: 1px solid #BBBBBB;
+	border-radius: 6px 6px 6px 6px;
+	color: #524D4D;
+	cursor: pointer;
+	display: inline-block;
+	float: right;
+	font-weight: bold;
+	line-height: 1em;
+	margin: 0;
+	padding: 5px 9px;
+	text-align: center;
+	text-shadow: 0 1px rgba(255, 255, 255, 0.9);
+	-webkit-transition: all 0.2s ease-in-out 0s;
+	-moz-transition: all 0.2s ease-in-out 0s;
+	-ms-transition: all 0.2s ease-in-out 0s;
+	-o-transition: all 0.2s ease-in-out 0s;
+	transition: all 0.2s ease-in-out 0s;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+}
+
+.button:hover {
+	box-shadow: 0 1px rgba(255, 255, 255, 0.35) inset, 0 0 0 1px
+		rgba(140, 126, 126, 0.5), 0 1px 2px rgba(35, 24, 24, 0.75);
+}
+
+.button.disabled,.button[disabled] {
+	background: none repeat scroll 0 0 #F2F0F0;
+	border-color: #D1CDCD;
+	color: #D1CDCD;
+	cursor: default;
+	text-shadow: 0 -1px rgba(34, 25, 25, 0.01);
+}
+
+span.dynaDropDown {
+	background-color: #F0EDED;
+	background-image: -moz-linear-gradient(center top, #FDFAFB, #F9F7F7 50%, #F6F3F4 50%,
+		#F0EDED);
+	border: 1px solid #BBB;
+	border-radius: 2px;
+	color: #524D4D;
+	cursor: pointer;
+	display: inline-block;
+	float: right;
+	font-weight: bold;
+	line-height: 1em;
+	margin-right: 5px;
+	padding: 5px 9px;
+	text-align: center;
+	text-shadow: 0px 1px rgba(255, 255, 255, 0.9);
+	transition: all 0.2s ease-in-out 0s;
+}
+
+#myContactPicker {
+	background: none repeat scroll 0% 0% #F0EDED;
+	border-radius: 3px 3px 3px 3px;
+	border: 1px solid rgb(213, 213, 213);
+	width: 194px;
+	float: right;
+	height: 454px;
+	border: 1px solid rgb(213, 213, 213);
+}
+
+#myContactPicker #header {
+	background-color: rgb(36, 63, 82);
+	padding: 3px;
+	color: #fff;
+	font-size: 13px;
+	font-weight: bold;
+	line-height: 18px;
+	cursor: pointer;
+}
+
+#myContactPicker #intro-text {
+	margin: 4px;
+	border-width: 1px;
+	border-color: #efefef;
+	border-style: solid;
+	background-color: #333;
+	font-size: 0.8em;
+	color: #efefef;
+	padding: 4px;
+}
+
+#myContactPicker #pickerSection ul {
+	list-style: none;
+}
+
+#myContactPicker #pickerSection ul li {
+	margin-left: 2px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap
+}
+
+li.srchRslt {
+	padding: 2px;
+	font-size: 12px;
+	cursor: pointer;
+}
+
+li.srchRslt:hover {
+	padding: 2px;
+	background: none repeat scroll 0% 0% #F7F7F7;
+}

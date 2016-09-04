@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans default-autowire="byType" default-lazy-init="true" default-dependency-check="none" >
+
+	<bean id="cfg4" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	   <property name="locations">
+	      <list>  
+	         <value>WEB-INF/spring-config/app.properties</value>
+	      </list>
+	   </property>
+	</bean>
+   
+	<bean id="mailMessageConfig" class="com.era.community.config.dao.MailMessageConfig">
+  		<property name="messages" >
+     		<list>
+
+		       <bean class="com.era.community.config.dao.MailMessageDefinition">
+		       		<property name="name" value="registerMe-message"/>
+		       		<property name="description" value="User account activation message"/>
+		       		<property name="defaultText">
+		       		<value><![CDATA[
+		Confirm your registration with CommunityEra
+		
+		Hi #userName#,
+		
+		Your Account Details
+		Email: #login#
+		
+		To activate your account, you'll need to verify your email address. Please verify by clicking below:
+		               
+		#activationLink#
+		
+		----------------------------------------------------------------------------------------------------
+		This message was sent to #cEmail#. 
+		
+		If you prefer not to receive emails from CommunityEra you may unsubscribe by clicking below:
+		#cUnsubscribe#
+		
+		or set your email preferences by clicking below:
+		#mailPreferences#
+		----------------------------------------------------------------------------------------------------
+		
+		             ]]></value>
+		       		</property>
+		       	</bean>
+       	
+       	<bean class="com.era.community.config.dao.MailMessageDefinition">
+       		<property name="name" value="membership-request-rejection"/>
+       		<property name="description" value="Sent when a community membership request is rejected"/>
+       		<property name="defaultText">
+       		<value><![CDATA[
+Thank you for requesting membership of the #communityName# community but your profile does not meet the community criteria. If you believe it does please amend your profile and reapply.
+               
+If you would like a fuller explanation or believe there has been a misunderstanding please do not hesitate to contact me  
+               
+With regards from #currentUserName# 
+       		 ]]></value>
+       		</property>
+       	</bean>
+       	
+       	<bean class="com.era.community.config.dao.MailMessageDefinition">
+       		<property name="name" value="expel-member-message"/>
+       		<property name="description" value="Sent when a user is being expelled from the community"/>
+       		<property name="defaultText">
+       		<value><![CDATA[
+Dear #userName#,
+
+We believe you have been included in the membership of this community by mistake and have been removed from the member list.
+
+If you would like a fuller explanation or believe this is an error please do not hesitate to contact me.
+
+With regards from #currentUserName#
+       		 ]]></value>
+       		</property>
+       	</bean>
+       	
+		
+       	
+       	<bean class="com.era.community.config.dao.MailMessageDefinition">
+       		<property name="name" value="new-topic-alert"/>
+       		<property name="description" value="Sent when a new forum topic has been created"/>
+       		<property name="defaultText">
+       		<value><![CDATA[
+jhapak.com
+               
+There has been a new posting in the #communityName# forum which you have opted to monitor.
+Topic title: #subject#
+               
+Click here to view this thread: 
+#threadLink#
+               
+Click here to manage your list of email alerts: 
+#sUnSubscribe#
+       		 ]]></value>
+       		</property>
+       	</bean>
+       	
+       	<bean class="com.era.community.config.dao.MailMessageDefinition">
+       		<property name="name" value="new-wiki-entry-alert"/>
+       		<property name="description" value="Sent when there has been a new posting in the wiki"/>
+       		<property name="defaultText">
+       		<value><![CDATA[
+jhapak.com
+               
+There has been a new posting in the #communityName# wiki which you have opted to monitor.
+               
+Entry title: #entryTitle#
+               
+Click here to view this wiki entry: #entryLink#
+               
+Click here to manage your list of email alerts:
+#sUnSubscribe#
+             ]]></value>
+       		</property>
+       	</bean>
+       	
+       	<bean class="com.era.community.config.dao.MailMessageDefinition">
+       		<property name="name" value="wiki-page-update-alert"/>
+       		<property name="description" value="Sent when there has been an update to the wiki entry"/>
+       		<property name="defaultText">
+       		<value><![CDATA[
+jhapak.com
+               
+There has been an update to the #communityName# wiki entry which you have opted to monitor.
+               
+Entry title: #entryTitle#
+               
+Click here to view this wiki entry: #entryLink#
+             ]]></value>
+       		</property>
+       	</bean>
+       	
+       	<bean class="com.era.community.config.dao.MailMessageDefinition">
+       		<property name="name" value="new-event-alert"/>
+       		<property name="description" value="Sent when a new event has been posted"/>
+       		<property name="defaultText">
+       		<value><![CDATA[
+jhapak.com
+               
+There has been a new event in the #communityName# event calendar which you have opted to monitor.  Please take a look.
+               
+#eventName#
+               
+Click here to view the event: #eventLink#
+               
+             ]]></value>
+       		</property>
+       	</bean>
+       	
+       	<bean class="com.era.community.config.dao.MailMessageDefinition">
+       		<property name="name" value="new-document-alert"/>
+       		<property name="description" value="Sent when a new document has been added to the document library"/>
+       		<property name="defaultText">
+       		<value><![CDATA[
+Communityera.com
+               
+There has been a new document in the #communityName# document library which you have opted to monitor.
+               
+Document title: #docTitle#
+               
+Click here to view this document:
+#docLink#
+               
+Click here to manage your list of email alerts:
+#sUnSubscribe#
+             ]]></value>
+       		</property>
+       	</bean>
+       	
+       	<bean class="com.era.community.config.dao.MailMessageDefinition">
+       		<property name="name" value="daily-weekly-update"/>
+       		<property name="description" value="Daily/Weekly update email sent to a subscribing member on activity in his communities"/>
+       		<property name="defaultText">
+       		<value><![CDATA[
+Here is your update on activity in your communities in the past #frequency#.
+Please contribute when you can - sharing enriches us all.
+               
+#body#
+             ]]></value>
+       		</property>
+       	</bean>
+       	
+       	<bean class="com.era.community.config.dao.MailMessageDefinition">
+       		<property name="name" value="user-feedback-message"/>
+       		<property name="description" value="Sent to users who have submitted a feedback message"/>
+       		<property name="defaultText">
+       		<value><![CDATA[
+Thank you for taking the time to provide feedback. We value your input and will take careful note of your comments which have been sent to the Community Admins.
+               
+With regards 
+Communityera.com team.
+             ]]></value>
+       		</property>
+       	</bean>
+       	
+       	<bean class="com.era.community.config.dao.MailMessageDefinition">
+       		<property name="name" value="admin-feedback-message"/>
+       		<property name="description" value="Sent to community admin when users have posted community feedback"/>
+       		<property name="defaultText">
+       		<value><![CDATA[
+Communityera.com
+               
+#communityNameUC#
+               
+url of the page: #url#
+               
+Member feedback from #submitterName#
+               
+#feedback#
+             ]]></value>
+       		</property>
+       	</bean>
+       	
+       	<bean class="com.era.community.config.dao.MailMessageDefinition">
+       		<property name="name" value="admin-feedback-message-nc"/>
+       		<property name="description" value="Sent to system administrators when users have submitted feedback"/>
+       		<property name="defaultText">
+       		<value><![CDATA[
+Communityera.com - Feedback
+               
+Feedback from #submitterName# #submitterEmail#
+               
+url of the page: #url#
+               
+Feedback:
+               
+#feedback#
+               
+#profile#
+             ]]></value>
+       		</property>
+       	</bean>
+       
+       	<bean class="com.era.community.config.dao.MailMessageDefinition">
+       		<property name="name" value="new-message-alert"/>
+       		<property name="description" value="Sent when users have received a new message from another user"/>
+       		<property name="defaultText">
+       		<value><![CDATA[
+You have been sent a new message by #senderName#.
+Click here to view the message : #messageLink#
+             ]]></value>
+       		</property>
+       	</bean>
+       	
+       	<bean class="com.era.community.config.dao.MailMessageDefinition">
+       		<property name="name" value="blog-alert"/>
+       		<property name="description" value="Sent when a new blog entry is posted"/>
+       		<property name="defaultText">
+       		<value><![CDATA[
+Communityera.com
+               
+There has been a new entry in the blog of #ownerName# which you have opted to monitor.
+               
+Entry title: 
+#blogEntryTitle#
+               
+Click here to view this blog entry: #blogEntryLink#
+               
+Click here to manage your list of email alerts: #unSubscribe#
+             ]]></value>
+       		</property>
+       	</bean>
+       	
+       	<bean class="com.era.community.config.dao.MailMessageDefinition">
+       		<property name="name" value="blog-alert-cs"/>
+       		<property name="description" value="Sent to the subscribers to the blog when a new blog entry is posted"/>
+       		<property name="defaultText">
+       		<value><![CDATA[
+Communityera.com
+               
+There has been a new entry in the blog entries for #communityName# which you have opted to monitor.
+               
+Blog entry title: #blogEntryTitle#
+               
+Click here to view this blog entry: #blogEntryLink#
+               
+Click here to manage your list of email alerts: #unSubscribe#
+             ]]></value>
+       		</property>
+       	</bean>
+       	
+       	<bean class="com.era.community.config.dao.MailMessageDefinition">
+       		<property name="name" value="new-document-comment"/>
+       		<property name="description" value="Sent when a new document comment is posted"/>
+       		<property name="defaultText">
+       		<value><![CDATA[
+Communityera.com
+               
+There has been a new comment in the #communityName# document library which you have opted to monitor.
+               
+Document title: #documentTitle# 
+               
+Click here to view this document: #documentLink# 
+               
+Click here to manage your list of email alerts: #unSubscribe#
+             ]]></value>
+       		</property>
+       	</bean>
+       	
+       	<bean class="com.era.community.config.dao.MailMessageDefinition">
+       		<property name="name" value="feed-error-message"/>
+       		<property name="description" value="Sent when there is an error processing an rss feed"/>
+       		<property name="defaultText">
+       		<value><![CDATA[
+#feedTitle#
+#communityName#
+               
+Error Message: #errorMessage#
+             ]]></value>
+       		</property>
+       	</bean>
+       	
+       	       	
+       	<bean class="com.era.community.config.dao.MailMessageDefinition">
+       		<property name="name" value="remove-registration"/>
+       		<property name="description" value="Sent to community admin to inform that the user is no longer registered on Community"/>
+       		<property name="defaultText">
+       		<value><![CDATA[
+#user# is no longer registered on Communityera.com.
+             ]]></value>
+       		</property>
+       	</bean>
+       	
+       	<bean class="com.era.community.config.dao.MailMessageDefinition">
+       		<property name="name" value="make-administrator"/>
+       		<property name="description" value="Sent to the userr to inform that he has system administration rights"/>
+       		<property name="defaultText">
+       		<value><![CDATA[
+#user# now has system administration rights on Communityera.com
+             ]]></value>
+       		</property>
+       	</bean>      
+
+       	
+       	</list>
+    </property>
+</bean>
+
+</beans>

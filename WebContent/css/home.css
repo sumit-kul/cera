@@ -1,0 +1,427 @@
+
+#container .left-panel .commSection .outerPost {
+	border-radius: 3px;
+	box-sizing: border-box;
+	background-color: #FFF;
+	border-width: 1px;
+	border-style: solid;
+	-moz-border-top-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-bottom-colors: none;
+	-moz-border-left-colors: none;
+	border-image: none;
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25) rgba(0, 0, 0, 0.25);
+	vertical-align: top;
+	clear: both;
+	overflow: hidden;
+	margin: 10px auto;
+	padding: 10px;
+	position: relative;
+	width: 100%;
+	font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+	font-size: 13px;
+	color: #a2a2a2;
+}
+
+#container .left-panel .commSection .outerPost .details .mainHeader {
+	float: left;
+	width: 100%;
+	margin-bottom: 6px;
+	line-height: 1.2;
+	}
+
+#container .left-panel .commSection .outerPost .leftImg {
+	float: left;
+}
+
+#container .left-panel .commSection .outerPost .leftImg img {
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	height: 50px;
+	overflow: hidden;
+	width: 50px;
+	margin: 0 10px 0 0;
+}
+
+#container .left-panel .commSection .outerPost .details {
+	float: left;
+	word-wrap: normal;
+	width: 100%;
+}
+
+#container .left-panel .commSection .outerPost .details .heading {
+	word-wrap: break-word;
+	width: 94%;
+}
+
+#container .left-panel .commSection .outerPost .details .heading span
+	{
+	color: rgb(24, 74, 114);
+}
+
+#container .left-panel .commSection .outerPost .details .heading a {
+	color: #66799f;
+	text-decoration: none;
+	word-wrap: break-word;
+	font-weight: 700;
+}
+
+#container .left-panel .commSection .outerPost .details .heading a:hover
+	{
+	color: #2a3a47;
+	text-decoration: none;
+}
+
+#container .left-panel .commSection .outerPost .details .entry
+	{
+	position: absolute;
+	right: 14px;
+	top: 12px;
+}
+
+#container .left-panel .commSection .outerPost .details .person {
+	font-size: 13px;
+	font-weight: bold;
+	padding: 3px 0 0 0;
+}
+
+#container .left-panel .commSection .outerPost .details .person a {
+	color: #738397;
+	text-decoration: none;
+	padding: 0 0 0 3px;
+}
+
+#container .left-panel .commSection .outerPost .details .person a:hover
+	{
+	color: #2a3a47;
+	text-decoration: none;
+}
+
+.coverHeader {
+    word-wrap: break-word;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.coverHeader a {
+    color: #66799F;
+    text-decoration: none;
+    word-wrap: break-word;
+    line-height: 1.2;
+}
+
+#container .left-panel .commSection .pListInner {
+    box-sizing: border-box;
+    background-color: #FFF;
+    border-width: 1px 1px 1px;
+    border-style: solid;
+    border-color: #D8D8D8;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image: none;
+    vertical-align: top;
+    clear: both;
+    overflow: hidden;
+    margin: 0px 0px 10px auto;
+    padding: 0px;
+    position: relative;
+}
+
+#container .left-panel .commSection .pListInner .detailRes {
+	width: 600px;
+	float: left;
+}
+
+#container .left-panel .commSection .pListInner .leftImgLarge {
+    position: relative;
+	width: 360px;
+	margin: 0px 10px 0px 0px;
+	height: 224px;
+	overflow: hidden;
+	background-color: #F2F2F2;
+	float: left;
+	vertical-align: top;
+	line-height: inherit;
+}
+
+#container .left-panel .commSection .pListInner .leftImgLarge img {
+    display: block;
+	width: 100%;
+	min-height: 224px;
+	position: absolute;
+}
+
+#container .left-panel .commSection .pListInner .leftImgLarge2 {
+    position: relative;
+	width: 120px;
+	margin: 10px;
+	height: 120px;
+	overflow: hidden;
+	float: left;
+	vertical-align: top;
+	line-height: inherit;
+}
+
+#container .left-panel .commSection .pListInner .leftImgLarge2 img {
+    display: block;
+	height: 120px;
+	position: absolute;
+}
+
+#container .left-panel .commSection .pListInner .leftImgLarge3 {
+    position: relative;
+	width: 80px;
+	margin: 10px;
+	height: 80px;
+	overflow: hidden;
+	float: left;
+	vertical-align: top;
+	line-height: inherit;
+}
+
+#container .left-panel .commSection .pListInner .leftImgLarge3 img {
+    display: block;
+	height: 80px;
+	position: absolute;
+}
+
+#container .left-panel .commSection .pListInner .leftImgSml {
+    position: relative;
+    float: left;
+    width: 40px;
+    margin: 0px;
+    height: 40px;
+    overflow: hidden;
+    background-color: #F2F2F2;
+}
+
+#container .left-panel .commSection .pListInner .detailRes a {
+    font-size: 11px;
+    font-weight: bold;
+    color: #738397;
+    text-decoration: none;
+    padding: 0px 0px 0px 3px;
+}
+
+#container .left-panel .commSection .pListInner .detailRes a:hover {
+    color: #2A3A47;
+	text-decoration: none;
+}
+
+#container .left-panel .commSection .outerPost .details .person a.lkBtn {
+	font-size: 13px;
+	line-height: 17px;
+	font-weight: normal;
+	text-decoration: none;
+	color: #3B5998;
+	background: transparent none repeat scroll 0% 0%;
+	border: medium none;
+	padding: 0px;
+	-moz-appearance: none;
+	margin: 0px ;
+	cursor: pointer;
+}
+
+#container .left-panel .commSection .outerPost .details .person a.lkBtn:hover {
+	text-decoration: underline;
+}
+
+#container .left-panel .commSection .outerPost .commentSec {
+	background-color: #F1F3F5;
+	padding: 10px;
+	border: 1px solid #E1E2E3;
+	clear: both;
+}
+
+#container .left-panel .commSection .outerPost .commentSec .addCommForm {
+	box-sizing: border-box;
+	position: relative;
+}
+
+#container .left-panel .commSection .outerPost .commentSec .addCommForm textarea {
+	height: 47px;
+	transition: height 0.2s ease-in 0s;
+	background: #FDFDFD none repeat scroll 0% 0%;
+	vertical-align: middle;
+	padding: 5px 6px 4px;
+	box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1) inset;
+	border: 1px solid #C1C1C1;
+	font-size: 13px;
+	color: #333;
+	line-height: 17px;
+	box-sizing: border-box;
+	max-height: 147px;
+	width: 100%;
+	max-width: 100%;
+	resize: none;
+	position: relative;
+	overflow: auto;
+	border-radius: 0px;
+	z-index: 3;
+	margin-top: 10px;
+}
+
+#container .left-panel .commSection .outerPost .commentSec .addCommForm textarea:focus {
+    background: #FFF none repeat scroll 0% 0%;
+    outline: 0px none;
+    border: 1px solid #0077B5;
+}
+
+#container .left-panel .commSection .outerPost .commentSec .addCommForm .buttonContainer {
+    overflow: hidden;
+    height: 36px;
+    transition: height 0.2s ease-in-out 0s
+}
+
+#container .left-panel .commSection .outerPost .commentSec .addCommForm .buttonContainer.show {
+    height: 36px;
+}
+
+#container .left-panel .commSection .outerPost .commentSec .addCommForm .buttonContainer .commentSubmit {
+    color: #CCCFD3 !important;
+    background-color: #FFF;
+    border: 1px solid #CCCFD3;
+    cursor: default;
+    font-size: 12px;
+	font-weight: normal;
+	box-sizing: border-box;
+	padding: 0px 15px;
+	border-radius: 3px;
+	height: 26px;
+	line-height: 26px;
+	cursor: default;
+	white-space: nowrap;
+	display: inline-block;
+	transition: all 0.2s ease-in-out 0s;
+	margin: 10px 0px 0px;
+}
+
+#container .left-panel .commSection .outerPost .commentSec .addCommForm .buttonContainer .commentSubmit.enabled {
+       background: #008CC9 none repeat scroll 0% 0%;
+    -moz-appearance: none;
+    font-size: 12px;
+    font-weight: normal;
+    box-sizing: border-box;
+    padding: 0px 15px;
+    border: 1px solid #008CC9;
+    border-radius: 3px;
+    height: 26px;
+    line-height: 26px;
+    cursor: pointer;
+    white-space: nowrap;
+    display: inline-block;
+    color: #FFF !important;
+    transition: all 0.2s ease-in-out 0s;
+    margin: 10px 0px 0px;
+}
+
+#container .left-panel .commSection .outerPost .commentList {
+    background-color: #F1F3F5;
+    overflow: hidden;
+    width: 100%;
+}
+
+#container .left-panel .commSection .outerPost .commentList ul {
+    overflow-y: auto;
+}
+
+#container .left-panel .commSection .outerPost .commentList ul .commentEntity:first-child {
+    margin-top: 0px;
+}
+
+#container .left-panel .commSection .outerPost .commentList ul .commentEntity {
+    position: relative;
+    min-height: 30px;
+    overflow: hidden;
+    opacity: 1;
+    margin-top: 10px;
+}
+
+#container .left-panel .commSection .outerPost .commentList ul .commentEntity .content {
+    margin-left: 10px;
+	display: inline-block;
+	width: 30px;
+	float: left;
+	height: 30px;
+	padding-top: 4px;
+}
+
+#container .left-panel .commSection .outerPost .commentList ul .commentEntity .content a {
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	background-color: #999;
+	color: #FFF;
+	position: absolute;
+	left: 0px;
+}
+
+#container .left-panel .commSection .outerPost .commentList ul .commentEntity .header {
+    padding: 0px;
+	min-height: 17px;
+	display: inline-block;
+}
+
+#container .left-panel .commSection .outerPost .commentList ul .commentEntity .subHeadline {
+    display: inline-block;
+	margin: 0px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	line-height: 14px;
+	max-width: 550px;
+}
+
+#container .left-panel .commSection .outerPost .commentList ul .commentEntity .subHeadline .name,
+#container .left-panel .commSection .outerPost .commentList ul .commentEntity .subHeadline .commLike a {
+    font-size: 12px;
+	line-height: 14px;
+	font-weight: normal;
+	text-decoration: none;
+	color: #3B5998;
+	margin-right: 4px;
+}
+
+#container .left-panel .commSection .outerPost .commentList ul .commentEntity .textEntity {
+    display: inline;
+    margin: 0px;
+    font-size: 12px;
+    line-height: 14px;
+    color: #333;
+    font-weight: normal;
+}
+
+.lkBtn {
+	color: #3B5998;
+	margin-bottom: 6px;
+	display: inline-block;
+	text-decoration: none;
+}
+
+#container .left-panel .commSection .outerPost .commentList ul .commentEntity .subHeadline .commLike {
+	font-size: 12px;
+	margin: 6px 0px 0px;
+	font-weight: normal;
+	color: #A7A9AB;
+}
+
+.lkBtn:hover, #container .left-panel .commSection .outerPost .commentList ul .commentEntity .subHeadline .commLike a:hover {
+	text-decoration: underline;
+}
+
+#container .left-panel .commSection .outerPost .detailRes .heading {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 100%;
+	outline: 0px none;
+	vertical-align: bottom;
+	font-size: 13px;
+	line-height: 17px;
+	font-weight: bold;
+	color: #66799F;
+	padding: 0px 0px 0px 3px;
+}

@@ -1,0 +1,4338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<!--
+ For now we had best not use lazy init because it may leave the dao manger with an
+ incomplete dao list which might cause a bad return from getRowMapperForType().
+-->
+<beans default-lazy-init="false">
+
+	<!--  -->
+	<bean id="Dao.ALOG" class="com.era.community.accesslog.dao.AccessLogDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBALOG"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBALOG"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+	   <property name="optimisticLockingEnabled" value="true"/>
+	   <property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>AccessLog</value></constructor-arg>
+							<constructor-arg><value>com.era.community.accesslog.dao.AccessLog</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>ItemType</value>
+										<value>ItemId</value>
+										<value>CommunityId</value>
+										<value>UserId</value>
+										<value>Modified</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+	
+	<bean id="Dao.NOTF" class="com.era.community.pers.dao.NotificationDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBNOTF"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBNOTF"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+	   <property name="optimisticLockingEnabled" value="true"/>
+	   <property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>Notification</value></constructor-arg>
+							<constructor-arg><value>com.era.community.pers.dao.Notification</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>ItemType</value>
+										<value>ItemId</value>
+										<value>CommunityId</value>
+										<value>UserId</value>
+										<value>Modified</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+
+	<!--  -->
+	<bean id="Dao.BCON" class="com.era.community.blog.dao.CommunityBlogDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBBCON"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBBCON"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+	   <property name="optimisticLockingEnabled" value="true"/>
+	   <property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>CommunityBlog</value></constructor-arg>
+							<constructor-arg><value>com.era.community.blog.dao.CommunityBlog</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>CommunityId</value>
+										<value>Name</value>
+										<value>Inactive</value>
+										<value>AllowCoEdit</value>
+										<value>AllowComments</value>
+										<value>ModerateComments</value>
+										<value>DefaultAllowComments</value>
+										<value>DefaultCommentDays</value>
+										<value>Modified</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+
+	<!--  -->
+	<bean id="Dao.FMIT" class="com.era.community.forum.dao.ForumItemDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBFMIT"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBFMIT"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+	   <property name="optimisticLockingEnabled" value="true"/>
+	   <property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>ForumItem</value></constructor-arg>
+							<constructor-arg><value>com.era.community.forum.dao.ForumItem</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>ForumId</value>
+										<value>Subject</value>
+										<value>Body</value>
+										<value>AuthorId</value>
+										<value>DatePosted</value>
+										<value>Closed</value>
+										<value>ClosedById</value>
+										<value>ClosedOn</value>
+										<value>Sticky</value>
+										<value>DeleteStatus</value>
+										<value>Visitors</value>
+										<value>LastVisitorsTime</value>
+										<value>Modified</value>
+										<value>lft</value>
+										<value>rht</value>
+										<value>lvl</value>
+										<value>ParentId</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>ForumTopic</value></constructor-arg>
+							<constructor-arg><value>com.era.community.forum.dao.ForumTopic</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>ForumId</value>
+										<value>Subject</value>
+										<value>Body</value>
+										<value>AuthorId</value>
+										<value>DatePosted</value>
+										<value>Closed</value>
+										<value>ClosedById</value>
+										<value>ClosedOn</value>
+										<value>Sticky</value>
+										<value>DeleteStatus</value>
+										<value>Visitors</value>
+										<value>LastVisitorsTime</value>
+										<value>Modified</value>
+										<value>lft</value>
+										<value>rht</value>
+										<value>lvl</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>ForumResponse</value></constructor-arg>
+							<constructor-arg><value>com.era.community.forum.dao.ForumResponse</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>TopicId</value>
+										<value>ForumId</value>
+										<value>Subject</value>
+										<value>Body</value>
+										<value>AuthorId</value>
+										<value>DatePosted</value>
+										<value>Closed</value>
+										<value>ClosedById</value>
+										<value>ClosedOn</value>
+										<value>Sticky</value>
+										<value>DeleteStatus</value>
+										<value>Visitors</value>
+										<value>LastVisitorsTime</value>
+										<value>Modified</value>
+										<value>lft</value>
+										<value>rht</value>
+										<value>lvl</value>
+										<value>ParentId</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+	
+	<!--  -->
+	<bean id="Dao.ASNMT" class="com.era.community.assignment.dao.AssignmentDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBASNMT"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBASNMT"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+	   <property name="optimisticLockingEnabled" value="true"/>
+	   <property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>Assignment</value></constructor-arg>
+							<constructor-arg><value>com.era.community.assignment.dao.Assignment</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>AssignmentsId</value>
+										<value>Title</value>
+										<value>Body</value>
+										<value>EntryType</value>
+										<value>DueDate</value>
+										<value>TaskId</value>
+										<value>CreatorId</value>
+										<value>DatePosted</value>
+										<value>Completed</value>
+										<value>CompletedById</value>
+										<value>CompletedOn</value>
+										<value>Sticky</value>
+										<value>DeleteStatus</value>
+										<value>Modified</value>
+										<value>ParentId</value>
+										<value>lft</value>
+										<value>rht</value>
+										<value>lvl</value>
+								</list>
+							</constructor-arg>
+						</bean>
+						
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>AssignmentTask</value></constructor-arg>
+							<constructor-arg><value>com.era.community.assignment.dao.AssignmentTask</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>AssignmentsId</value>
+										<value>Title</value>
+										<value>Body</value>
+										<value>CreatorId</value>
+										<value>DatePosted</value>
+										<value>Sticky</value>
+										<value>DeleteStatus</value>
+										<value>Modified</value>
+										<value>CompletedOn</value>
+										<value>DueDate</value>
+										<value>ParentId</value>
+										<value>lft</value>
+										<value>rht</value>
+										<value>lvl</value>
+								</list>
+							</constructor-arg>
+						</bean>
+						
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>AssignmentEntry</value></constructor-arg>
+							<constructor-arg><value>com.era.community.assignment.dao.AssignmentEntry</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>AssignmentsId</value>
+										<value>Title</value>
+										<value>Body</value>
+										<value>EntryType</value>
+										<value>DueDate</value>
+										<value>TaskId</value>
+										<value>CreatorId</value>
+										<value>DatePosted</value>
+										<value>Completed</value>
+										<value>CompletedById</value>
+										<value>CompletedOn</value>
+										<value>Sticky</value>
+										<value>DeleteStatus</value>
+										<value>Modified</value>
+										<value>ParentId</value>
+										<value>lft</value>
+										<value>rht</value>
+										<value>lvl</value>
+								</list>
+							</constructor-arg>
+						</bean>
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+	
+
+	<!--  -->
+	<bean id="Dao.CMEM" class="com.era.community.connections.communities.dao.MembershipDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBCMEM"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBCMEM"/>
+			</bean>
+		</property>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>Membership</value></constructor-arg>
+							<constructor-arg><value>com.era.community.connections.communities.dao.Membership</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>MemberListId</value>
+										<value>UserId</value>
+										<value>DateJoined</value>
+										<value>Role</value>
+										<value>DateLastVisit</value>
+										<value>ApproverId</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+
+	<!--  -->
+	<bean id="Dao.CJRQ" class="com.era.community.communities.dao.CommunityJoiningRequestDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBCJRQ"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBCJRQ"/>
+			</bean>
+		</property>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>CommunityJoiningRequest</value></constructor-arg>
+							<constructor-arg><value>com.era.community.communities.dao.CommunityJoiningRequest</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>CommunityId</value>
+										<value>UserId</value>
+										<value>OptionalComment</value>
+										<value>RequestDate</value>
+										<value>Status</value>
+										<value>ApproveRejectDate</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+
+	<!--  -->
+	<bean id="Dao.FRUM" class="com.era.community.forum.dao.ForumDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBFRUM"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBFRUM"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+	    <property name="optimisticLockingEnabled" value="true"/>
+	    <property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>Forum</value></constructor-arg>
+							<constructor-arg><value>com.era.community.forum.dao.Forum</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>CommunityId</value>
+										<value>Name</value>
+										<value>Inactive</value>
+										<value>Modified</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+
+	<!--  -->
+	<bean id="Dao.DLIB" class="com.era.community.doclib.dao.DocumentLibraryDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBDLIB"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBDLIB"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+	   <property name="optimisticLockingEnabled" value="true"/>
+	   <property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>DocumentLibrary</value></constructor-arg>
+							<constructor-arg><value>com.era.community.doclib.dao.DocumentLibrary</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>CommunityId</value>
+										<value>Name</value>
+										<value>Inactive</value>
+										<value>Modified</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+
+	<!--  -->
+	<bean id="Dao.FEED" class="com.era.community.communities.dao.FeedbackDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBFEED"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBFEED"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+	   <property name="optimisticLockingEnabled" value="true"/>
+	   <property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>Feedback</value></constructor-arg>
+							<constructor-arg><value>com.era.community.communities.dao.Feedback</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>CommunityId</value>
+										<value>SubmitterId</value>
+										<value>Subject</value>
+										<value>Body</value>
+										<value>Modified</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+
+	<!--  -->
+	<bean id="Dao.UPLD" class="com.era.community.upload.dao.UploadDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBUPLD"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBUPLD"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+	   <property name="optimisticLockingEnabled" value="true"/>
+	   <property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>Upload</value></constructor-arg>
+							<constructor-arg><value>com.era.community.upload.dao.Upload</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>CreatorId</value>
+										<value>Title</value>
+										<value>Description</value>
+										<value>Modified</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+
+	<!--  -->
+	<bean id="Dao.WENT" class="com.era.community.wiki.dao.WikiEntryDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBWENT"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBWENT"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+	   <property name="optimisticLockingEnabled" value="true"/>
+	   <property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>WikiEntry</value></constructor-arg>
+							<constructor-arg><value>com.era.community.wiki.dao.WikiEntry</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>WikiId</value>
+										<value>EntryId</value>
+										<value>EntrySequence</value>
+										<value>Title</value>
+										<value>DatePosted</value>
+										<value>PosterId</value>
+										<value>ReasonForUpdate</value>
+										<value>Visitors</value>
+										<value>LastVisitorsTime</value>
+										<value>Modified</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+	
+	<!--  -->
+	<bean id="Dao.WECOM" class="com.era.community.wiki.dao.WikiEntryCommentDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBWECOM"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBWECOM"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+	   <property name="optimisticLockingEnabled" value="true"/>
+	   <property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>WikiEntryComment</value></constructor-arg>
+							<constructor-arg><value>com.era.community.wiki.dao.WikiEntryComment</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>WikiEntryId</value>
+										<value>Comment</value>
+										<value>DatePosted</value>
+										<value>PosterId</value>
+										<value>Modified</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+	
+	<!--  -->
+	<bean id="Dao.TBWLIK" class="com.era.community.wiki.dao.WikiEntryLikeDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBWLIK"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBWLIK"/>
+			</bean>
+		</property>
+	   	<property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>WikiEntryLike</value></constructor-arg>
+							<constructor-arg><value>com.era.community.wiki.dao.WikiEntryLike</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>WikiEntryId</value>
+										<value>PosterId</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+	
+	<!--  -->
+	<bean id="Dao.TBWES" class="com.era.community.wiki.dao.WikiEntrySectionDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBWES"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBWES"/>
+			</bean>
+		</property>
+	   	<property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>WikiEntrySection</value></constructor-arg>
+							<constructor-arg><value>com.era.community.wiki.dao.WikiEntrySection</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>WikiEntryId</value>
+										<value>SectionTitle</value>
+										<value>SectionSeq</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+	
+	<!--  -->
+	<bean id="Dao.DCOM" class="com.era.community.doclib.dao.DocumentCommentDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBDCOM"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBDCOM"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+	   <property name="optimisticLockingEnabled" value="true"/>
+	   <property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>DocumentComment</value></constructor-arg>
+							<constructor-arg><value>com.era.community.doclib.dao.DocumentComment</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>DocumentId</value>
+										<value>Comment</value>
+										<value>DatePosted</value>
+										<value>PosterId</value>
+										<value>Modified</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+
+	<!--  -->
+	<bean id="Dao.DCMT" class="com.era.community.doclib.dao.DocumentDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBDCMT"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBDCMT"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+	    <property name="optimisticLockingEnabled" value="true"/>
+	    <property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>Document</value></constructor-arg>
+							<constructor-arg><value>com.era.community.doclib.dao.Document</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>LibraryId</value>
+										<value>Title</value>
+										<value>FileName</value>
+										<value>Description</value>
+										<value>DatePosted</value>
+										<value>PosterId</value>
+										<value>RevisionNumber</value>
+										<value>DocGroupNumber</value>
+										<value>DateRevised</value>
+										<value>Inactive</value>
+										<value>Modified</value>
+										<value>Width</value>
+										<value>Height</value>
+										<value>PrivacyLevel</value>
+										<value>FolderId</value>
+										<value>CurrentProfile</value>
+										<value>Downloads</value>
+										<value>LastDownloadTime</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+	
+	<!--  -->
+	<bean id="Dao.IMG" class="com.era.community.upload.dao.ImageDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBIMG"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBIMG"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+		<property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>Image</value></constructor-arg>
+							<constructor-arg><value>com.era.community.upload.dao.Image</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>BlogEntryId</value>
+										<value>WikiEntryId</value>
+										<value>WikiEntrySectionId</value>
+										<value>ForumItemId</value>
+										<value>BlogEntryCommentId</value>
+										<value>WikiEntryCommentId</value>
+										<value>CommunityDescriptionId</value>
+										<value>AboutMeId</value>
+										<value>MessageId</value>
+										<value>AssignmentId</value>
+										<value>Title</value>
+										<value>FileName</value>
+										<value>PosterId</value>
+										<value>Modified</value>
+										<value>Width</value>
+										<value>Height</value>
+										<value>MarkDeleted</value>
+										<value>Thumbnail</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+
+	<!--  -->
+	<bean id="Dao.COMM" class="com.era.community.communities.dao.CommunityDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBCOMM"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBCOMM"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+	   <property name="optimisticLockingEnabled" value="true"/>
+	   <property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>Community</value></constructor-arg>
+							<constructor-arg><value>com.era.community.communities.dao.Community</value></constructor-arg>
+							<constructor-arg>
+								<list> 
+										<value>ParentId</value>
+										<value>Name</value>
+										<value>WelcomeText</value>
+										<value>IncludeParentMembers</value>
+										<value>CreatorId</value>
+										<value>Status</value>
+										<value>Modified</value>
+										<value>CommunityUpdated</value>
+										<value>VisitCount</value>
+										<value>Featured</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>PublicCommunity</value></constructor-arg>
+							<constructor-arg><value>com.era.community.communities.dao.PublicCommunity</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>ParentId</value>
+										<value>Name</value>
+										<value>WelcomeText</value>
+										<value>IncludeParentMembers</value>
+										<value>CreatorId</value>
+										<value>Status</value>
+										<value>Modified</value>
+										<value>CommunityUpdated</value>
+										<value>VisitCount</value>
+										<value>Featured</value>
+								</list>
+							</constructor-arg>
+						</bean>
+						
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>ProtectedCommunity</value></constructor-arg>
+							<constructor-arg><value>com.era.community.communities.dao.ProtectedCommunity</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>ParentId</value>
+										<value>Name</value>
+										<value>WelcomeText</value>
+										<value>IncludeParentMembers</value>
+										<value>CreatorId</value>
+										<value>Status</value>
+										<value>Modified</value>
+										<value>CommunityUpdated</value>
+										<value>VisitCount</value>
+										<value>Featured</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>PrivateCommunity</value></constructor-arg>
+							<constructor-arg><value>com.era.community.communities.dao.PrivateCommunity</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>ParentId</value>
+										<value>Name</value>
+										<value>WelcomeText</value>
+										<value>IncludeParentMembers</value>
+										<value>CreatorId</value>
+										<value>Status</value>
+										<value>Modified</value>
+										<value>CommunityUpdated</value>
+										<value>VisitCount</value>
+										<value>Featured</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+
+	<!--  -->
+	<bean id="Dao.BENT" class="com.era.community.blog.dao.BlogEntryDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBBENT"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBBENT"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+	   <property name="optimisticLockingEnabled" value="true"/>
+	   <property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>BlogEntry</value></constructor-arg>
+							<constructor-arg><value>com.era.community.blog.dao.BlogEntry</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>CommunityBlogId</value>
+										<value>PersonalBlogId</value>
+										<value>Title</value>
+										<value>PosterId</value>
+										<value>Body</value>
+										<value>DatePosted</value>
+										<value>Visitors</value>
+										<value>LastVisitorsTime</value>
+										<value>Modified</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+
+	<!--  -->
+	<bean id="Dao.SSIT" class="com.era.community.search.dao.SearchSiteDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBSSIT"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBSSIT"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+	   <property name="optimisticLockingEnabled" value="true"/>
+	   <property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>SearchSite</value></constructor-arg>
+							<constructor-arg><value>com.era.community.search.dao.SearchSite</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>CommunityId</value>
+										<value>Name</value>
+										<value>Hostname</value>
+										<value>Description</value>
+										<value>Sequence</value>
+										<value>Modified</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+
+	<!--  -->
+	<bean id="Dao.NWFD" class="com.era.community.newsfeed.dao.NewsFeedDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBNWFD"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBNWFD"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+	   <property name="optimisticLockingEnabled" value="true"/>
+	   <property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>NewsFeed</value></constructor-arg>
+							<constructor-arg><value>com.era.community.newsfeed.dao.NewsFeed</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>AggregatorId</value>
+										<value>Name</value>
+										<value>Url</value>
+										<value>Uri</value>
+										<value>Link</value>
+										<value>Title</value>
+										<value>Description</value>
+										<value>DatePublished</value>
+										<value>Author</value>
+										<value>Copyright</value>
+										<value>Modified</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+
+	<!--  -->
+	<bean id="Dao.DELC" class="com.era.community.communities.dao.DeletedCommunityDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBDELC"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBDELC"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+	   <property name="optimisticLockingEnabled" value="true"/>
+	   <property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>DeletedCommunity</value></constructor-arg>
+							<constructor-arg><value>com.era.community.communities.dao.DeletedCommunity</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>CommunityId</value>
+										<value>DeleterId</value>
+										<value>Comment</value>
+										<value>Modified</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+
+	<!--  -->
+	<bean id="Dao.NCFD" class="com.era.community.home.dao.NonCommunityFeedbackDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBNCFD"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBNCFD"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+	   <property name="optimisticLockingEnabled" value="true"/>
+	   <property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>NonCommunityFeedback</value></constructor-arg>
+							<constructor-arg><value>com.era.community.home.dao.NonCommunityFeedback</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>Name</value>
+										<value>EmailAddress</value>
+										<value>Body</value>
+										<value>Subject</value>
+										<value> Type</value>
+										<value>Modified</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+
+	<!--  -->
+	<bean id="Dao.TAG" class="com.era.community.tagging.dao.TagDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBTAG"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBTAG"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+	   <property name="optimisticLockingEnabled" value="true"/>
+	   <property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>Tag</value></constructor-arg>
+							<constructor-arg><value>com.era.community.tagging.dao.Tag</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>CommunityId</value>
+										<value>PosterId</value>
+										<value>ParentId</value>
+										<value>ParentType</value>
+										<value>TagText</value>
+										<value>Modified</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+
+	<!--  -->
+	<bean id="Dao.WIKI" class="com.era.community.wiki.dao.WikiDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBWIKI"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBWIKI"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+	   <property name="optimisticLockingEnabled" value="true"/>
+	   <property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>Wiki</value></constructor-arg>
+							<constructor-arg><value>com.era.community.wiki.dao.Wiki</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>CommunityId</value>
+										<value>Name</value>
+										<value>Inactive</value>
+										<value>Modified</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+	
+	<!--  -->
+	<bean id="Dao.ASNMTS" class="com.era.community.assignment.dao.AssignmentsDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBASNMTS"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBASNMTS"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+	   <property name="optimisticLockingEnabled" value="true"/>
+	   <property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>Assignments</value></constructor-arg>
+							<constructor-arg><value>com.era.community.assignment.dao.Assignments</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>CommunityId</value>
+										<value>Name</value>
+										<value>Inactive</value>
+										<value>Modified</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+	
+	<!--  -->
+	<bean id="Dao.ASMTCOM" class="com.era.community.assignment.dao.AssignmentCommentDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBASMTCOM"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBASMTCOM"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+	   <property name="optimisticLockingEnabled" value="true"/>
+	   <property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>AssignmentComment</value></constructor-arg>
+							<constructor-arg><value>com.era.community.assignment.dao.AssignmentComment</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>AssignmentId</value>
+										<value>Comment</value>
+										<value>DatePosted</value>
+										<value>PosterId</value>
+										<value>Modified</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+
+	<!--  -->
+	<bean id="Dao.NWFA" class="com.era.community.newsfeed.dao.NewsFeedAggregatorDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBNWFA"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBNWFA"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+	   <property name="optimisticLockingEnabled" value="true"/>
+	   <property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>NewsFeedAggregator</value></constructor-arg>
+							<constructor-arg><value>com.era.community.newsfeed.dao.NewsFeedAggregator</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>CommunityId</value>
+										<value>Name</value>
+										<value>Inactive</value>
+										<value>Modified</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+
+	<!--  -->
+	<bean id="Dao.NWFE" class="com.era.community.newsfeed.dao.NewsFeedEntryDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBNWFE"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBNWFE"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+	   <property name="optimisticLockingEnabled" value="true"/>
+	   <property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>NewsFeedEntry</value></constructor-arg>
+							<constructor-arg><value>com.era.community.newsfeed.dao.NewsFeedEntry</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>FeedId</value>
+										<value>Uri</value>
+										<value>Link</value>
+										<value>Title</value>
+										<value>DescriptionType</value>
+										<value>Description</value>
+										<value>DatePublished</value>
+										<value>DateRevised</value>
+										<value>Author</value>
+										<value>Modified</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+
+	<!--  -->
+	<bean id="Dao.EVCL" class="com.era.community.events.dao.EventCalendarDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBEVCL"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBEVCL"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+	   <property name="optimisticLockingEnabled" value="true"/>
+	   <property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>EventCalendar</value></constructor-arg>
+							<constructor-arg><value>com.era.community.events.dao.EventCalendar</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>CommunityId</value>
+										<value>Name</value>
+										<value>Inactive</value>
+										<value>Modified</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+
+	<!--  -->
+	<bean id="Dao.DOCR" class="com.era.community.doclib.dao.DocumentRatingDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBDOCR"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBDOCR"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+	   <property name="optimisticLockingEnabled" value="true"/>
+	   <property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>DocumentRating</value></constructor-arg>
+							<constructor-arg><value>com.era.community.doclib.dao.DocumentRating</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>DocumentId</value>
+										<value>PosterId</value>
+										<value>DatePosted</value>
+										<value>Stars</value>
+										<value>Modified</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+
+	<!--  -->
+	<bean id="Dao.MMDE" class="com.era.community.config.dao.MailMessageDefinitionDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBMMDE"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBMMDE"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+	   <property name="optimisticLockingEnabled" value="true"/>
+	   <property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>MailMessageDefinition</value></constructor-arg>
+							<constructor-arg><value>com.era.community.config.dao.MailMessageDefinition</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>Name</value>
+										<value>Description</value>
+										<value>Subject</value>
+										<value>VariableNames</value>
+										<value>From</value>
+										<value>DefaultText</value>
+										<value>Modified</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+
+	<!--  -->
+	<bean id="Dao.MLST" class="com.era.community.connections.communities.dao.MemberListDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBMLST"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBMLST"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+	   <property name="optimisticLockingEnabled" value="true"/>
+	   <property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>MemberList</value></constructor-arg>
+							<constructor-arg><value>com.era.community.connections.communities.dao.MemberList</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>CommunityId</value>
+										<value>Name</value>
+										<value>Inactive</value>
+										<value>Modified</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+
+	<!--  -->
+	<bean id="Dao.ANMT" class="com.era.community.announcement.dao.AnnouncementDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBANMT"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBANMT"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+	   <property name="optimisticLockingEnabled" value="true"/>
+	   <property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>Announcement</value></constructor-arg>
+							<constructor-arg><value>com.era.community.announcement.dao.Announcement</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>Title</value>
+										<value>Subject</value>
+										<value>AuthorId</value>
+										<value>DatePosted</value>
+										<value>Status</value>
+										<value>MessageType</value>
+										<value>Body</value>
+										<value>FileName1</value>
+										<value>FileName2</value>
+										<value>FileName3</value>
+										<value>Modified</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+
+	<!--  -->
+	<bean id="Dao.FRAQ" class="com.era.community.faqs.dao.FaqDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBFRAQ"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBFRAQ"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+	   <property name="optimisticLockingEnabled" value="true"/>
+	   <property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>Faq</value></constructor-arg>
+							<constructor-arg><value>com.era.community.faqs.dao.Faq</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>Subject</value>
+										<value>Body</value>
+										<value>FileName</value>
+										<value>Sequence</value>
+										<value>Inactive</value>
+										<value>Modified</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+	
+	<!--  -->
+	<bean id="Dao.HLPQ" class="com.era.community.faqs.dao.HelpQDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBHLPQ"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBHLPQ"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+	   <property name="optimisticLockingEnabled" value="true"/>
+	   <property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>HelpQ</value></constructor-arg>
+							<constructor-arg><value>com.era.community.faqs.dao.HelpQ</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>Title</value>
+										<value>ParentId</value>
+										<value>Sequence</value>
+										<value>Inactive</value>
+										<value>Modified</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+	
+	<!--  -->
+	<bean id="Dao.HLENT" class="com.era.community.faqs.dao.HelpEntryDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBHLENT"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBHLENT"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+	   <property name="optimisticLockingEnabled" value="true"/>
+	   <property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>HelpEntry</value></constructor-arg>
+							<constructor-arg><value>com.era.community.faqs.dao.HelpEntry</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>Question</value>
+										<value>Answer</value>
+										<value>ParentId</value>
+										<value>Sequence</value>
+										<value>Inactive</value>
+										<value>Modified</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+
+	<!--  -->
+	<bean id="Dao.BCOM" class="com.era.community.blog.dao.BlogEntryCommentDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBBCOM"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBBCOM"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+	   <property name="optimisticLockingEnabled" value="true"/>
+	   <property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>BlogEntryComment</value></constructor-arg>
+							<constructor-arg><value>com.era.community.blog.dao.BlogEntryComment</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>BlogEntryId</value>
+										<value>Comment</value>
+										<value>DatePosted</value>
+										<value>PosterId</value>
+										<value>Modified</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+
+	<!--  -->
+	<bean id="Dao.SUBS" class="com.era.community.monitor.dao.SubscriptionDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBSUBS"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBSUBS"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+	   <property name="optimisticLockingEnabled" value="true"/>
+	   <property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+						
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>CommunitySubscription</value></constructor-arg>
+							<constructor-arg><value>com.era.community.monitor.dao.CommunitySubscription</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>UserId</value>
+										<value>CommunityId</value>
+										<value>Frequency</value>
+										<value>Modified</value>
+										<value>WebSubscription</value>
+										<value>MailSubscription</value>
+										<value>PageSubscription</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>WikiSubscription</value></constructor-arg>
+							<constructor-arg><value>com.era.community.monitor.dao.WikiSubscription</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>WikiId</value>
+										<value>UserId</value>
+										<value>CommunityId</value>
+										<value>Frequency</value>
+										<value>Modified</value>
+										<value>WebSubscription</value>
+										<value>MailSubscription</value>
+										<value>PageSubscription</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>DocLibSubscription</value></constructor-arg>
+							<constructor-arg><value>com.era.community.monitor.dao.DocLibSubscription</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>DocLibId</value>
+										<value>UserId</value>
+										<value>CommunityId</value>
+										<value>Frequency</value>
+										<value>Modified</value>
+										<value>WebSubscription</value>
+										<value>MailSubscription</value>
+										<value>PageSubscription</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>EventCalendarSubscription</value></constructor-arg>
+							<constructor-arg><value>com.era.community.monitor.dao.EventCalendarSubscription</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>EventCalendarId</value>
+										<value>UserId</value>
+										<value>CommunityId</value>
+										<value>Frequency</value>
+										<value>Modified</value>
+										<value>WebSubscription</value>
+										<value>MailSubscription</value>
+										<value>PageSubscription</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>BlogEntrySubscription</value></constructor-arg>
+							<constructor-arg><value>com.era.community.monitor.dao.BlogEntrySubscription</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>BlogEntryId</value>
+										<value>UserId</value>
+										<value>CommunityId</value>
+										<value>Frequency</value>
+										<value>Modified</value>
+										<value>WebSubscription</value>
+										<value>MailSubscription</value>
+										<value>PageSubscription</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>WikiEntrySubscription</value></constructor-arg>
+							<constructor-arg><value>com.era.community.monitor.dao.WikiEntrySubscription</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>WikiEntryId</value>
+										<value>UserId</value>
+										<value>CommunityId</value>
+										<value>Frequency</value>
+										<value>Modified</value>
+										<value>WebSubscription</value>
+										<value>MailSubscription</value>
+										<value>PageSubscription</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>ForumSubscription</value></constructor-arg>
+							<constructor-arg><value>com.era.community.monitor.dao.ForumSubscription</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>ForumId</value>
+										<value>UserId</value>
+										<value>CommunityId</value>
+										<value>Frequency</value>
+										<value>Modified</value>
+										<value>WebSubscription</value>
+										<value>MailSubscription</value>
+										<value>PageSubscription</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>PersonalBlogSubscription</value></constructor-arg>
+							<constructor-arg><value>com.era.community.monitor.dao.PersonalBlogSubscription</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>PersonalBlogId</value>
+										<value>UserId</value>
+										<value>Frequency</value>
+										<value>Modified</value>
+										<value>WebSubscription</value>
+										<value>MailSubscription</value>
+										<value>PageSubscription</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>DocumentSubscription</value></constructor-arg>
+							<constructor-arg><value>com.era.community.monitor.dao.DocumentSubscription</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>DocumentId</value>
+										<value>UserId</value>
+										<value>CommunityId</value>
+										<value>Frequency</value>
+										<value>Modified</value>
+										<value>WebSubscription</value>
+										<value>MailSubscription</value>
+										<value>PageSubscription</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>CommunityBlogSubscription</value></constructor-arg>
+							<constructor-arg><value>com.era.community.monitor.dao.CommunityBlogSubscription</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>CommunityBlogId</value>
+										<value>UserId</value>
+										<value>CommunityId</value>
+										<value>Frequency</value>
+										<value>Modified</value>
+										<value>WebSubscription</value>
+										<value>MailSubscription</value>
+										<value>PageSubscription</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>ThreadSubscription</value></constructor-arg>
+							<constructor-arg><value>com.era.community.monitor.dao.ThreadSubscription</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>ThreadId</value>
+										<value>UserId</value>
+										<value>CommunityId</value>
+										<value>Frequency</value>
+										<value>Modified</value>
+										<value>WebSubscription</value>
+										<value>MailSubscription</value>
+										<value>PageSubscription</value>
+								</list>
+							</constructor-arg>
+						</bean>
+						
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>EventSubscription</value></constructor-arg>
+							<constructor-arg><value>com.era.community.monitor.dao.EventSubscription</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>EventId</value>
+										<value>UserId</value>
+										<value>CommunityId</value>
+										<value>Frequency</value>
+										<value>Modified</value>
+										<value>WebSubscription</value>
+										<value>MailSubscription</value>
+										<value>PageSubscription</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>Subscription</value></constructor-arg>
+							<constructor-arg><value>com.era.community.monitor.dao.Subscription</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>UserId</value>
+										<value>CommunityId</value>
+										<value>Frequency</value>
+										<value>Modified</value>
+										<value>WebSubscription</value>
+										<value>MailSubscription</value>
+										<value>PageSubscription</value>
+								</list>
+							</constructor-arg>
+						</bean>
+						
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+
+	<!--  -->
+	<bean id="Dao.EVNT" class="com.era.community.events.dao.EventDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBEVNT"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBEVNT"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+	   <property name="optimisticLockingEnabled" value="true"/>
+	   <property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>Event</value></constructor-arg>
+							<constructor-arg><value>com.era.community.events.dao.Event</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>Name</value>
+										<value>Description</value>
+										<value>StartDate</value>
+										<value>EndDate</value>
+										<value>Location</value>
+										<value>Address</value>
+										<value>Country</value>
+										<value>Cstate</value>
+										<value>Venue</value>
+										<value>City</value>
+										<value>PostalCode</value>
+										<value>Rollup</value>
+										<value>PosterId</value>
+										<value>Weblink</value>
+										<value>ContactName</value>
+										<value>ContactTel</value>
+										<value>ContactEmail</value>
+										<value>PhoneCodeId</value>
+										<value>CalendarId</value>
+										<value>Ticket</value>
+										<value>Modified</value>
+										<value>Invited</value>
+										<value>MayBe</value>
+										<value>Confirmed</value>
+										<value>Declined</value>
+										<value>HostCount</value>
+										<value>Status</value>
+										<value>Latitude</value>
+										<value>Longitude</value>
+										<value>EventType</value>
+										<value>EventCategory</value>
+										<value>Width</value>
+										<value>Height</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+
+	<!--  -->
+	<bean id="Dao.CONT" class="com.era.community.pers.dao.ContactDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBCONT"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBCONT"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+	   <property name="optimisticLockingEnabled" value="true"/>
+	   <property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>Contact</value></constructor-arg>
+							<constructor-arg><value>com.era.community.pers.dao.Contact</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>OwningUserId</value>
+										<value>ContactUserId</value>
+										<value>Status</value>
+										<value>DateConnection</value>
+										<value>FollowOwner</value>
+										<value>FollowContact</value>
+										<value>Modified</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+
+	<!--  -->
+	<bean id="Dao.USER" class="com.era.community.pers.dao.UserDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBUSER"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBUSER"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+	   <property name="optimisticLockingEnabled" value="true"/>
+	   <property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>User</value></constructor-arg>
+							<constructor-arg><value>com.era.community.pers.dao.User</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>ProfileName</value>
+										<value>Modified</value>
+										<value>FirstName</value>
+										<value>LastName</value>
+										<value>EmailAddress</value>
+										<value>Password</value>
+										<value>DateRegistered</value>
+										<value>SystemAdministrator</value>
+										<value>Inactive</value>
+										<value>Validated</value>
+										<value>MsgAlert</value>
+										<value>SuperAdministrator</value>
+										<value>DateLastVisit</value>
+										<value>ConnectionCount</value>
+										<value>DateDeactivated</value>
+										<value>FirstKey</value>
+										<value>ChangeKey</value>
+										<value>Width</value>
+										<value>Height</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+	
+	<!--  -->
+	<bean id="Dao.ExtraInfoUser" class="com.era.community.pers.dao.ExtraInfoUserDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBEIUSER"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBEIUSER"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+	   <property name="optimisticLockingEnabled" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>ExtraInfoUser</value></constructor-arg>
+							<constructor-arg><value>com.era.community.pers.dao.ExtraInfoUser</value></constructor-arg>
+							<constructor-arg>
+								<list>
+									<value>UserId</value>
+									<value>Modified</value>
+									<value>About</value>
+									<value>DateOfBirth</value>
+									<value>CuntryCodeId</value>
+									<value>MobileNumber</value>
+									<value>Relationship</value>
+									<value>Gender</value>
+									<value>Company</value>
+									<value>Occupation1</value>
+									<value>Occupation2</value>
+									<value>Occupation3</value>
+									<value>Spotlight</value>
+									<value>SpotlightUrl</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+	
+	<!--  -->
+	<bean id="Dao.LoginSN" class="com.era.community.pers.dao.LoginSNDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBLOGSN"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBLOGSN"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>LoginSN</value></constructor-arg>
+							<constructor-arg><value>com.era.community.pers.dao.LoginSN</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>FullName</value>
+										<value>Modified</value>
+										<value>FirstName</value>
+										<value>LastName</value>
+										<value>EmailAddress</value>
+										<value>Inactive</value>
+										<value>SnType</value>
+										<value>LoginId</value>
+										<value>Login</value>
+										<value>UserId</value>
+										<value>Link</value>
+										<value>Gender</value>
+										<value>About</value>
+										<value>Cover</value>
+										<value>Website</value>
+										<value>Location</value>
+										<value>PhotoUrl</value>
+										<value>Birthday</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+	
+	<!--  -->
+	<bean id="Dao.USPR" class="com.era.community.pers.dao.UserPrivacyDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBUSPR"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBUSPR"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+	   <property name="optimisticLockingEnabled" value="true"/>
+	   <property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>UserPrivacy</value></constructor-arg>
+							<constructor-arg><value>com.era.community.pers.dao.UserPrivacy</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>Modified</value>
+										<value>Address</value>
+										<value>DateOfBirth</value>
+										<value>Gender</value>
+										<value>Relationship</value>
+										<value>MobileNumber</value>
+										<value>Education</value>
+										<value>Occupation</value>
+										<value>UserId</value>
+								</list>
+							</constructor-arg>
+						</bean>
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+
+	<!--  -->
+	<bean id="Dao.UMSG" class="com.era.community.pers.dao.MessageDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBUMSG"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBUMSG"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+	   <property name="optimisticLockingEnabled" value="true"/>
+	   <property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>ReceivedMessage</value></constructor-arg>
+							<constructor-arg><value>com.era.community.pers.dao.ReceivedMessage</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>ToUserId</value>
+										<value>FromUserId</value>
+										<value>Subject</value>
+										<value>Body</value>
+										<value>DateSent</value>
+										<value>AlreadyRead</value>
+										<value>DeleteFlag</value>
+										<value>ReadFlag</value>
+										<value>Modified</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>SentMessage</value></constructor-arg>
+							<constructor-arg><value>com.era.community.pers.dao.SentMessage</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>ToUserId</value>
+										<value>FromUserId</value>
+										<value>Subject</value>
+										<value>Body</value>
+										<value>DateSent</value>
+										<value>AlreadyRead</value>
+										<value>DeleteFlag</value>
+										<value>ReadFlag</value>
+										<value>Modified</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>Message</value></constructor-arg>
+							<constructor-arg><value>com.era.community.pers.dao.Message</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>ToUserId</value>
+										<value>FromUserId</value>
+										<value>Subject</value>
+										<value>Body</value>
+										<value>DateSent</value>
+										<value>AlreadyRead</value>
+										<value>DeleteFlag</value>
+										<value>ReadFlag</value>
+										<value>Modified</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+	
+	<!--  -->
+	<bean id="Dao.DBALT" class="com.era.community.pers.dao.DashBoardAlertDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBDBALT"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBDBALT"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+	    <property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>DashBoardAlert</value></constructor-arg>
+							<constructor-arg><value>com.era.community.pers.dao.DashBoardAlert</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>UserId</value>
+										<value>MessageCount</value>
+										<value>NotificationCount</value>
+										<value>LikeCount</value>
+										<value>ProfileVisitCount</value>
+										<value>ConnectionReceivedCount</value>
+										<value>ConnectionApprovedCount</value>
+										<value>Modified</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+	
+	<!--  -->
+	<bean id="Dao.BLIK" class="com.era.community.blog.dao.BlogEntryLikeDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBBLIK"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBBLIK"/>
+			</bean>
+		</property>
+		<property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>BlogEntryLike</value></constructor-arg>
+							<constructor-arg><value>com.era.community.blog.dao.BlogEntryLike</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>BlogEntryId</value>
+										<value>PosterId</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+	
+	<!--  -->
+	<bean id="Dao.BCLIK" class="com.era.community.blog.dao.BlogEntryCommentLikeDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBBCLIK"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBBCLIK"/>
+			</bean>
+		</property>
+		<property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>BlogEntryCommentLike</value></constructor-arg>
+							<constructor-arg><value>com.era.community.blog.dao.BlogEntryCommentLike</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>BlogEntryId</value>
+										<value>BlogEntryCommentId</value>
+										<value>PosterId</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+	
+	<!--  -->
+	<bean id="Dao.WCLIK" class="com.era.community.wiki.dao.WikiEntryCommentLikeDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBWCLIK"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBWCLIK"/>
+			</bean>
+		</property>
+		<property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>WikiEntryCommentLike</value></constructor-arg>
+							<constructor-arg><value>com.era.community.wiki.dao.WikiEntryCommentLike</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>WikiEntryId</value>
+										<value>WikiEntryCommentId</value>
+										<value>PosterId</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+	
+	<!--  -->
+	<bean id="Dao.EVLIK" class="com.era.community.events.dao.EventLikeDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBEVLIK"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBEVLIK"/>
+			</bean>
+		</property>
+		<property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>EventLike</value></constructor-arg>
+							<constructor-arg><value>com.era.community.events.dao.EventLike</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>EventId</value>
+										<value>PosterId</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+	
+	<!--  -->
+	<bean id="Dao.DLIK" class="com.era.community.doclib.dao.DocumentLikeDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBDLIK"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBDLIK"/>
+			</bean>
+		</property>
+		<property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>DocumentLike</value></constructor-arg>
+							<constructor-arg><value>com.era.community.doclib.dao.DocumentLike</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>DocumentId</value>
+										<value>PosterId</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+	
+	<!--  -->
+	<bean id="Dao.DCLIK" class="com.era.community.doclib.dao.DocumentCommentLikeDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBDCLIK"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBDCLIK"/>
+			</bean>
+		</property>
+		<property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>DocumentCommentLike</value></constructor-arg>
+							<constructor-arg><value>com.era.community.doclib.dao.DocumentCommentLike</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>DocumentId</value>
+										<value>DocumentCommentId</value>
+										<value>PosterId</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+	
+	<bean id="Dao.PCLIK" class="com.era.community.media.dao.PhotoCommentLikeDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBPCLIK"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBPCLIK"/>
+			</bean>
+		</property>
+		<property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>PhotoCommentLike</value></constructor-arg>
+							<constructor-arg><value>com.era.community.media.dao.PhotoCommentLike</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>PhotoId</value>
+										<value>PhotoCommentId</value>
+										<value>PosterId</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+	
+	<!--  -->
+	<bean id="Dao.FLIK" class="com.era.community.forum.dao.ForumItemLikeDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBFLIK"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBFLIK"/>
+			</bean>
+		</property>
+		<property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>ForumItemLike</value></constructor-arg>
+							<constructor-arg><value>com.era.community.forum.dao.ForumItemLike</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>ForumItemId</value>
+										<value>PosterId</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+	
+	<!--  -->
+	<bean id="Dao.CVST" class="com.era.community.communities.dao.CommunityVisitDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBCVST"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBCVST"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+	   <property name="optimisticLockingEnabled" value="true"/>
+	   <property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>CommunityVisit</value></constructor-arg>
+							<constructor-arg><value>com.era.community.communities.dao.CommunityVisit</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>CommunityId</value>
+										<value>VisitingUserId</value>
+										<value>Modified</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+	
+	<!--  -->
+	<bean id="Dao.PVST" class="com.era.community.profile.dao.ProfileVisitDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBPVST"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBPVST"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+	   <property name="optimisticLockingEnabled" value="true"/>
+	   <property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>ProfileVisit</value></constructor-arg>
+							<constructor-arg><value>com.era.community.profile.dao.ProfileVisit</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>ProfileUserId</value>
+										<value>VisitingUserId</value>
+										<value>Status</value>
+										<value>VisitingCounter</value>
+										<value>Modified</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+	
+	<!--  -->
+	<bean id="Dao.UEXP" class="com.era.community.pers.dao.UserExpertiseDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBUEXP"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBUEXP"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+	   <property name="optimisticLockingEnabled" value="true"/>
+	   <property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>UserExpertise</value></constructor-arg>
+							<constructor-arg><value>com.era.community.pers.dao.UserExpertise</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>Name</value>
+										<value>Modified</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+	
+	<!--  -->
+	<bean id="Dao.UEXL" class="com.era.community.pers.dao.UserExpertiseLinkDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBUEXL"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBUEXL"/>
+			</bean>
+		</property>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>UserExpertiseLink</value></constructor-arg>
+							<constructor-arg><value>com.era.community.pers.dao.UserExpertiseLink</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>UserId</value>
+										<value>UserExpertiseId</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+	
+	<!--  -->
+	<bean id="Dao.UEEL" class="com.era.community.events.dao.EventInviteeLinkDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBUEEL"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBUEEL"/>
+			</bean>
+		</property>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>EventInviteeLink</value></constructor-arg>
+							<constructor-arg><value>com.era.community.events.dao.EventInviteeLink</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>EventId</value>
+										<value>UserId</value>
+										<value>JoiningStatus</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+	
+	<!--  -->
+	<bean id="Dao.ASASL" class="com.era.community.assignment.dao.AssignmentAssigneeLinkDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBASASL"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBASASL"/>
+			</bean>
+		</property>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>AssignmentAssigneeLink</value></constructor-arg>
+							<constructor-arg><value>com.era.community.assignment.dao.AssignmentAssigneeLink</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>AssignmentId</value>
+										<value>UserId</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+	
+	<!--  -->
+	<bean id="Dao.BLAT" class="com.era.community.blog.dao.BlogAuthorDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBBLAT"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBBLAT"/>
+			</bean>
+		</property>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>BlogAuthor</value></constructor-arg>
+							<constructor-arg><value>com.era.community.blog.dao.BlogAuthor</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>BlogId</value>
+										<value>PersonalBlogId</value>
+										<value>UserId</value>
+										<value>Role</value>
+										<value>Active</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+	
+	<bean id="Dao.TBCONTR" class="com.era.community.location.dao.CountryDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBCONTR"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBERLG"/>
+			</bean>
+		</property>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>Country</value></constructor-arg>
+							<constructor-arg><value>com.era.community.location.dao.Country</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>CountryCode</value>
+										<value>CountryName</value>
+										<value>PhoneCountryCode</value>
+										<value>Active</value>
+										<value>Duplicate</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+	
+	<bean id="Dao.TBREGN" class="com.era.community.location.dao.RegionDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBREGN"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBREGN"/>
+			</bean>
+		</property>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>Country</value></constructor-arg>
+							<constructor-arg><value>com.era.community.location.dao.Region</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>CountryId</value>
+										<value>RegionName</value>
+										<value>Active</value>
+										<value>Duplicate</value>
+								</list>
+							</constructor-arg>
+						</bean>
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+	
+	<bean id="Dao.TBCITY" class="com.era.community.location.dao.CityDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBCITY"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBCITY"/>
+			</bean>
+		</property>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>Country</value></constructor-arg>
+							<constructor-arg><value>com.era.community.location.dao.City</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>CountryId</value>
+										<value>RegionId</value>
+										<value>CityName</value>
+										<value>Latitude</value>
+										<value>Longitude</value>
+										<value>Active</value>
+										<value>Duplicate</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+	
+	<!--  -->
+	<bean id="Dao.BPCON" class="com.era.community.blog.dao.PersonalBlogDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBBPCON"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBBPCON"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+	   <property name="optimisticLockingEnabled" value="true"/>
+	   <property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>PersonalBlog</value></constructor-arg>
+							<constructor-arg><value>com.era.community.blog.dao.PersonalBlog</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>UserId</value>
+										<value>Name</value>
+										<value>Description</value>
+										<value>Inactive</value>
+										<value>AllowCoEdit</value>
+										<value>AllowComments</value>
+										<value>ModerateComments</value>
+										<value>DefaultAllowComments</value>
+										<value>DefaultCommentDays</value>
+										<value>Modified</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+	
+	<!--  -->
+	<bean id="Dao.MSDT" class="com.era.community.pers.dao.MasterDataDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBMSDT"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBMSDT"/>
+			</bean>
+		</property>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>MasterData</value></constructor-arg>
+							<constructor-arg><value>com.era.community.pers.dao.MasterData</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>Label</value>
+										<value>Category</value>
+										<value>Active</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+	
+	<!--  -->
+	<bean id="Dao.INT" class="com.era.community.pers.dao.InterestDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBINT"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBINT"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>Interest</value></constructor-arg>
+							<constructor-arg><value>com.era.community.pers.dao.Interest</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>CategoryId</value>
+										<value>CreatorId</value>
+										<value>Interest</value>
+										<value>Active</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+	
+	<!--  -->
+	<bean id="Dao.INTLNK" class="com.era.community.pers.dao.InterestLinkDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBINTLNK"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBINTLNK"/>
+			</bean>
+		</property>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>UserExpertiseLink</value></constructor-arg>
+							<constructor-arg><value>com.era.community.pers.dao.InterestLink</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>InterestId</value>
+										<value>ProfileId</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+	
+	<!--  -->
+	<bean id="Dao.PHO" class="com.era.community.media.dao.PhotoDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBPHO"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBPHO"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>Photo</value></constructor-arg>
+							<constructor-arg><value>com.era.community.media.dao.Photo</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>Modified</value>
+										<value>Title</value>
+										<value>Description</value>
+										<value>UserId</value>
+										<value>AlbumId</value>
+										<value>CurrentProfile</value>
+										<value>PrivacyLevel</value>
+										<value>Width</value>
+										<value>Height</value>
+										<value>MediaGroupNumber</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+	
+	<!--  -->
+	<bean id="Dao.ALB" class="com.era.community.media.dao.AlbumDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBALB"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBALB"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>Album</value></constructor-arg>
+							<constructor-arg><value>com.era.community.media.dao.Album</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>Modified</value>
+										<value>Title</value>
+										<value>Description</value>
+										<value>OwnerId</value>
+										<value>CoverPhotoId</value>
+										<value>PrivacyLevel</value>
+										<value>Shared</value>
+										<value>ProfileAlbum</value>
+										<value>CoverAlbum</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+	
+	<!--  -->
+	<bean id="Dao.FLD" class="com.era.community.doclib.dao.FolderDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBFLD"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBFLD"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>Folder</value></constructor-arg>
+							<constructor-arg><value>com.era.community.doclib.dao.Folder</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>Modified</value>
+										<value>Title</value>
+										<value>Description</value>
+										<value>OwnerId</value>
+										<value>CoverPhotoId</value>
+										<value>PrivacyLevel</value>
+										<value>LibraryId</value>
+										<value>ProfileFolder</value>
+										<value>BannerFolder</value>
+										<value>BlogFolder</value>
+										<value>ForumFolder</value>
+										<value>WikiFolder</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+	
+	<!--  -->
+	<bean id="Dao.DCGR" class="com.era.community.doclib.dao.DocGroupDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBDCGR"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBDCGR"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>DocGroup</value></constructor-arg>
+							<constructor-arg><value>com.era.community.doclib.dao.DocGroup</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>Modified</value>
+										<value>DocumentId</value>
+										<value>FolderId</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+	
+	<!--  -->
+	<bean id="Dao.PHGR" class="com.era.community.media.dao.PhotoGroupDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBPHGR"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBPHGR"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>PhotoGroup</value></constructor-arg>
+							<constructor-arg><value>com.era.community.media.dao.PhotoGroup</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>Modified</value>
+										<value>PhotoId</value>
+										<value>AlbumId</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+	
+	<!--  -->
+	<bean id="Dao.ALBLNK" class="com.era.community.media.dao.AlbumLinkDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBALBLNK"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBALBLNK"/>
+			</bean>
+		</property>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>AlbumLink</value></constructor-arg>
+							<constructor-arg><value>com.era.community.media.dao.AlbumLink</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>AlbumId</value>
+										<value>ContributorId</value>
+										<value>AccessLevel</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+	
+	<!--  -->
+	<bean id="Dao.PHLIK" class="com.era.community.media.dao.PhotoLikeDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBPHLIK"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBPHLIK"/>
+			</bean>
+		</property>
+		<property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>PhotoLike</value></constructor-arg>
+							<constructor-arg><value>com.era.community.media.dao.PhotoLike</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>PhotoId</value>
+										<value>PosterId</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+	
+	<!--  -->
+	<bean id="Dao.PHCOM" class="com.era.community.media.dao.PhotoCommentDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBPHCOM"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBPHCOM"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+	   <property name="optimisticLockingEnabled" value="true"/>
+	   <property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>PhotoComment</value></constructor-arg>
+							<constructor-arg><value>com.era.community.media.dao.PhotoComment</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>PhotoId</value>
+										<value>Comment</value>
+										<value>DatePosted</value>
+										<value>PosterId</value>
+										<value>Modified</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+	
+	<!--  -->
+	<bean id="Dao.LOC" class="com.era.community.location.dao.LocationDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBLOC"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBLOC"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+	   <property name="optimisticLockingEnabled" value="true"/>
+	   <property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>Location</value></constructor-arg>
+							<constructor-arg><value>com.era.community.location.dao.Location</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>Address</value>
+										<value>City</value>
+										<value>State</value>
+										<value>PostalCode</value>
+										<value>Country</value>
+										<value>Latitude</value>
+										<value>Longitude</value>
+										<value>UserId</value>
+										<value>Modified</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+	
+	<!--  -->
+	<bean id="Dao.SLNK" class="com.era.community.pers.dao.SocialLinkDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBSLNK"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBSLNK"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+	   <property name="optimisticLockingEnabled" value="true"/>
+	   <property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>SocialLink</value></constructor-arg>
+							<constructor-arg><value>com.era.community.pers.dao.SocialLink</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>Name</value>
+										<value>Link</value>
+										<value>UserId</value>
+										<value>Modified</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+	
+	<!--  -->
+	<bean id="Dao.MINV" class="com.era.community.connections.communities.dao.MemberInvitationDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBMINV"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBMINV"/>
+			</bean>
+		</property>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>MemberInvitation</value></constructor-arg>
+							<constructor-arg><value>com.era.community.connections.communities.dao.MemberInvitation</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>CommunityId</value>
+										<value>UserId</value>
+										<value>InvitorId</value>
+										<value>RequestDate</value>
+										<value>Status</value>
+										<value>ApproveRejectDate</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+	
+	<bean id="Dao.TBSCTK" class="com.era.community.jobs.dao.ScheduledJobDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBSCTK"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBSCTK"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>ScheduledJob</value></constructor-arg>
+							<constructor-arg><value>com.era.community.jobs.dao.ScheduledJob</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>TaskName</value>
+										<value>Started</value>
+										<value>Completed</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+	
+	<bean id="Dao.TBUSSN" class="com.era.community.common.dao.UserSessionDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBUSSN"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBUSSN"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>UserSession</value></constructor-arg>
+							<constructor-arg><value>com.era.community.common.dao.UserSession</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>sessionKey</value>
+										<value>deviceType</value>
+										<value>deviceBrand</value>
+										<value>deviceOS</value>
+										<value>browser</value>
+										<value>version</value>
+										<value>ip</value>
+										<value>hostname</value>
+										<value>org</value>
+										<value>country</value>
+										<value>region</value>
+										<value>city</value>
+										<value>loc</value>
+										<value>referer</value>
+										<value>userId</value>
+										<value>Modified</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+	
+	<bean id="Dao.TBISGT" class="com.era.community.common.dao.InsightDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBISGT"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBISGT"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>Insight</value></constructor-arg>
+							<constructor-arg><value>com.era.community.common.dao.Insight</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>screen</value>
+										<value>timeSpent</value>
+										<value>sessionId</value>
+										<value>previousPageId</value>
+										<value>Modified</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+	
+	<!--  -->
+	<bean id="Dao.CACT" class="com.era.community.communities.dao.CommunityActivityDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBCACT"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBCACT"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+	   <property name="optimisticLockingEnabled" value="true"/>
+	   <property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>CommunityActivity</value></constructor-arg>
+							<constructor-arg><value>com.era.community.communities.dao.CommunityActivity</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>CommunityId</value>
+										<value>UserId</value>
+										<value>DocumentId</value>
+										<value>FolderId</value>
+										<value>DocGroupNumber</value>
+										<value>BlogEntryId</value>
+										<value>ForumItemId</value>
+										<value>WikiEntryId</value>
+										<value>EventId</value>
+										<value>AssignmentId</value>
+										<value>Modified</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+	
+	<!--  -->
+	<bean id="Dao.UACT" class="com.era.community.pers.dao.UserActivityDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+		<property name="daoManager" ref="daoManager"/>
+		<property name="tableName" value="TBUACT"/>
+		<property name="keyGenerator" >
+			<bean class="support.community.database.SequenceKeyGenerator">
+				<property name="dataSource" ref="dataSource"/>
+				<property name="tableName" value="TBUACT"/>
+			</bean>
+		</property>
+		<property name="createdTimestampProperty" value="Created"/>
+	   <property name="optimisticLockingEnabled" value="true"/>
+	   <property name="polymorphic" value="true"/>
+		<property name="keyProperties">
+			<list>
+				<value>Id</value>
+			</list>
+		</property> 
+		<property name="typeMap"> 
+			<bean class="support.community.database.TypeMap">
+			    <constructor-arg>
+					<list>
+
+						<bean class="support.community.database.TypeMapEntry">  
+							<constructor-arg><value>UserActivity</value></constructor-arg>
+							<constructor-arg><value>com.era.community.pers.dao.UserActivity</value></constructor-arg>
+							<constructor-arg>
+								<list>
+										<value>UserId</value>
+										<value>CommunityActivityId</value>
+										<value>CommunityId</value>
+										<value>BlogEntryId</value>
+										<value>MediaGroupNumber</value>
+										<value>PhotoId</value>
+										<value>AlbumId</value>
+								</list>
+							</constructor-arg>
+						</bean>
+
+					</list> 
+			    </constructor-arg>
+			</bean>
+		</property> 
+	</bean>
+
+</beans>

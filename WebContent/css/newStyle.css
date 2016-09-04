@@ -1,0 +1,190 @@
+.commdetaillist {
+	background: #fff;
+	clear: both;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border: 5px solid #f4f4f4;
+	overflow: hidden;
+	padding: 10px;
+	position: relative;
+}
+
+.commdetaillist .leftImg {
+	float: left;
+}
+
+.commdetaillist .leftImg img {
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	height: 50px;
+	overflow: hidden;
+	/*padding: 0 5px; */
+	width: 50px;
+	margin: 0 10px 0 0;
+}
+
+.commdetaillist .details {
+	float: left;
+	width: 570px;
+	word-wrap: normal;
+}
+
+.commdetaillist .details .heading {
+	clear: both;
+}
+
+.commdetaillist .details .heading span
+	{
+	color: rgb(24, 74, 114);
+}
+
+.commdetaillist .details .heading a {
+	font-size: 12px;
+	font-weight: bold;
+	color: #66799f;
+	text-decoration: none;
+}
+
+.commdetaillist .details .heading a:hover
+	{
+	color: #2a3a47;
+	text-decoration: none;
+}
+
+/* Accordion */
+div.element {
+	float: left;
+	width: 100%;
+	background-color: rgb(246, 247, 248);
+}
+
+.element-wrapper div {
+	float: left;
+	width: 100%;
+}
+
+h3.toggler {
+	background: url('../img/icon-link-expand-dark.gif') no-repeat right top;
+	/*clear: left;
+		color: white !important; */
+	float: left;
+	width: 615px;
+	position: relative;
+	height: 17px;
+	margin: 0px 0px 0px 0px;
+	/* padding: 0px 4px; */
+}
+
+h3.toggler a {
+	float: left;
+	display: block;
+	text-decoration: none;
+	margin: 0px 0px;
+	padding: 2px 2px 2px 0px;
+	height: 17px;
+	font-size: 11px;
+	font-weight: bold;
+	color: #738397;
+	text-decoration: none;
+	/* border-left: 1.5px solid rgb(111, 183, 255);
+	border-right: 1.5px solid rgb(111, 183, 255);
+	border-top: 1.5px solid rgb(111, 183, 255); */
+}
+
+h3.toggler .left { /* padding: 0px 0 0px 20px; */
+	width: 290px;
+	font-weight: normal;
+}
+
+h3.toggler .right {
+	padding: 0px 40px 0px 0;
+	font-weight: normal;
+	text-align: right;
+	width: 300px;
+}
+
+h3.toggler .right span {
+	font-weight: bold;
+}
+
+div.element table .col2,div.element table .col3 {
+	width: 15%;
+}
+
+div.element table .col3 {
+	text-align: right;
+}
+
+div.element table .col4 {
+	text-align: right;
+}
+
+.element-wrapper {
+	float: left;
+	width: 620px;
+	position: relative;
+	/* border-left: 1.5px solid rgb(111, 183, 255);
+	border-right: 1.5px solid rgb(111, 183, 255);
+	border-bottom: 1.5px solid rgb(111, 183, 255); */
+	background-color: rgb(255, 255, 255);
+}
+
+.element-wrapper .bottomRight {
+	/*background: url("../img/i/bullet-blue.gif") no-repeat scroll left center
+		transparent; */
+	width: 200px;
+	height: 20px;
+	margin: 0px 0px 0px 455px;
+	padding: 1px;
+}
+
+.innerPannel .bottomRight {
+	/*background: url("../img/i/bullet-blue.gif") no-repeat scroll left center
+		transparent; */
+	width: 150px;
+	height: 20px;
+	margin: 2px 2px 2px 10px;
+	padding: 4px 10px;
+}
+
+.bottomRight a {
+	margin: 0px 0px 0px 15px;
+	text-decoration: none;
+	font-size: 12px;
+	font-weight: bold;
+	color: #66799f;
+	font-style: italic;
+	line-height: 18px;
+	text-decoration: none;
+}
+
+.bottomRight a:hover {
+	color: #4C4E4E;
+	text-decoration: underline;
+}
+
+p.onlylineColor {
+	background-color: rgb(237, 239, 244);
+	padding: 5px;
+	margin: 5px;
+	font-size: 12px;
+}
+
+span.mycomm {
+	clear: both;
+	font-size: 11px;
+	color: #a7a9ab;
+	line-height: 14px;
+	padding: 3px 0 0 0;
+}
+
+.lineseparater3 {
+	width: 700px;
+	height: 1px;
+	margin: 10px 0px 0px 0px;
+	padding: 0px;
+	position: relative;
+	border-top: 0px none;
+}

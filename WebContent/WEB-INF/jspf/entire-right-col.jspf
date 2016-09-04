@@ -1,0 +1,13 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="toolsCount" value="${communityEraContext.linkBuilder.toolsLinkBuilder.length}"/>
+<c:set var="optionsCount" value="${communityEraContext.linkBuilder.optionsLinkBuilder.length}"/>
+<c:if test="${toolsCount>0 || optionsCount>0}" >
+	<c:forEach var="link" items="${communityEraContext.linkBuilder.toolsLinkBuilder.links}">
+		<c:set var="count" value="${count+1}"/>
+		<li><a href="${link.href}" title="${link.title}">${link.text}</a></li>
+	</c:forEach>
+	
+	<c:forEach var="link" items="${communityEraContext.linkBuilder.optionsLinkBuilder.links}">
+		<li><a href="${link.href}"  title="${link.title}">${link.text}</a></li>
+	</c:forEach>
+</c:if>

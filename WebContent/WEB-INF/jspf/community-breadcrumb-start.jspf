@@ -1,0 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<li>You are here:</li>
+<li><a href="${communityEraContext.contextUrl}/community/showCommunities.do">All Communities</a></li>
+<li><a href="${communityEraContext.currentCommunityUrl}/home.do">${communityEraContext.currentCommunityName}</a></li>
+						

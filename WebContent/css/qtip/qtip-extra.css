@@ -1,0 +1,134 @@
+.myCustomClass {
+	width: 380px;
+}
+
+.myCustomClass2 {
+	width: 200px;
+}
+
+.myCustomClass3 {
+	width: 160px;
+	background-color: #FFF;
+	color: #524D4D;
+	font-weight: bold;
+	line-height: 2em;
+	text-align: center;
+	list-style: none outside none;
+	padding: 0px;
+	margin-top: -8px;
+	background-clip: padding-box;
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	border-radius: 3px;
+	box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+.myCustomClass4 {
+	width: 280px;
+	background-color: #FFF;
+	color: #524D4D;
+	font-weight: bold;
+	line-height: 1em;
+	text-align: center;
+	list-style: none outside none;
+	padding: 0px;
+	margin-top: -8px;
+	background-clip: padding-box;
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	border-radius: 3px;
+	box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+#communityEra .myCustomClass3 .qtip-tip, #communityEra .myCustomClass4 .qtip-tip {
+	display: none;
+	visibility: hidden;
+}
+
+.myCustomClass3 li, .myCustomClass4 li {
+	cursor: pointer;
+	padding: 4px 0px;
+	margin: 0px;
+	text-align: center;
+	font-size: 12px;
+	line-height: 2em;
+	width: 100%;
+}
+
+.myCustomClass3 li:hover, .myCustomClass4 li:hover {
+	color: #FFF;
+	text-decoration: none;
+	background-color: #243F52;
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+	padding: 4px 0px;
+}
+
+.qtip {
+	max-width: 580px;
+	/*max-height: 200px; */
+}
+
+.qtip-bootstrap .qtip-content {
+	padding: 0px;
+	overflow: auto;
+}
+
+.tipGroup {
+	width: 380px;
+	height: 100px;
+}
+
+.tipGroup2 {
+	width: 380px;
+	height: 159px;
+	border-bottom: 1px solid #DCDEE3;
+}
+
+.tipImg {
+	float: left;
+	margin: 10px;
+}
+
+.tipInfo {
+	float: left;
+	margin: 10px;
+	width: 208px;
+}
+
+.tipInfo a {
+	font-size: 16px;
+	font-weight: bold;
+	color: #66799f;
+	text-decoration: none;
+	padding: 0;
+}
+
+.tipInfo a:hover {
+	color: #2a3a47;
+	text-decoration: none;
+}
+
+.tipFooter {
+	height: 40px;
+	background: none repeat scroll 0% 0% #EEF3F6;
+}
+
+.tipFooter .detailsConnection {
+	margin: 0px;
+	float: right;
+	word-wrap: break-word;
+}
+
+.tipFooter .detailsConnection .actions {
+	position: relative;
+	margin-top: 2px;
+	font-size: 11px;
+	right: 0px;
+}
+
+.tipFooter .detailsConnection .actions a {
+	height: 28px;
+	line-height: 24px;
+	font-size: 12px;
+	margin-right: 4px;
+}

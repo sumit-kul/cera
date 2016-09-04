@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE urlrewrite PUBLIC "-//tuckey.org//DTD UrlRewrite 4.0//EN"
+        "http://www.tuckey.org/res/dtds/urlrewrite4.0.dtd">
+
+<!--
+
+    Configuration file for UrlRewriteFilter
+    http://www.tuckey.org/urlrewrite/
+
+-->
+<urlrewrite>
+
+
+    <rule>
+        <note>
+            The rule means that requests to /test/status/ will be redirected to /rewrite-status
+            the url will be rewritten.
+        </note>
+    	<from>/profile/([a-zA-Z0-9]+)</from>
+		<to>/pers/connectionResult.do?profileName=$1</to>
+    </rule>
+    
+    <!--
+    
+    <rule enabled="true">
+    	<name>Force HTTPS for http requests</name>
+		<condition type="scheme" operator="equal">^http$</condition>
+    	<from>^/web/$</from>
+		<to type="permanent-redirect" last="true">https://jhapak.com/welcomeToCommunities.do</to>
+    </rule>
+    
+    <rule enabled="true">
+    	<name>Force HTTPS for http requests</name>
+		<condition type="scheme" operator="equal">^http$</condition>
+    	<from>^/web$</from>
+		<to type="permanent-redirect" last="true">https://jhapak.com/welcomeToCommunities.do</to>
+    </rule>
+    
+    <rule>
+       <from>^/web/(.*)$</from>
+       <to type="redirect">/$1</to>
+    </rule>
+    
+    <rule enabled="true">
+    	<name>Force HTTPS for http requests</name>
+		<condition type="scheme" operator="equal">^http$</condition>
+    	<from>^.*$</from>
+		<to type="permanent-redirect" last="true">https://%{server-name}%{request-uri}?%{query-string}</to>
+    </rule> 
+     
+    -->
+
+</urlrewrite>

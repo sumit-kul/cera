@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>[Jhapak] New Blog Entry</title>
+</head>
+<body style="font-family: Arial,Helvetica,sans-serif;">
+<table role="presentation" style="max-width: 850px; width: 100%; font-size: 14px; border-collapse:collapse; border: #66799f 4px solid;" cellspacing="0" cellpadding="4" border="0">
+<tr>
+<td tabindex="0" style="background-color: #8E9BA4; border-style: solid; color: white; border-top: #66799f 4px solid; border-bottom: #66799f 4px solid; border-right:#474747 1px solid; border-left:#474747 1px solid; border-top: #474747 1px solid; padding-bottom: 4px;" colspan="3">
+<table role="presentation" cellspacing="0" cellpadding="6" border="0" width="100%">
+<tr style="height: 80px;"><td>
+<span style="color: white; font-size: 1.2em; margin-top: 0px; margin-bottom: 6px;">
+<strong>There has been a new entry in the blog of ${ownerName}<br />
+</span>
+</td></tr>
+</table>
+</td>
+</tr>
+<tr style="height: 140px;">
+<td>
+<p style="font-size: 13px; margin-top: 20px; margin-bottom: 20px;margin-left: 20px;">
+Click here to view this blog entry: 
+<a href="${blogEntryLink}" style="text-decoration: none; font-weight: bold; overflow: hidden; cursor: pointer; color:#66799f;">${blogEntryTitle}</a>
+</p>
+</td>
+</tr>
+<tr>
+<td style="background-color: #474747; color:#white; font-size: .8em;">
+<p style="color: white;">
+See you soon!
+<br />
+The Jhapak Team
+</p>
+</td>
+<td style="background-color: #474747; color:#white; font-size: .8em;" align="right"><img src="cid:logoimg" style="width: 206px; height: 24px; padding-top: 6px;"/></td>
+</tr>
+</table>
+</body>
+</html>

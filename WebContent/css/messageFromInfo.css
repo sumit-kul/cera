@@ -1,0 +1,80 @@
+.sendMessage-dialog .modal-dialog .modal-body {
+	position: relative;
+	padding: 5px 15px 5px 15px;
+	height: 460px;
+}
+
+.sendMessage-dialog .modal-dialog {
+	width: 714px;
+	margin: 30px auto
+}
+
+.sendMessage-dialog .modal-content {
+	width: 714px;
+	-webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+	box-shadow: 0 5px 15px rgba(0, 0, 0, .5)
+}
+
+.sendMessage-dialog .modal-sm {
+	width: 300px
+}
+
+#sendMessageForm input {
+	border: 1px solid #D6D6D6;
+	background: none repeat scroll 0% 0% #F2F2F2;
+	color: #2C3A47;
+	margin: 0px 0px 5px 0px;
+	padding: 2px 0px;
+	font-size: 12px;
+	font-weight: normal;
+	height: 24px;
+}
+
+#sendMessageForm label {
+	color: #707070;
+	font-size: 12px;
+	font-weight: normal;
+}
+
+#sendMessageForm .divText2 {
+	width: 97%;
+	min-height: 26px;
+	border: 1px solid #D6D6D6;
+	background: none repeat scroll 0% 0% #F2F2F2;
+	color: #2C3A47;
+	margin: 0px 0px 10px 0px;
+	padding: 2px 0px;
+	font-size: 12px;
+	font-weight: normal;
+	line-height: 26px;
+}
+
+p.messHead {
+	font-size: 11px;
+	color: #898F9C;
+	font-weight: bold;
+	padding: 0px;
+}
+
+#toNames .innerName {
+	border: 1px solid #D6D6D6;
+	padding: 3px 0px;
+	margin: 4px 2px;
+	cursor: pointer;
+	background: none repeat scroll 0% 0% white;
+}
+
+.successMsg-dialog .modal-dialog .modal-body {
+	position: relative;
+	padding: 5px;
+	height: 100px;
+}
+
+p.seccMsg {
+	font-size: 1.10em;
+	line-height: 1.2667;
+	white-space: normal;
+	text-align: left;
+	color: #3F4752;
+	padding: 40px;
+}

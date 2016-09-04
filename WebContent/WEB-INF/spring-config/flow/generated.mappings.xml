@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE beans PUBLIC
+    "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans default-autowire="byType" default-lazy-init="true" default-dependency-check="none" >  
+
+  <!-- 
+  <bean name="/cid/[cec]/doclib/add-comment.do" class="com.era.community.doclib.ui.action.DocumentCommentAddAction" />
+  <bean name="/cid/[cec]/admin/delete-community.do" class="com.era.community.communities.ui.action.CommunityDeleteAction" />
+  
+  <bean name="/upld/create-upload.do" class="com.era.community.upload.ui.action.UploadAction" />
+
+  <bean name="/pers/inactivate-user.do" class="com.era.community.pers.ui.action.InactivateUserAction" />
+
+  <bean name="/admin/download.do" class="com.era.community.admin.ui.action.DataDownloadAction" /> -->
+
+
+  
+
+  <bean name="/upld/get-data.do" class="com.era.community.upload.ui.action.GetDataAction" />
+
+  <bean name="/admin/delete-unvalidated-users.do" class="com.era.community.admin.ui.action.UnvalidatedUsersDeleteAction" />
+
+  <bean
+      name="/admin/approver-menu.do"
+      class="com.era.community.admin.ui.action.CommunityApproverMenuAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/pers/file-remove.do"
+      class="com.era.community.blog.ui.action.BlogFileRemoveAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/admin/news-feed-index.do"
+      class="com.era.community.admin.ui.action.NewsFeedIndexAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/cid/[cec]/tag-list.do"
+      class="com.era.community.tagging.ui.action.TagListAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/pers/blog-deactivate.do"
+      class="com.era.community.blog.ui.action.BlogInactivateAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/cid/[cec]/forum/item-delete.do"
+      class="com.era.community.forum.ui.action.ForumItemDeleteAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/admin/param-inline-edit.do"
+      class="com.era.community.admin.ui.action.ParamInlineEditAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/cid/[cec]/doclib/rate.do"
+      class="com.era.community.doclib.ui.action.DocumentRateAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/comm/theme-image.do"
+      class="com.era.community.communities.ui.action.ThemeImageDisplayAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/cid/[cec]/comm/watch.do"
+      class="com.era.community.communities.ui.action.WatchListAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/feed/blog-feed.rss"
+      class="com.era.community.newsfeed.ui.action.DefaultBlogFeedAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/metrics/authority-user-counts.do"
+      class="com.era.community.metrics.ui.action.AuthorityUserCountExportAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/comm/theme-image-remove.do"
+      class="com.era.community.communities.ui.action.ThemeImageRemoveAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/cid/[cec]/news/feed-delete.do"
+      class="com.era.community.newsfeed.ui.action.NewsFeedDeleteAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/comm/process-pending.do"
+      class="com.era.community.communities.ui.action.CommunityPendingProcessAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/cid/[cec]/wiki/json-index.do"
+      class="com.era.community.wiki.ui.action.WikiIndexAjaxAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/cid/[cec]/admin/theme-delete.do"
+      class="com.era.community.communities.ui.action.ThemeDeleteAction"
+  >
+
+  </bean>
+  <bean
+      name="/cid/[cec]/doclib/feed.rss"
+      class="com.era.community.newsfeed.ui.action.DefaultDocumentFeedAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/admin/user-index.do"
+      class="com.era.community.admin.ui.action.UserIndexAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/comm/create-community-complete.do"
+      class="com.era.community.communities.ui.action.CreateCommunityCompleteAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/pers/personal-details.do"
+      class="com.era.community.pers.ui.action.UserDetailsAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/cid/[cec]/wiki/feed.rss"
+      class="com.era.community.newsfeed.ui.action.DefaultEventFeedAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/test/test.do"
+      class="com.era.community.pers.ui.action.TestController"
+  >
+
+  </bean>
+
+  <bean
+      name="/user-activity.do"
+      class="com.era.community.base.UserActivityAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/metrics/index.do"
+      class="com.era.community.metrics.ui.action.MetricsHomeAction"
+  >
+
+  </bean>
+
+  
+
+  <bean
+      name="/comm/a-z-index.do"
+      class="com.era.community.communities.ui.action.AZCommunityIndexAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/admin/administrator-index.do"
+      class="com.era.community.admin.ui.action.AdministratorIndexAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/admin/group-edit.do"
+      class="com.era.community.admin.ui.action.GroupEditAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/cid/[cec]/forums-theme-index.do"
+      class="com.era.community.communities.ui.action.ForumsThemeIndexAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/admin/usercount-export.do"
+      class="com.era.community.admin.ui.action.UserCountByMonthAndRegionExport"
+  >
+
+  </bean>
+
+  <bean
+      name="/comm/for-keyword.do"
+      class="com.era.community.communities.ui.action.ListCommunitiesForKeywordAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/cid/[cec]/doclib/delete-comment.do"
+      class="com.era.community.doclib.ui.action.DocumentCommentDeleteAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/cid/[cec]/theme-move.do"
+      class="com.era.community.communities.ui.action.ThemeMoveAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/comm/reject-community.do"
+      class="com.era.community.communities.ui.action.CommunityRejectAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/cid/[cec]/forum/feed.rss"
+      class="com.era.community.newsfeed.ui.action.DefaultForumFeedAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/master-calendar/display.do"
+      class="com.era.community.events.ui.action.MasterCalendarDisplayAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/admin/community-list-export.do"
+      class="com.era.community.admin.ui.action.CommunityListExportAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/comm/shared.do"
+      class="com.era.community.communities.ui.action.SharedCommunityIndexAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/admin/migrate-forum.do"
+      class="com.era.community.admin.ui.action.ForumMigrateAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/admin/user-deactivate.do"
+      class="com.era.community.admin.ui.action.UserDeactivate"
+  >
+
+  </bean>
+
+  <bean
+      name="/cid/[cec]/doclib/themed-index.do"
+      class="com.era.community.doclib.ui.action.DocumentsForThemeIndexAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/cid/[cec]/doclibs/index.do"
+      class="com.era.community.doclib.ui.action.LibraryByThemeIndexAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/cid/[cec]/admin/add-theme.do"
+      class="com.era.community.communities.ui.action.ThemeAddAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/faq/file-remove.do"
+      class="com.era.community.faqs.ui.action.FaqFileRemoveAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/cid/[cec]/comm/feature-community.do"
+      class="com.era.community.communities.ui.action.CommunityFeatureAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/cid/[cec]/comm/community-cloud.do"
+      class="com.era.community.communities.ui.action.CommunityCloudAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/admin/user-list-export.do"
+      class="com.era.community.admin.ui.action.UserListExportAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/cid/[cec]/admin/theme-index.do"
+      class="com.era.community.communities.ui.action.ThemesIndexAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/admin/rejectedcommunities-index.do"
+      class="com.era.community.admin.ui.action.RejectedCommunityIndexAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/comm/create-community.do"
+      class="com.era.community.communities.ui.action.CreateCommunityAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/cid/[cec]/admin/move-to-parent.do"
+      class="com.era.community.admin.ui.action.MoveToParentAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/register/myHome.do"
+      class="com.era.community.pers.ui.action.MyHomePageAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/cid/[cec]/comm/feedback.do"
+      class="com.era.community.communities.ui.action.FeedbackAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/cid/[cec]/doclib/add-comment-rate.do"
+      class="com.era.community.doclib.ui.action.DocumentCommentRateAddAction"
+  >
+
+  </bean>
+
+
+  <bean
+      name="/cid/[cec]/admin/theme-edit.do"
+      class="com.era.community.communities.ui.action.ThemeEditAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/param/mail-message-index.do"
+      class="com.era.community.param.ui.action.MailMessageIndexAction"
+  >
+
+  </bean>
+  
+  <bean
+      name="/cid/[cec]/news/feed-add.do"
+      class="com.era.community.newsfeed.ui.action.NewsFeedAddAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/cid/[cec]/admin/rejected-requests.do"
+      class="com.era.community.communities.ui.action.RejectedRequestsIndexAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/cid/[cec]/event/json-index.do"
+      class="com.era.community.events.ui.action.EventIndexAjaxAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/comm/metrics.do"
+      class="com.era.community.communities.ui.action.MetricsHomeAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/cid/[cec]/metrics.do"
+      class="com.era.community.communities.ui.action.MetricsHomeAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/cid/[cec]/members/expel-member.do"
+      class="com.era.community.communities.ui.action.ExpelMemberAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/admin/unvalidateduser-list-export.do"
+      class="com.era.community.admin.ui.action.UnvalidatedUserListExportAction"
+  >
+  
+  </bean>
+
+  <bean
+      name="/faq/get-file.do"
+      class="com.era.community.faqs.ui.action.FileGetAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/cid/[cec]/event/master-calendar-toggle.do"
+      class="com.era.community.events.ui.action.MasterCalendarToggleAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/metrics/community-authority-user-counts.do"
+      class="com.era.community.metrics.ui.action.CommAuthorityUserCountExportAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/param/restore-default-message.do"
+      class="com.era.community.param.ui.action.RestoreDefaultMessageAction"
+  >
+
+  </bean>
+
+  <bean
+      name="/cid/[cec]/event/feed.rss"
+      class="com.era.community.newsfeed.ui.action.DefaultWikiFeedAction"
+  />
+
+</beans>

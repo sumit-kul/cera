@@ -1,0 +1,242 @@
+#container .help {
+	font: "FS Albert Pro Web Light", Helvetica, Arial, sans-serif;
+	background: #FFF none repeat scroll 0% 0%;
+	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15), -1px 0px 0px rgba(0, 0, 0, 0.03), 1px 0px 0px rgba(0, 0, 0, 0.03), 0px 1px 0px rgba(0, 0, 0, 0.12);
+	border-radius: 2px;
+	clear: both;
+	font-size: 12px;
+	font-weight: normal;
+	border-radius: 3px;
+	display: inline-block;
+	width: 99.4%;
+	text-align: justify;
+	font-size: 14px;
+	line-height: 1.385;
+	margin-bottom: 10px;
+	min-height: 420px;
+}
+
+#container .help .header {
+	height: 50px;
+	background: #EEF3F6 none repeat scroll 0% 0%;
+	clear: both;
+	text-decoration: none;
+	padding: 10px;
+	display: inline-block;
+	border-bottom: 1px solid #CCC;
+	padding: 6px 20px;
+	width: 96%;
+	border-radius: 4px 4px 0px 0px;
+	font-size: 24px;
+	font-weight: bold;
+	text-align: left;
+}
+
+#container .help .header a {
+	color: #1693EB;
+	text-decoration: none;
+}
+
+#container .help .header a:hover {
+	text-decoration: none;
+}
+
+#container .help .header p {
+	font-size: 12px;
+	font-weight: normal;
+	width: 100%;
+}
+
+#container .help .content {
+	padding: 10px 20px;
+}
+
+#container .help .content p.top, #mainSection p.top {
+	padding: 10px 0px 6px;
+	color: #3F4751;
+	font-weight: bold;
+	font-size: 1.4em;
+}
+
+#container .help .content ul.outer {
+	list-style: outside none none;
+	margin-left: 45px;
+	text-shadow: none;
+	margin-top: 6px;
+}
+
+#container .help .content ul.outer li {
+	margin-top: 6px;
+}
+
+#container .help .content ul.outer li::before {
+	color: #1693EB;
+	content: "•";
+	font-size: 20px;
+	vertical-align: middle;
+}
+
+li.paginatedList {
+	clear: both;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	display: inline-block;
+	width: 100%;
+}
+
+.wrapper {
+	width: 100%;
+	margin: 0px auto;
+}
+
+#container .help .content .st-accordion, #mainSection .st-accordion {
+	width: 100%;
+	margin: 0 auto;
+}
+
+#container .help .content .st-accordion ul li.paginatedList, #mainSection .st-accordion ul li.paginatedList {
+	border-bottom: 1px solid #c7deef;
+	overflow: hidden;
+}
+
+#container .help .content .st-accordion ul li.paginatedList:first-child, #mainSection ul li.paginatedList:first-child {
+	border-top: 1px solid #c7deef;
+}
+
+#container .help .content .st-accordion ul li.paginatedList>a , #mainSection .st-accordion ul li.paginatedList>a{
+	transform: unset;
+	font-size: 13px;
+	font-weight: bold;
+	color: #1693EB;
+	background: none;
+	text-indent: 0px;
+	opacity: 10;
+	margin: 0px;
+	text-decoration: none;
+	font-family: 'Josefin Slab', Georgia, serif;
+	text-shadow: 1px 1px 1px #fff;
+	display: block;
+	position: relative;
+	line-height: 30px;
+	outline: none;
+	-webkit-transition: color 0.2s ease-in-out;
+	-moz-transition: color 0.2s ease-in-out;
+	-o-transition: color 0.2s ease-in-out;
+	-ms-transition: color 0.2s ease-in-out;
+	transition: color 0.2s ease-in-out;
+}
+
+#container .help .content .st-accordion ul li>a span, #mainSection .st-accordion ul li>a span {
+	background: transparent url(../images/down.png) no-repeat center center;
+	text-indent: -9000px;
+	width: 26px;
+	height: 14px;
+	position: absolute;
+	top: -12px;
+	right: -26px;
+	margin-top: 22px;
+	opacity: 0;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	-ms-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+}
+
+.st-accordion ul li>a:hover {
+	color: #1693eb;
+}
+
+#container .help .content .st-accordion ul li>a:hover span, #mainSection .st-accordion ul li>a:hover span {
+	opacity: 1;
+	right: 10px;
+}
+
+#container .help .content .st-accordion ul li.st-open>a, #mainSection .st-accordion ul li.st-open>a {
+	color: #1693eb;
+}
+
+#container .help .content .st-accordion ul li.st-open>a span, #mainSection .st-accordion ul li.st-open>a span {
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	transform: rotate(180deg);
+	right: 10px;
+	opacity: 1;
+}
+
+.st-content {
+	padding: 5px 0px 20px 0px;
+}
+
+.st-content p.st-cont {
+	font: "FS Albert Pro Web Light", Helvetica, Arial, sans-serif;
+	text-align: justify;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 1.385;
+	color: #666;
+	padding: 0px 4px 5px 4px;
+}
+
+.st-content img {
+	width: 125px;
+	border-right: 1px solid #fff;
+	border-bottom: 1px solid #fff;
+}
+
+@media screen and (max-width: 320px) {
+	.st-accordion ul li>a {
+		font-size: 36px;
+	}
+}
+
+#container .help .content .leftMenu {
+	width: 25%;
+	float: left;
+	overflow: hidden;
+	border: 2px solid #E9EAED;
+}
+
+#container .help .content .mainBody {
+	min-height: 400px;
+	width: 66.6667%;
+	float: left;
+	border: 2px solid #E9EAED;
+}
+
+.dl-menu.dl-animate-out-1 {
+	animation: MenuAnimOut1 0.4s linear forwards;
+}
+
+@keyframes MenuAnimOut1 {
+	50% {
+		transform: translateZ(-250px) rotateY(30deg);
+	}
+	75% {
+		transform: translateZ(-372.5px) rotateY(15deg);
+		opacity: .5;
+	}
+	100% {
+		transform: translateZ(-500px) rotateY(0deg);
+		opacity: 0;
+	}
+}
+
+.dl-menu.dl-animate-in-1 {
+	animation: MenuAnimIn1 0.3s linear forwards;
+}
+
+@keyframes MenuAnimIn1 {
+	0% {
+		transform: translateZ(-500px) rotateY(0deg);
+		opacity: 0;
+	}
+	20% {
+		transform: translateZ(-250px) rotateY(30deg);
+		opacity: 0.5;
+	}
+	100% {
+		transform: translateZ(0px) rotateY(0deg);
+		opacity: 1;
+	}
+}

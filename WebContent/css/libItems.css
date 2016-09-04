@@ -1,0 +1,239 @@
+.modal-dialog {
+	width: 700px;
+}
+
+.modal-body {
+	padding: 0px;
+	min-height: 340px;
+}
+
+.modal-footer {
+	padding: 8px;
+	text-align: right;
+	border-top: 1px solid #E5E5E5;
+}
+
+.scroll-pane {
+	width: 100%;
+	height: 350px;
+	overflow: auto;
+}
+
+.scroll-pane2 {
+	width: 100%;
+	height: 310px;
+	overflow: auto;
+}
+
+#mainSection .dropzone {
+	background: none repeat scroll 0% 0% #FFF;
+	padding: 0px;
+	min-height: 345px;
+}
+
+#mainSection .dropzone .dz-preview .dz-image {
+	border-radius: 10px;
+}
+
+#mainSection .dropzone .dz-preview {
+	margin: 13px;
+}
+
+#mainSection .dropzone .dz-message .note {
+	font-size: 0.8em;
+	font-weight: 200;
+	display: block;
+	margin-top: 1.4rem;
+}
+
+#mainSection .dropzone .dz-preview .dz-details .dz-filename span,.dropzone .dz-preview .dz-details .dz-size span
+	{
+	max-width: 60px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: normal;
+}
+
+#mainSection .dropzone .dz-preview .dz-details .dz-filename:hover span {
+	max-width: 120px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.btn {
+	padding: 4px;
+}
+
+.radio-group {
+	display: inline-block;
+	width: 100%;
+	padding-bottom: 6px;
+	border-bottom: 2px solid #E5E5E5;
+}
+
+.radio-group .column {
+	position: relative;
+	list-style: none;
+	padding: 10px;
+}
+
+input[type="radio"] {
+	opacity: 0;
+	position: absolute;
+}
+
+input[type="radio"]+label span {
+	display: inline-block;
+	width: 19px;
+	height: 19px;
+	margin: -1px 4px 0 0;
+	vertical-align: middle;
+	background: url(../img/check_radio_sheet.png) -38px top no-repeat;
+	cursor: pointer;
+}
+
+input[type="radio"]:checked+label span {
+	background: url(../img/check_radio_sheet.png) -56.5px top no-repeat;
+}
+
+label {
+	display: inline-block;
+	overflow: hidden;
+	max-width: 135px;
+	margin: 0px 0px 1px 1px;
+	vertical-align: middle;
+	word-wrap: break-word;
+	text-overflow: ellipsis;
+	font-size: 11px;
+}
+
+.leftRadio {
+	float: left;
+	width: 45%;
+	text-align: right;
+	margin-top: 6px;
+}
+
+.rightRadio {
+	float: right;
+	width: 45%;
+	margin-top: 6px;
+}
+
+.mainSection {
+	padding: 10px;
+}
+
+.mainSection form select {
+	border: 1px solid #D6D6D6;
+	background: none repeat scroll 0% 0% #F2F2F2;
+	color: #2C3A47;
+	margin: 0px 12px 5px 0px;
+	padding: 2px 5px;
+	width: 250px;
+	float: left;
+}
+
+.searchResult {
+	width: 408px;
+	height: 18px;
+}
+
+.ico--search {
+	background-position: -488px -1288px;
+	position: absolute;
+	cursor: pointer;
+	top: 50px;
+	right: 10px;
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	background: url('../img/search.png') no-repeat scroll 0px 0px
+		transparent;
+	padding-left: 4px;
+	right: 10px;
+}
+
+.lowerSection {
+	width: 100%;
+	height: 280px;
+	display: inline-block;
+}
+
+.lowerSection .lowerInfoSection {
+	width: 100%;
+}
+
+.lowerSection .lowerDataSection {
+	width: 100%;
+}
+
+ul.fileInfo {
+	list-style: none;
+	padding: 10px;
+}
+
+li.fileEntry {
+	margin: 4px;
+	background: none;
+	border: none;
+}
+
+li.fileEntrySelected {
+	cursor: pointer;
+	border: 1px solid #FFF;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	-khtml-border-radius: 2px;
+	color: #141823;
+	text-decoration: none;
+	background-color: #F6F7F8;
+	border-color: rgba(0, 0, 0, 0.1);
+	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.08);
+	cursor: pointer;
+	font-size: 13px;
+	font-weight: bold;
+	margin: 4px;
+}
+
+li.fileEntry label, li.fileEntrySelected label {
+	color: #898F9C;
+	font-size: 13px;
+	display: inline-block;
+	overflow: hidden;
+	max-width: 600px;
+	margin: 2px;
+	vertical-align: middle;
+	word-wrap: break-word;
+	text-overflow: ellipsis;
+}
+
+li.fileEntry label img, li.fileEntrySelected label img {
+	margin-right: 4px;
+}
+
+.newButton {
+	color: #FFF;
+	background-color: #428BCA;
+	border-color: #357EBD;
+	display: inline-block;
+	padding: 4px;
+	margin-bottom: 0px;
+	margin-left: 5px;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.42857;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	-moz-user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+
+.newButton.disabled,.newButton[disabled],.btn.disabled,.btn[disabled] {
+	opacity: 0.25;
+}

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>  
+				<value>WEB-INF/spring-config/app.properties</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="exceptionMapper" class="support.community.framework.AppMappingExceptionResolver">
+		<property name="order" value="99"/>
+		<property name="defaultErrorView" value="error"/>
+		<property name="defaultStatusCode" value="500"/>
+		<property name="transactionContextHolder" ref="transactionContextHolder"/>
+	</bean>
+
+	<bean id="communityEraContextManager" class="com.era.community.base.CommunityEraContextManager" autowire="byType">
+		<property  name="exposeInViewAs" value="communityEraContext" />
+		<property  name="production" ><value>${prod.env}</value></property>
+    </bean>
+		
+	<bean id="mailSender" class ="org.springframework.mail.javamail.JavaMailSenderImpl" >
+	    <property name="host"><value>jhapak.com</value></property>
+	        <property name="port"><value>465</value></property>
+	        <property name="protocol"><value>smtp</value></property>
+	        <property name="username"><value>cemt@jhapak.com</value></property>
+        	<property name="password"><value>arun@1234</value></property>
+        	<property name="defaultEncoding" value="UTF-8"/>
+	        <property name="javaMailProperties">
+	            <props>
+	            	<prop key="mail.smtp.auth">true</prop>
+		            <prop key="mail.smtp.connectiontimeout">5000</prop>
+		            <prop key="mail.smtp.sendpartial">true</prop>
+		            <prop key="mail.smtp.userset">true</prop>
+		            <prop key="mail.mime.charset">UTF-8</prop>
+	                <prop key="mail.smtp.starttls.enable">true</prop>
+	                <prop key="mail.smtp.quitwait">false</prop>
+	                <prop key="mail.smtp.socketFactory.class">javax.net.ssl.SSLSocketFactory</prop>
+	                <prop key="mail.smtp.socketFactory.fallback">false</prop>
+	                <prop key="mail.debug">true</prop>
+	            </props>
+	        </property>
+	</bean>
+	
+	<bean id="velocityEngine" class="org.springframework.ui.velocity.VelocityEngineFactoryBean">
+	    <property name="velocityProperties">
+	        <props>
+	            <prop key="resource.loader">class</prop>
+	            <prop key="class.resource.loader.class">
+	                org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+	            </prop>
+	        </props>
+	    </property>
+	</bean>
+
+	<bean id="referenceData" class="com.era.community.base.ReferenceData" autowire="byType" />
+	<bean id="imageManipulation" class="com.era.community.base.ImageManipulation" autowire="byType" />
+
+	<bean id="runtimeContext" class="support.community.framework.WebsphereRuntimeContext" autowire="byType" />
+
+	<bean id="activityManager" class="com.era.community.base.UserActivityManagerImpl" autowire="byType" >
+		<property name="urlList" value="${activityManager.url.list}"/>
+	</bean>
+	
+	<bean id='recaptcha' class='net.tanesha.recaptcha.ReCaptchaImpl' autowire="byType" >
+	 <property name='privateKey' value='6LfdEygTAAAAAP1fA8CrfgJqmL_2xvYwQ0m2d2eb' />
+	</bean>
+	
+	<bean id="taskExecutor" class="com.era.community.base.RunAsAsyncThread">
+		<property name="runtimeContext" ref="runtimeContext"/>
+	    <property name="threadDecorators">
+	      <list>
+	         <ref bean="transactionContextHolder" />
+	         <ref bean="threadLifecycleTracker" />
+	      </list>
+	    </property>
+	</bean>
+
+</beans>

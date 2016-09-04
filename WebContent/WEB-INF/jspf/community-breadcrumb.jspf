@@ -1,0 +1,14 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--<p id="breadcrumb">
+		You are here: <a href="${communityEraContext.contextUrl}/community/showCommunities.do" class="breadcrumbLink">All Communities</a> &gt; 
+		<span class="bigHead2">
+			${communityEraContext.currentCommunity.name}
+		</span>
+</p> --%>
+<div class="breadcrum">
+	<ul>
+		<li>You are here:</li>
+		<li><a href="${communityEraContext.contextUrl}/community/showCommunities.do">All Communities</a></li>
+		<li class="uppercase">${communityEraContext.currentCommunity.name}</li>
+	</ul>
+</div>

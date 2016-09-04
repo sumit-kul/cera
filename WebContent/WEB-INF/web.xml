@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>jhapak</display-name>
+  <context-param>
+    <description></description>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>/WEB-INF/spring-config/base/*.xml</param-value>
+  </context-param>
+  <context-param>
+    <description></description>
+    <param-name>defaultHtmlEscape</param-name>
+    <param-value>true</param-value>
+  </context-param>
+  
+  <filter>
+	<filter-name>UrlRewriteFilter</filter-name>
+	<filter-class>org.tuckey.web.filters.urlrewrite.UrlRewriteFilter</filter-class>
+  </filter>
+  
+  <filter>
+    <filter-name>Acegi Filter Chain Proxy</filter-name>
+    <filter-class>org.acegisecurity.util.FilterToBeanProxy</filter-class>
+    <init-param>
+      <param-name>targetClass</param-name>
+      <param-value>org.acegisecurity.util.FilterChainProxy</param-value>
+    </init-param>
+  </filter>
+  
+  <filter-mapping>
+    <filter-name>Acegi Filter Chain Proxy</filter-name>
+    <url-pattern>*.do</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>Acegi Filter Chain Proxy</filter-name>
+    <url-pattern>*.rss</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>Acegi Filter Chain Proxy</filter-name>
+    <url-pattern>*.img</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>Acegi Filter Chain Proxy</filter-name>
+    <url-pattern>*.ajx</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>Acegi Filter Chain Proxy</filter-name>
+    <url-pattern>/profile/*</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>UrlRewriteFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <listener>
+    <description></description>
+    <display-name>SpringContextLoaderListener</display-name>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  <servlet>
+    <description></description>
+    <display-name>SpringDispatcher</display-name>
+    <servlet-name>SpringDispatcher</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <init-param>
+      <description></description>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>/WEB-INF/spring-config/flow/*.xml</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SpringDispatcher</servlet-name>
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SpringDispatcher</servlet-name>
+    <url-pattern>*.rss</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SpringDispatcher</servlet-name>
+    <url-pattern>*.img</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SpringDispatcher</servlet-name>
+    <url-pattern>*.ajx</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SpringDispatcher</servlet-name>
+    <url-pattern>/profile/</url-pattern>
+  </servlet-mapping>
+  
+  <mime-mapping>
+    <extension>doc</extension>
+    <mime-type>application/msword</mime-type>
+  </mime-mapping>
+  <mime-mapping>
+    <extension>rtf</extension>
+    <mime-type>application/rtf</mime-type>
+  </mime-mapping>
+  <mime-mapping>
+    <extension>docx</extension>
+    <mime-type>application/msword</mime-type>
+  </mime-mapping>
+  <resource-ref id="Resource_datasource">
+    <description></description>
+    <res-ref-name>DefaultDataSource</res-ref-name>
+    <res-type>javax.sql.DataSource</res-type>
+    <res-auth>Application</res-auth>
+    <res-sharing-scope>Shareable</res-sharing-scope>
+  </resource-ref>
+</web-app>

@@ -1,0 +1,26 @@
+<%@ taglib prefix="form" uri="/WEB-INF/tlds/cera_form.tld" %>
+<div class="header_bottom">
+	<div class="headerBody">
+		<form:form showFieldErrors="true" action="${communityEraContext.contextUrl}/search/searchComplete.do" method="get" id="myform" name="myform">	
+				<fieldset style="width: 274px;float: left;">
+				<div class="search-box">
+					<label class="label_type_1">May I help you ?</label>
+					<div class="size-container" style="height: 22px; margin-top: 2px;">
+						<form:dropdown path="searchType" fieldLabel="" cssStyle="" cssClass="searchType">
+							<form:optionlist options="${referenceData.searchOptions}" cssClass="logoAll"/>
+						</form:dropdown>
+					</div>
+				
+			</div>
+			</fieldset>
+					<input type="text" id="queryText" name="queryText" value="${command.queryText}" class="qtext"/>
+					<%-- <input type="submit" value="Search" class="search_btn" onclick="validateQueryText();"/> --%>
+					<span style="margin: 2px 0px 0px 4px">
+						<a class="search_btn" href="javascript: submitform()" style="margin-right:6px;">Search</a>
+						<a href="comm/advanced-search.do" title="Advanced Search" class="search_btn" style="margin-right:6px;">Advanced Search</a>
+					</span>
+			
+		</form:form>
+	</div> <!-- /#headerBody -->
+</div> <!-- /#header_bottom -->
+
